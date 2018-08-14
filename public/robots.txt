@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://baddate.netlify.com/sitemap.xml
