@@ -3,6 +3,7 @@ title: HTTP NOTES
 tags: 
     - HTTP
 date: 2018-07-25
+lastmod: 2018-08-14
 description: "HTTP Note"
 thumbnail: "images/HTTP Protocol.gif"
 url: /notes/http
@@ -173,11 +174,12 @@ Request-line --> HTTP-version
 ```
 ### Request-line        
 
-*The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF.*
-**syntax**
+*The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF.*    
+
+**syntax**  
     
     Request-Line = Method SP Request-URI SP HTTP-Version CRLF
-    
+
 ```mermaid
 graph TB
 Request-Method --> GET
@@ -529,7 +531,7 @@ The user agent includes stored cookies in the Cookie HTTP request
 --- 
 
 ## Reference:
-[HTTP Tutorial](https://www.tutorialspoint.com/http/index.htm)
-[Hypertext Transfer Protocol -- HTTP/1.1](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
-[The Cookie Header](https://tools.ietf.org/html/rfc6265#section-5.4)
+[HTTP Tutorial](https://www.tutorialspoint.com/http/index.htm)    
+[Hypertext Transfer Protocol -- HTTP/1.1](https://www.w3.org/Protocols/rfc2616/rfc2616.html)    
+[The Cookie Header](https://tools.ietf.org/html/rfc6265#section-5.4)    
 
