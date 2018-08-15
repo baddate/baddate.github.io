@@ -1,2 +1,2 @@
 # My blog
-https://baddate.netlify.com
+https://baddate.xyz
