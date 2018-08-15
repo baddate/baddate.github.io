@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://baddate.netlify.com/* https://baddate.xyz/:splat 301!
