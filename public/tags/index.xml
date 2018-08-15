@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Onepiece - a wnaderer&#39;s blog</title>
+    <link>https://baddate.netlify.com/tags/</link>
+    <description>Recent content in Tags on Onepiece - a wnaderer&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://baddate.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://baddate.netlify.com/tags/algorithm/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assembly</title>
+      <link>https://baddate.netlify.com/tags/assembly/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://baddate.netlify.com/tags/git/</link>
+      <pubDate>Tue, 14 Aug 2018 12:49:10 +0800</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://baddate.netlify.com/tags/http/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://baddate.netlify.com/tags/javascript/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://baddate.netlify.com/tags/tips/</link>
+      <pubDate>Tue, 14 Aug 2018 12:49:10 +0800</pubDate>
+      
+      <guid>https://baddate.netlify.com/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

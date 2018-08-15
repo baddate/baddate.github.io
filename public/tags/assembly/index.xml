@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly on Onepiece - a wnaderer&#39;s blog</title>
+    <link>https://baddate.netlify.com/tags/assembly/</link>
+    <description>Recent content in Assembly on Onepiece - a wnaderer&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://baddate.netlify.com/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>x86 Assembly Note</title>
+      <link>https://baddate.netlify.com/notes/x86asm/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/notes/x86asm/</guid>
+      <description>x86-Assembly note Registers eight 32-bit general purpose registers
+When referring to registers in assembly language, the names are not case-sensitive.
+Memory and Addressing Modes Declaring Static Data Regions Data declarations should be preceded by the .DATA directive.  located in memory next to one another.
+ DB&amp;mdash;one byte
+DW&amp;mdash;two bytes
+DD&amp;mdash;four bytes
+ Example
+.DATA var DB 64 ; _Declare a byte, referred to as location var, containing the value 64.</description>
+    </item>
+    
+  </channel>
+</rss>

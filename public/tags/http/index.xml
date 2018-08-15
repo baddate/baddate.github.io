@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on Onepiece - a wnaderer&#39;s blog</title>
+    <link>https://baddate.netlify.com/tags/http/</link>
+    <description>Recent content in HTTP on Onepiece - a wnaderer&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 25 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://baddate.netlify.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTTP NOTES</title>
+      <link>https://baddate.netlify.com/notes/http/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/notes/http/</guid>
+      <description>HTTP NOTES FEATURES Architecture based on Client-Server Architecture Parameters HTTP Version syntax
+HTTP-Version = &amp;quot;HTTP&amp;quot; &amp;quot;/&amp;quot; 1*DIGIT &amp;quot;.&amp;quot; 1*DIGIT
+Example HTTP/1.0
+Uniform Resource Identifiers(URI) syntax
+URI = &amp;quot;http:&amp;quot; &amp;quot;//&amp;quot; host [ &amp;quot;:&amp;quot; port ] [ abs_path [ &amp;quot;?&amp;quot; query ]]
+_port_can be not given, default: 80
+_characters_are equivalent to their&amp;rdquo;&amp;ldquo;%&amp;rdquo; HEX HEX&amp;rdquo; encoding.
+Example http://abc.com:80/~smith/home.html http://ABC.com/%7Esmith/home.html http://ABC.com/%7Esmith/home.html  Date/Time Formats be represented in Greenwich Mean Time (GMT)
+Character Sets default: ASCII</description>
+    </item>
+    
+  </channel>
+</rss>

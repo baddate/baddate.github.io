@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Onepiece - a wnaderer&#39;s blog</title>
+    <link>https://baddate.netlify.com/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Onepiece - a wnaderer&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://baddate.netlify.com/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm Notes</title>
+      <link>https://baddate.netlify.com/notes/algorithm/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/notes/algorithm/</guid>
+      <description>一些算法笔记 Algorithm Notes 算法复杂度 不高于关系O n^3 + 2n +5 = O(n^3) 不低于关系Ω 𝑛^2=Ω(𝑛 log⁡𝑛) 等于关系θ n^3 + 2n +5 = θ(n^3) 因为 n^3 + 2n +5 = O(n^3) n^3 +</description>
+    </item>
+    
+    <item>
+      <title>Algorithm Problems on POJ</title>
+      <link>https://baddate.netlify.com/solutions/algorithm/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://baddate.netlify.com/solutions/algorithm/</guid>
+      <description>算法题解 Divide and Conquer Algorithm Raid from ID3714 最近点对问题(Closest Pair)的进阶版, 增加一个限制, 即判断两个点是不是来自同一阵营 思路 利用分治思想, 划分为两</description>
+    </item>
+    
+  </channel>
+</rss>
