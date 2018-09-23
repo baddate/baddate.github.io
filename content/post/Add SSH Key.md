@@ -1,4 +1,18 @@
-# Add SSH Key
+---
+title: "Git_synctips"
+date: 2018-09-23
+lastmod: 
+tags: 
+    - Tips
+    - Git
+categories: 
+    - TIPS
+url: 
+    /tips/git_addSSHKey
+draft: false
+---
+
+
 
 1. Open CMD, and entering ssh-keygen -t rsa -C "youremail@example.com"
 2. Just Enter.
