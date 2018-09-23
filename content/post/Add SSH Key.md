@@ -1,6 +1,6 @@
 ---
-title: "Git_synctips"
-date: 2018-09-23
+title: "Add SSH Keys"
+date: 2018-09-23~
 lastmod: 
 tags: 
     - Tips
