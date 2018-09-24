@@ -1,8 +1,7 @@
 ---
 title: "Markdown Editors"
-author: Alex
 date: 2018-09-24 20:09:51
-lastmod: 2018-09-24 22:12:12
+lastmod: 2018-09-24 22:18:55
 menu:
 url: /tools/markdown
 tags:
