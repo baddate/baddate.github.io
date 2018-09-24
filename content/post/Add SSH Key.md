@@ -1,7 +1,7 @@
 ---
 title: Add SSH Keys
 date: 2018-09-23 22:20:20
-lastmod: 2018-09-24 22:31:44
+lastmod: 2018-09-24 22:52:18
 tags: 
     - Tips
     - Git
@@ -9,7 +9,6 @@ categories:
     - TIPS
 url: 
     /tips/git_addSSHKey
-draft: false
 ---
 
 
