@@ -1,7 +1,7 @@
 ---
 title: "Markdown Editors"
-date: 2018-09-24 20:09:51
-lastmod: 2018-09-24 22:18:55
+date: 2018-09-24
+lastmod: 2018-09-24 22:25:20
 menu:
 url: /tools/markdown
 tags:
