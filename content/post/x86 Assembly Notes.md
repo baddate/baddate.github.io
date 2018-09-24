@@ -2,7 +2,7 @@
 title: x86 Assembly Note 
 tags: 
     - Assembly
-date: 2018-07-25
+date: 2018-07-25 22:20:20
 description: "Some Assembly note"
 url:
     /notes/x86asm

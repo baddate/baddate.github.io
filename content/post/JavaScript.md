@@ -1,7 +1,7 @@
 ---
 title: JavaScript Notes
 date: 
-    2018-06-07
+    2018-06-07 22:20:20
 tags: 
     - JavaScript
 url:
