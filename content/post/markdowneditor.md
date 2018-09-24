@@ -1,7 +1,7 @@
 ---
 title: Markdown Editors
 date: 2018-09-24 22:20:20
-lastmod: 2018-09-24 22:39:51
+lastmod: 2018-09-24 22:41:23
 menu:
 url: /tools/markdown
 tags:
@@ -15,7 +15,7 @@ categories:
 ## Ghostwriter
 [link](https://wereturtle.github.io/ghostwriter/)
 ## Caret
-*note:* __charged__
+*note:* __charged__ 
 [link](https://caret.io/)
 ## Writemonkey
 [link](http://writemonkey.com/index.php)
