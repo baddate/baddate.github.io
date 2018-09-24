@@ -1,5 +1,5 @@
 ---
-title: JavaScript
+title: JavaScript Notes
 date: 
     2018-06-07
 tags: 

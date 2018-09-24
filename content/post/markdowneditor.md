@@ -2,14 +2,14 @@
 title: "Markdown Editors"
 author: Alex
 date: 2018-09-24 20:09:51
-lastmod: 2018-09-24 21:45:42
+lastmod: 2018-09-24 22:12:12
 menu:
 url: /tools/markdown
 tags:
-    - tools
-    - markdown
+    - Tools
+    - Markdown
 categories:
-    - tools
+    - TOOLS
 ---
 # OFFLINE
 ## Ghostwriter
