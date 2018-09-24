@@ -14,7 +14,7 @@ categories:
 # x86-Assembly note
 
 ## Registers
-![Registers](http://www.cs.virginia.edu/~evans/cs216/guides/x86-registers.png "x86-registers")
+![Registers](./static/x86-registers.png "x86-registers")
 _eight 32-bit general purpose registers_        
 **When referring to registers in assembly language, the names are not case-sensitive.**     
 ## Memory and Addressing Modes
@@ -332,7 +332,7 @@ ret
 
 *To allow separate programmers to share code and develop libraries for use by many programs, and to simplify the use of subroutines in general, programmers typically adopt a common **calling convention**. The calling convention is **a protocol about how to call and return from routines**.*		
 
-![Stack during Subroutine Call](http://www.cs.virginia.edu/~evans/cs216/guides/stack-convention.png "Stack during Subroutine Call")
+![Stack during Subroutine Call](./static/stack-convention.png "Stack during Subroutine Call")
 
 
 The image above depicts the contents of the stack during the execution of a subroutine with three parameters and three local variables. The cells depicted in the stack are 32-bit wide memory locations, thus the memory addresses of the cells are 4 bytes apart. The first parameter resides at an offset of 8 bytes from the base pointer. Above the parameters on the stack (and below the base pointer), the call instruction placed the return address, thus leading to an extra 4 bytes of offset from the base pointer to the first parameter. When the ret instruction is used to return from the subroutine, it will jump to the return address stored on the stack. 
