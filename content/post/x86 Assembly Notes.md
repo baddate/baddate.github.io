@@ -4,7 +4,6 @@ tags:
     - Assembly
 date: 2018-07-25
 description: "Some Assembly note"
-thumbnail: "images/x86-registers.png"
 url:
     /notes/x86asm
 categories:
@@ -14,7 +13,7 @@ categories:
 # x86-Assembly note
 
 ## Registers
-![Registers](./static/x86-registers.png "x86-registers")
+![Registers](/static/x86-registers.png "x86-registers")
 _eight 32-bit general purpose registers_        
 **When referring to registers in assembly language, the names are not case-sensitive.**     
 ## Memory and Addressing Modes
