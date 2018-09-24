@@ -1,7 +1,7 @@
 ---
 title: Markdown Editor
-date: 2018-09-24 22:42:46
-lastmod: 2018-09-24 22:57:02
+date: 2018-09-24
+lastmod: 2018-09-24 22:58:38
 tags:
     - Tools
     - Markdown
@@ -34,6 +34,7 @@ __Powerful__
 ## Markable
 [link](http://markable.in/)
 ## Dillinger
+__Powerful__
 [link](http://dillinger.io/)
 ## Remarkable
 *win version is developing*
