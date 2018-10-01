@@ -1,7 +1,7 @@
 ---
 title: "How to config a VPN with vultr(一键脚本搭建SS/搭建SSR服务并开启BBR加速)"
 date: 2018-10-01
-lastmod: 2018-10-01 22:38:15
+lastmod: 2018-10-01 22:48:45
 url:
     /tips/vpn_config
 tags:
@@ -9,8 +9,7 @@ tags:
     - VPN
     - ShadowsocksR
 categories:
-    - TIPS
-    - VPN
+    - 2018-10
 ---
 
 ## 购买服务器

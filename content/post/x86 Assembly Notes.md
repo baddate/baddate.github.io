@@ -7,7 +7,7 @@ description: "Some Assembly note"
 url:
     /notes/x86asm
 categories:
-    - NOTES
+    - 2018-07
 ---
 
 # x86-Assembly note

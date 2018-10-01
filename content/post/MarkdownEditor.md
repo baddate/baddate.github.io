@@ -1,12 +1,12 @@
 ---
 title: Markdown Editor
 date: 2018-09-24
-lastmod: 2018-09-24 23:00:40
+lastmod: 2018-10-01 22:49:34
 tags:
     - Tools
     - Markdown
 categories:
-    - TOOLS
+    - 2018-09
 url: /tools/markdown
 ---
 

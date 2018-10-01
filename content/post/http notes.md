@@ -3,13 +3,13 @@ title: HTTP NOTES
 tags: 
     - HTTP
 date: 2018-07-25 22:20:20
-lastmod: 2018-09-24 22:31:44
+lastmod: 2018-10-01 22:49:27
 description: "HTTP Note"
 thumbnail: "images/HTTP Protocol.gif"
 url: /notes/http
 
 categories:
-    - NOTES
+    - 2018-7
 ---
 
 # HTTP NOTES     

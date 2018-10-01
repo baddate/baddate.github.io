@@ -1,12 +1,12 @@
 ---
 title: "Git_synctips"
-date: 2018-08-14T12:49:10+08:00
-lastmod: 2018-08-14T12:49:10+08:00
+date: 2018-08-14
+lastmod: 2018-10-01 22:49:05
 tags: 
     - Tips
     - Git
 categories: 
-    - TIPS
+    - 2018-08
 url: 
     /tips/git_synctips
 draft: false

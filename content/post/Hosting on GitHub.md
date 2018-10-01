@@ -1,13 +1,13 @@
 ---
 title: "Hosting on GitHub with Hugo(Windows)"
 date: 2018-07-25T20:14:36+08:00
-lastmod: 
+lastmod: 2018-10-01 22:49:16
 tags:
     - Tips
 url:
     /tips/github_tips
 categories:
-    - TIPS
+    - 2018-07
 ---
 
 
