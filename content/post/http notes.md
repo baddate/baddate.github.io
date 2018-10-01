@@ -1,15 +1,15 @@
 ---
-title: HTTP NOTES
+title: http notes
 tags: 
     - HTTP
 date: 2018-07-25 22:20:20
-lastmod: 2018-10-01 22:49:27
+lastmod: 2018-10-01 23:01:00
 description: "HTTP Note"
 thumbnail: "images/HTTP Protocol.gif"
 url: /notes/http
 
 categories:
-    - 2018-7
+    - 2018-07
 ---
 
 # HTTP NOTES     
