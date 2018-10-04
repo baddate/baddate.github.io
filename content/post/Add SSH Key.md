@@ -1,7 +1,7 @@
 ---
-title: Add SSH Keys
+title: Add SSH Key
 date: 2018-09-23 22:20:20
-lastmod: 2018-10-01 22:48:46
+lastmod: 2018-10-04 18:50:00
 tags: 
     - Tips
     - Git
@@ -11,7 +11,8 @@ url:
     /tips/git_addSSHKey
 ---
 
-
+test
+<!-- more-->
 
 1. Open CMD, and entering ssh-keygen -t rsa -C "youremail@example.com"
 2. Just Enter.
