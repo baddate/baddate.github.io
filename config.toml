@@ -22,8 +22,8 @@ paginate = 10 #frontpage pagination
   ]
   copyright = [
     "&copy; 2018 Alex",
-    "Nederburg Hugo Theme by [Appernetic](https://appernetic.io).",
-    "A port of Tracks by Compete Themes."
+    #"Nederburg Hugo Theme by [Appernetic](https://appernetic.io).",
+    #"A port of Tracks by Compete Themes."
   ]
 
 
