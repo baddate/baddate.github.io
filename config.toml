@@ -11,10 +11,11 @@ paginate = 10
 [author]                  # essential
   name = "Alex"
 [params]
+    mainMenu = "Back"
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
     favicon             = "sam.ico"
-    homepage            = "Back to Home"                        # What to call the home page link
+    homepage            = "Home"                        # What to call the home page link
     galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
     clickablePhotos     = false                          # Allow links to the full size images
     smallPreviewImages   = true                         # Show small images from the subfolder instead of the big versions in the gallery
