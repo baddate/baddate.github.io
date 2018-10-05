@@ -11,7 +11,6 @@ paginate = 10
 [author]                  # essential
   name = "Alex"
 [params]
-    mainMenu = "Back"
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
     favicon             = "sam.ico"
