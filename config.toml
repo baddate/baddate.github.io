@@ -2,12 +2,14 @@ baseurl                 = "https://baddate.xyz/"               # Your domain nam
 languageCode            = "en-us"
 defaultContentLanguage  = "en"
 isMultilingual          = false
-title                   = "Call me Sam"
+title                   = "Alex's Blog"
 theme                   = "sam"
 pygmentsStyle           = "monokai"                     # https://help.farbox.com/pygments.html
 pygmentsCodefences      = true
 # googleAnalytics         = ""             # Tracking code, eg. "UA-111111111-1"
-
+paginate = 10
+[author]                  # essential
+  name = "Alex"
 [params]
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
@@ -22,18 +24,18 @@ pygmentsCodefences      = true
     footerText          = "Call me Sam, a theme for Hugo."
 
 # Metadata
-    description         = "A new Hugo site."            # Max 160 characters show in search results
+    description         = "A wandelust."            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
    # primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
 
 [[params.mainMenu]]
     link = "/posts"
-    text = "posts"
+    text = "techPosts"
 
 [[params.mainMenu]]
-    link = "/gallery"
-    text = "gallery"
+    link = "/notes"
+    text = "notes"
 
 [[params.mainMenu]]
     link = "/about"
-    text = "who is sam?"
+    text = "who am I?"
