@@ -14,6 +14,7 @@ paginate = 10
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
     favicon             = "sam.ico"
+    weight = 1
     homepage            = "main"                        # What to call the home page link
     galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
     clickablePhotos     = false                          # Allow links to the full size images
@@ -31,11 +32,14 @@ paginate = 10
 [[params.mainMenu]]
     link = "/techPosts"
     text = "techPosts"
+    weight=2
 
 [[params.mainMenu]]
     link = "/notes"
     text = "notes"
+    weight=3
 
 [[params.mainMenu]]
     link = "/about"
     text = "who am I?"
+    weight=4
