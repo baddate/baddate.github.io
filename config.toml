@@ -1,24 +1,55 @@
-baseurl                 = "https://baddate.xyz/"               # Your domain name. Must end with "/"
-languageCode            = "en-us"
-defaultContentLanguage  = "en"
-isMultilingual          = false
-title                   = "Alex's Blog"
-theme                   = "evens"
-pygmentsStyle           = "monokai"                     # https://help.farbox.com/pygments.html
-pygmentsCodefences      = true
-# googleAnalytics         = ""             # Tracking code, eg. "UA-111111111-1"
-paginate = 10
-[author]                  # essential
-  name = "Alex"
-[params]
+baseURL = "https://baddate.xyz/"
+languageCode = "en"
+defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
+title = "Onepiece - a wnaderer's blog"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "evens"
 
+preserveTaxonomyNames = true
+hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+paginate = 10                                              # 首页每页显示的文章数
+disqusShortname = ""      # disqus_shortname
+googleAnalytics = "UA-126758542-1"      # UA-XXXXXXXX-X
+copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
+
+[author]                  # essential                     # 必需
+  name = "Alex"
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]             # config your menu              # 配置目录
+  name = "Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "Archives"
+  weight = 20
+  identifier = "archives"
+  url = "post/"
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "tags/"
+[[menu.main]]
+  name = "Categories"
+  weight = 40
+  identifier = "categories"
+  url = "categories/"
+
+[params]
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
   since = "2018"            # Site creation time          # 站点建立时间
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "Alex"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Onepiece"        # default: the title value    # 默认值: 上面设置的title值
   #keywords = ["Hugo", "theme","even"]
   description = "a wanderer's blog."
 
@@ -159,34 +190,3 @@ quality = 75
 # Smart Cropping is content aware and tries to find the best crop for each image.
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 anchor = "smart"
-    dateform            = "2018-07-02"
-    #dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
-    favicon             = "sam.ico"
-    homepage            = "Home"                        # What to call the home page link
-    galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
-    clickablePhotos     = false                          # Allow links to the full size images
-    smallPreviewImages   = true                         # Show small images from the subfolder instead of the big versions in the gallery
-                                                         # Note: This will only become active if clickablePhotos is also true.
-    smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
-                                                         # For each image the small version has to have the same filename as the big version.
-    footerText          = "Crazy or Gifted."
-
-# Metadata
-    description         = "A wandelust."            # Max 160 characters show in search results
-    twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
-   # primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
-
-[[params.mainMenu]]
-    link = "/techPosts"
-    text = "techPosts"
-    weight=2
-
-[[params.mainMenu]]
-    link = "/notes"
-    text = "notes"
-    weight=3
-
-[[params.mainMenu]]
-    link = "/about"
-    text = "who am I?"
-    weight=4
