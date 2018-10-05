@@ -13,7 +13,7 @@ paginate = 10
 [params]
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
-    #favicon             = "sam.ico"
+    favicon             = "favicon.ico"
     homepage            = "main"                        # What to call the home page link
     galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
     clickablePhotos     = false                          # Allow links to the full size images
@@ -21,7 +21,7 @@ paginate = 10
                                                          # Note: This will only become active if clickablePhotos is also true.
     smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
                                                          # For each image the small version has to have the same filename as the big version.
-    footerText          = "Call me Sam, a theme for Hugo."
+    footerText          = "Crazy or Gifted."
 
 # Metadata
     description         = "A wandelust."            # Max 160 characters show in search results
