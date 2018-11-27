@@ -1,7 +1,7 @@
 ---
 title: Lexical_analyzer
 date: 2018-11-27
-lastmod: 2018-11-27 19:14:37
+lastmod: 2018-11-27 20:44:01
 url:
 tags:
     - Compiler
@@ -12,7 +12,7 @@ categories:
 ## DFA
 ![dfa](/static/All_in_one.jpeg "DFA")
 **Note:**       
-```bash
+```
 DEC代表十进制数
 OCT代表八进制数
 HEX代表十六进制数
@@ -43,6 +43,14 @@ public class test{
 };
 ```
 ## Result
+    Undefined=0
+    Keyword=1
+    Identifier=2
+    Operator=3
+    Constant=4
+    Delimiter-5
+    Comment=6
+
 ```
 Word [ type=1, value="public"]
 Word [ type=1, value="class"]
