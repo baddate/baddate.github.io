@@ -1,7 +1,7 @@
 ---
 title: Lexical_analyzer
 date: 2018-11-27
-lastmod: 2018-11-27 20:44:01
+lastmod: 2018-11-28 14:23:09
 url:
 tags:
     - Compiler
@@ -43,12 +43,11 @@ public class test{
 };
 ```
 ## Result
-    Undefined=0
     Keyword=1
     Identifier=2
     Operator=3
     Constant=4
-    Delimiter-5
+    Delimiter=5
     Comment=6
 
 ```
