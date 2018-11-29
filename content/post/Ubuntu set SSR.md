@@ -8,20 +8,23 @@ tags:
 categories:
     - 2018-11
 ---
-- Install a client from [HERE](https://github.com/erguottou520/electron-ssr), It is an amazing ssr GUI!
-- Open it and setting params.
-- Setting Firefox browser. 
+#### 1. Install a client from [HERE](https://github.com/erguottou520/electron-ssr), It is an amazing ssr GUI!
+**...**
+#### 2. Open it and setting params.
+**...**
+#### 3. Setting Firefox browser. 
+
 *One way*       
 
-    1. `Preferences` -> `General` -> `Network Settings` -> `Manual Proxy configuration`
-    2. `SOCKS Host:127.0.0.1` and `Port:1080`.ps:use yours port if you set another port.
-    3. Clicking `OK`.
-    4. Enjoying!
+- `Preferences` -> `General` -> `Network Settings` -> `Manual Proxy configuration`
+- `SOCKS Host:127.0.0.1` and `Port:1080`.ps:use yours port if you set another port.
+- Clicking `OK`.
+- Enjoying!
      
 
 *Another way*       
 
-    1. Adding this Add-on called [FoxyProxy Standard](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/).
-    2. Setting this Add-on by clicking `Options`, it will pop a tab. 
-    3. Enter`Edit`button then setting IP address(127.0.0.1) and Port(1080).
-    4. Enjoying!
+- Adding this Add-on called [FoxyProxy Standard](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/).
+- Setting this Add-on by clicking `Options`, it will pop a tab. 
+- Enter`Edit`button then setting IP address(127.0.0.1) and Port(1080).
+- Enjoying!
