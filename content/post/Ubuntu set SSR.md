@@ -1,7 +1,7 @@
 ---
 title: set ssr on ubuntu18.04
 date: 2018-11-30
-lastmod: 2018-11-30 00:10:09
+lastmod: 2018-11-30
 url:
 tags:
     - Tips  
