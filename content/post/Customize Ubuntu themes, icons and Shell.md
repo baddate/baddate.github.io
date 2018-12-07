@@ -1,5 +1,5 @@
 ---
-title: Set SSR on ubuntu18.04
+title: Customize Ubuntu themes, icons and Shell
 date: 2018-12-08
 lastmod: 2018-12-08 1:13:09
 url:
