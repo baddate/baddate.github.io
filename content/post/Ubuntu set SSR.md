@@ -1,7 +1,7 @@
 ---
 title: Set SSR on ubuntu18.04
-date: 2018-12-08
-lastmod: 2018-12-08 1:13:09
+date: 2018-11-28
+lastmod: 2018-11-30 14:23:09
 url:
 tags:
     - Tips  
