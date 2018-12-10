@@ -1,7 +1,7 @@
 ---
-title: "Customize Ubuntu themes, icons and Shell"
+title: Customize Ubuntu themes, icons and Shell
 date: 2018-12-07
-lastmod: 2018-12-08 01:13:09
+lastmod: 2018-12-10 13:01:56
 url:
 tags:
     - Tips  
@@ -9,7 +9,6 @@ tags:
 categories:
     - 2018-12
 ---
-# Customize Ubuntu themes, icons and Shell
 ## Pre-requirements
 1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
 2. gnome-tweak-tool

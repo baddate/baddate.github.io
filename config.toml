@@ -1,7 +1,7 @@
 baseURL = "https://baddate.xyz/"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "Onepiece - a wnaderer's blog"
+title = "baddate | a wnaderer's blog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "evens"
