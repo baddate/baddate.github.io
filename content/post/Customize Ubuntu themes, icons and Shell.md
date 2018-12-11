@@ -1,7 +1,7 @@
 ---
 title: Customize Ubuntu themes, icons and Shell
 date: 2018-12-07
-lastmod: 2018-12-11 22:37:09
+lastmod: 2018-12-11 22:38:58
 url:
 tags:
     - Tips  
@@ -9,7 +9,7 @@ tags:
 categories:
     - 2018-12
 ---
-read more
+Make a macOS-like UI.
 <!--more-->
 # Make a macOS-like UI
 ## Pre-requirements
