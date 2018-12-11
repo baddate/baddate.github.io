@@ -1,7 +1,7 @@
 ---
 title: Customize Ubuntu themes, icons and Shell
 date: 2018-12-07
-lastmod: 2018-12-10 13:01:56
+lastmod: 2018-12-11 22:37:09
 url:
 tags:
     - Tips  
@@ -9,6 +9,9 @@ tags:
 categories:
     - 2018-12
 ---
+read more
+<!--more-->
+# Make a macOS-like UI
 ## Pre-requirements
 1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
 2. gnome-tweak-tool
