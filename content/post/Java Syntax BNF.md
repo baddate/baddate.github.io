@@ -1,15 +1,15 @@
-    ---
-    title: Java Syntax BNF
-    date: 2018-12-22
-    lastmod: 2018-12-22 15:07:02
-    url:
-    tags:
-        - Java
-        - BNF
-        - Compiler
-    categories:
-        - 2018-12
-    ---
+---
+title: Java Syntax Specification
+date: 2018-12-22
+lastmod: 2018-12-22 15:13:47
+url:
+tags:
+    - Java
+    - Compiler
+categories:
+    - 2018-12
+---
+
 ## Programs
     <compilation unit> ::= <package declaration>? <import declarations>? <type declarations>?
 ## Declarations
