@@ -1,8 +1,8 @@
 ---
-title: "找回丢失的“新建”文件类型"
+title: find 'New' command
 date: 
     2018-08-12 22:20:20
-lastmod: 2018-10-01 22:55:12
+lastmod: 2019-01-10 17:37:00
 tags:
     - Tips
 url:
@@ -20,5 +20,5 @@ categories:
 `[HKEY_CLASSES_ROOT\.TXT\ShellNew]"NullFile"=""`        
 3. 保存该文件并执行。        
 
->REFERENCE：
+>REFERENCE： 
 电脑爱好者2018-12
