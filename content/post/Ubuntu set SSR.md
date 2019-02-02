@@ -9,7 +9,7 @@ tags:
 categories:
     - 2018-11
 ---
-#### 1. Install a client from [HERE](https://github.com/erguottou520/electron-ssr), It is an amazing ssr GUI!
+#### 1. Install a client from [HERE](https://github.com/erguotou520/electron-ssr), It is an amazing ssr GUI!
 **...**
 #### 2. Open it and setting params.
 **...**
