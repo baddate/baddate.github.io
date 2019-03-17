@@ -1,5 +1,6 @@
 ---
 title: find 'New' command
+draft: true
 date: 
     2018-08-12 22:20:20
 lastmod: 2019-01-10 17:37:00

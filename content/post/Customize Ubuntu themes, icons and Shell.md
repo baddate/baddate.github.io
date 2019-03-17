@@ -9,9 +9,7 @@ tags:
 categories:
     - 2018-12
 ---
-Make a macOS-like UI.
-<!--more-->
-# Make a macOS-like UI
+
 ## Pre-requirements
 1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
 2. gnome-tweak-tool
@@ -27,7 +25,7 @@ Make it `on`
 ## Start!
 ### Install an GTK+ themes
 1. Download themes files from [here](https://www.opendesktop.org/s/Gnome/p/1241688).
-[](/static/macthemes.png)
+![test](/static/macthemes.png)
 2. Decompression files use these commands
 `xz -d filename.tar.xz`
 `tar xvf filename.tar`
