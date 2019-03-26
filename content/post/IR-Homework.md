@@ -1,5 +1,5 @@
 ---
-title: 
+title: Multithreaded Processing in Dynamic Inverted Indexes for Web Search Engines
 date: 2019-03-26 
 lastmod: 2019-03-26
 tags: 
@@ -13,7 +13,6 @@ url:
 description: "信息检索作业-翻译论文"
 ---
 
-# Multithreaded Processing in Dynamic Inverted Indexes for Web Search Engines
 
 ## ABSTRACT
 在Web搜索引擎中处理查询需要有效地使用硬件资源来应对用户流量的规模和动态。 本文重点讨论了多线程处理查询，这些查询需要（1）访问大型反向索引数据结构以获取一组文档，（2）通过执行WAND运算符对它们进行排名，以获得前K个最相关的文档。 查询，以及（3）在执行查询的同时解决在反向索引上插入新文档的问题。 我们提出了一种高效的策略来为查询和索引更新操作分配线程，这种策略适合于在查询处理的同时支持索引的更新。 我们提案的核心是一种简单的分类技术，旨在快速为查询操作分配线程。
