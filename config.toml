@@ -143,13 +143,13 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
-#    a-email = "alex.ra.code@gmail.com"
+    a-email = "alex.ra.code@gmail.com"
 #    b-stack-overflow = "http://localhost:1313"
-    c-twitter = ""
+    c-twitter = "https://twitter.com/Alex__Hans"
 #    d-facebook = "http://localhost:1313"
 #    e-linkedin = "http://localhost:1313"
 #    f-google = "http://localhost:1313"
-    g-github = ""
+#    g-github = ""
 #    h-weibo = "http://localhost:1313"
 #    i-zhihu = "http://localhost:1313"
 #    j-douban = "http://localhost:1313"
