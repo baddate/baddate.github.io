@@ -23,17 +23,20 @@ description: "install trilium server and set https"
 
 # Certbot
 1. Enable the EPEL repository
+
 ```
 $ yum -y install yum-utils
 $ yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
 ```
 2. Installation
+
 ```
 $ sudo yum install certbot
 ```
 
 # TLS
 1. Config
+
 ```
 $ sudo certbot certonly --standalone -d baddate.cn -d www.baddate.cn
 ```
@@ -42,6 +45,7 @@ $ sudo certbot certonly --standalone -d baddate.cn -d www.baddate.cn
 refer to this [official article](https://certbot.eff.org/docs/using.html#renewal)
 # Trilium
 1. modify `~/trilium-data/config.ini` with `vim`
+
 ```
 [General]
 # Instance name can be used to distinguish between different instances
