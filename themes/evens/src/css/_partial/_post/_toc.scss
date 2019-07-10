@@ -1,6 +1,6 @@
 .post-toc {
   position: absolute;
-  width: 300px;
+  width: $post-toc-width;
   margin-left: $post-toc-margin-left;
   padding: 10px;
   font-family: $global-serif-font-family;
