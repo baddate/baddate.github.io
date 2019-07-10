@@ -10,9 +10,9 @@ categories:
 url: 
     /tips/git_addSSHKey
 
-description: "如何添加ssh key"
 ---
->OS: archlinux
+
+>OS: archlinux	
 >terminal: alacritty
 
 1. Open terminal, and entering ssh-keygen 
