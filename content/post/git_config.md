@@ -2,6 +2,7 @@
 title: Git add username and user-email
 date: 2019-07-10
 lastmod: 2019-07-10 
+weight: 4
 url:
     /git/config
 tags:
