@@ -12,22 +12,6 @@ categories:
     - 2019-07
 ---
 
-# Arch Linux Notes
-## Table of contents
-[Arch Linux Installation Guide on HP Pavilion](#Arch-Linux-Installation-Guide-on-HP-Pavilion)
-
-[Arch Linux reset root passwd](#Arch-Linux-reset-root-passwd)
-
-[Arch Linux disable beep](#Arch-Linux-disable-beep)
-
-[Arch Linux install MySQL](#Arch-Linux-install-MySQL)
-
-[Linux running python scripts in the background](#Linux-running-python-scripts-in-the-background)
-
-[Arch Linux config touchpad](#Arch-Linux-config-touchpad)
-
-[Arch Linux config backlight](##Arch-Linux-config-backlight)
-
 ------------------
 
 ## Arch Linux config backlight
