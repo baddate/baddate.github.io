@@ -2,6 +2,7 @@
 title: NOHUP command details 
 date: 2019-07-10
 lastmod: 2019-07-10 
+weight: 10
 url:
     /linux/nohup
 tags:
