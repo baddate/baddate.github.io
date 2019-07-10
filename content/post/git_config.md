@@ -20,11 +20,14 @@ categories:
 ```
 $ git config --global user.name "yourname"
 ```
+
 3. Confirm that you have set the Git username correctly:
+
 ```
 $ git config --global user.name
 > yourname
 ```
+
 1. Open Terminal.
 
 2. Set a Git useremail:
@@ -32,7 +35,9 @@ $ git config --global user.name
 ```
 $ git config --global user.email "email@addr.com"
 ```
+
 3. Confirm that you have set the Git user email correctly:
+
 ```
 $ git config --global user.email
 > email@addr.com
