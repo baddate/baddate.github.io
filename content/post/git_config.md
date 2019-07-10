@@ -28,6 +28,8 @@ $ git config --global user.name
 > yourname
 ```
 
+----
+
 1. Open Terminal.
 
 2. Set a Git useremail:
