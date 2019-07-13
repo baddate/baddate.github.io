@@ -4,33 +4,37 @@ date: 2019-01-24
 lastmod: 2019-02-19 11:33:17
 url:
 tags:
-    - DOCKER
+    - Docker
 categories:
     - 2019-02
 ---
 
 ## List Docker CLI commands
+```
 docker
 docker container --help
-
+```
 ## Display Docker version and info
+```
 docker --version
 docker version
 docker info
-
+```
 ## Execute Docker image
-docker run hello-world
+`docker run hello-world`
 
 ## List Docker images
-docker image ls
+`docker image ls`
 
 ## List Docker containers (running, all, all in quiet mode)
+```bash
 docker container ls
 docker container ls --all
 docker container ls -aq
-
+```
 -----
 
+```bash
 docker build -t friendlyhello .  # Create image using this directory's Dockerfile
 docker run -p 4000:80 friendlyhello  # Run "friendlyname" mapping port 4000 to 80
 docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
@@ -47,6 +51,7 @@ docker login             # Log in this CLI session using your Docker credentials
 docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
+```
 
 ----
 

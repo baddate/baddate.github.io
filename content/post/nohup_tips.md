@@ -14,14 +14,15 @@ categories:
 ---
 
 
->操作系统中有三个常用的流：
->　　0：标准输入流 stdin	
->　　1：标准输出流 stdout	
->　　2：标准错误流 stderr	
->　　一般当我们用 > console.txt，实际是 1>console.txt的省略用法；< console.txt ，实际是 0 < console.txt的省略用法。	
+ **操作系统中有三个常用的流：**
+
+> 0：标准输入流 stdin	    
+> 1：标准输出流 stdout	
+> 2：标准错误流 stderr	
+> 一般当我们用 > console.txt，实际是 1>console.txt的省略用法；< console.txt ，实际是 0 < console.txt的省略用法。	
   
 例子：   
-```
+```bash
 nohup ./start-dishi.sh >output 2>&1 &
 ```
 
