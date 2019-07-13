@@ -149,7 +149,7 @@ $post-nav-font-size: 18px !default;
 
 // ========== TOC ========== //
 // Width of the post toc.
-$post-toc-width: 400px !default;
+$post-toc-width: 300px !default;
 
 // Backgroud color of the post toc.
 $post-toc-backgroud: rgba($deputy-color, 0.6) !default;
@@ -167,7 +167,7 @@ $post-toc-content: 15px !default;
 $post-toc-list-style: square !default;
 
 // Max screen media of the post toc.
-$toc-max-sreen-width: 1 * $post-toc-width + $post-toc-margin-left !default;
+$toc-max-sreen-width: 2 * $post-toc-width + $post-toc-margin-left !default;
 
 // ========== Content ========== //
 // Headings anchor.
