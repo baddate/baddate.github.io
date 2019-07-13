@@ -4,7 +4,7 @@ theme = "terminal"
 paginate = 8
 
 [params]
-  favicon = "/img/favicon/favicon.jpeg"
+  favicon = "/static/img/favicon/icon2.svg"
   author = "Alex"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "post"

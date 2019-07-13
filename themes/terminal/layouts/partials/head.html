@@ -21,7 +21,7 @@
 {{ if isset $.Site.Params "favicon" }}
 <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}
-<link rel="shortcut icon" href="{{ printf "img/favicon/favicon.jpeg" $.Site.Params.ThemeColor | absURL }}">
+<link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
 {{ end }}
 
 <!-- Twitter Card -->
