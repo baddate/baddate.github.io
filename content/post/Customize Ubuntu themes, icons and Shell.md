@@ -33,7 +33,7 @@ then you can see a folder on current directiry
 3. Move the folder to *themes* folder
 `sudo mv filename /usr/share/themes`
 4. Open Tweaks and change themes on *Appearence->Themes->Applications*
-![](/static/themes-done.png)
+![them-done](/static/themes-done.png)
 
 ### Install macOS ICON
 1. Download file from [here](https://www.opendesktop.org/s/Gnome/p/1102582/)
