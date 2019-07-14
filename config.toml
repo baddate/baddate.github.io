@@ -2,9 +2,13 @@ baseurl = "https://baddate.xyz"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 8
-enableRobotsTXT = true
 
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true
 [params]
+
+
   favicon = "/static/img/favicon/icon2.svg"
   author = "Alex"
   # dir name of your blog content (default is `content/posts`)
@@ -19,6 +23,11 @@ enableRobotsTXT = true
   centerTheme = true
   # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [languages]
   [languages.en]
