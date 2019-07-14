@@ -22,11 +22,13 @@
     {{ end }}
   </span>
   {{ end }}
-
   {{ with .Params.Cover }}
   <img src="{{ . | absURL }}" class="post-cover" />
   {{ end }}
-
+  <!-- <aside>
+    {{ .TableOfContents }}
+  </aside> -->
+  {{- partial "toc.html" . -}}
   <div class="post-content">
     {{ .Content }}
   </div>

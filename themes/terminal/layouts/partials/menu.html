@@ -26,6 +26,11 @@
         {{ end }}
       {{ end }}
     {{ end }}
+        <!-- add RSS link -->
+        <li>  
+            <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss">
+              <i class="rss"></i>{{.Site.Params.RSSName}}</a>
+        </li>
   </ul>
 
   <ul class="menu__inner menu__inner--mobile">

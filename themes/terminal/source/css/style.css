@@ -9,6 +9,7 @@
 @import 'post';
 @import 'pagination';
 @import 'footer';
+@import 'toc';
 
 @import 'prism';
 @import 'syntax';

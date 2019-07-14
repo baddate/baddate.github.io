@@ -9,11 +9,11 @@
     <h1 class="post-title">
       <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
     <div class="post-meta">
-      <!-- 写作时间 -->
+      <!-- time -->
       <span class="post-date">
         {{ .Date.Format "01-02-2006" }}
       </span>
-      <!-- 文章作者 -->
+      <!-- author -->
       <span class="post-author">by{{ with .Site.Params.Author }}
         {{ . }}</span>{{ end }}
     </div>

@@ -6,9 +6,13 @@ paginate = 8
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
+[author]
+  name = "Alex"
+  email = "badgatex@outlook.com"
+
 [params]
 
-
+  RSSName = "RSS"
   favicon = "/static/img/favicon/icon2.svg"
   author = "Alex"
   # dir name of your blog content (default is `content/posts`)
@@ -48,8 +52,34 @@ hasCJKLanguage = true
       [[languages.en.menu.main]]
         identifier = "email"
         name = "Email"
-        url = "mailto:alex.ra.code@gmail.com"
+        url = "mailto:badgatex@outlook.com"
       [[languages.en.menu.main]]
         identifier = "twitter"
         name = "Twitter"
         url = "https://twitter.com/Alex_Hans"
+
+# set output format to htm
+# [mediaTypes]
+#   [mediaTypes."text/html"]
+#   suffix = "htm"
+
+# Redefine HTML to update its media type.
+# [outputFormats]
+#   [outputFormats.HTML]
+#     mediaType = "text/html"
+
+# [outputs]
+#   home = ["HTML", "AMP", "RSS"]
+#   page = ["HTML"]
+
+# set frontmatter
+# [frontmatter]
+#   date = ["date", "publishDate", "lastmod"]
+#   lastmod = [":git", "lastmod", "date", "publishDate"]
+#   publishDate = ["publishDate", "date"]
+#   expiryDate = ["expiryDate"]
+#   title = [":filename",":default"]
+
+# set default permalinks
+# [permalinks]
+#   post = "/:year/:month/:title/"
