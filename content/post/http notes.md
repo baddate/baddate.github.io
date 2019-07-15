@@ -4,6 +4,7 @@ tags:
     - HTTP
 date: 2018-07-25 22:20:20
 lastmod: 2018-10-01 23:01:00
+draft: true
 description: "HTTP Note"
 thumbnail: "images/HTTP Protocol.gif"
 url: /notes/http

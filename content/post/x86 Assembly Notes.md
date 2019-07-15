@@ -10,8 +10,6 @@ categories:
     - 2018-07
 ---
 
-# x86-Assembly note
-
 ## Registers
 ![Registers](/static/x86-registers.png "x86-registers")
 _eight 32-bit general purpose registers_        

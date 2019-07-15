@@ -14,6 +14,10 @@ categories:
 
 ------------------
 
+some tips about archlinux
+
+<!--more-->
+
 ## Arch Linux config backlight
 
 ### Get your graphics card folder
