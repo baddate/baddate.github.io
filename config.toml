@@ -71,7 +71,6 @@ hasCJKLanguage = true
 # [outputs]
 #   home = ["HTML", "AMP", "RSS"]
 #   page = ["HTML"]
-
 # set frontmatter
 # [frontmatter]
 #   date = ["date", "publishDate", "lastmod"]
