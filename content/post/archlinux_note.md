@@ -240,7 +240,7 @@ This is my partition layout:
 
 Mount points | Partition | Partition Type | Size
 
-----|---|---|---|
+|----|---|---|---|
 
 /mnt | /dev/sda3 | linux filesystem |50G
 
