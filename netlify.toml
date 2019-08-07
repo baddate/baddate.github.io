@@ -23,6 +23,10 @@ HUGO_ENABLEGITINFO = "true"
 
 # The following redirect is intended for use with most SPA's that handles routing internally.
 [[redirects]]
-  from = "https://baddate.netlify.com/"
+  from = "https://baddate.netlify.com/*"
+  to = "https://baddate.top/"
+  status = 301
+[[redirects]]
+  from = "https://baddate.xyz/"
   to = "https://baddate.top/"
   status = 301
