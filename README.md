@@ -1,2 +1,2 @@
 # My blog site
-https://baddate.xyz
+https://baddate.top
