@@ -10,13 +10,12 @@ tags:
     - Arch
 categories:
     - 2019-07
+description: "some tips about archlinux"
 ---
 
 ------------------
 
-some tips about archlinux
 
-<!--more-->
 
 ## Arch Linux config backlight
 
