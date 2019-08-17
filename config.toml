@@ -6,7 +6,7 @@ paginate = 8
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
-googleAnalytics = "UA-126758542-2"
+googleAnalytics = "UA-126758542-1"
 [author]
   name = "Alex"
   email = "badgatex@outlook.com"
