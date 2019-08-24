@@ -2,6 +2,7 @@
 title: Java Syntax Specification
 date: 2018-12-22
 lastmod: 2018-12-22 15:13:47
+draft: true
 url:
 tags:
     - Java
