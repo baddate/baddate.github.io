@@ -13,9 +13,9 @@ categories:
     - 2019-09
 url: 
     /solutions/javaweb
-draft: false
+draft: true
 
-description: "记录一些我学习过程中的踩过的一些坑，持续更新"
+description:
 ---
 
 ## 关于 "java.sql.SQLException: Before start of result set" 异常
