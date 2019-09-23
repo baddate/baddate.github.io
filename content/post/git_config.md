@@ -1,27 +1,26 @@
 ---
 title: Git config username & user-email and proxy
 date: 2019-07-10
-lastmod: 2019-09-21 
+lastmod: 2019-09-23 
 weight: 4
 url:
     /git/config
 tags:
     - Tips  
     - Git
+    - Proxy
 categories:
     - 2019-07
-description: "some tips qabout git"
+description: "some tips about git"
 ---
 
 
 ## User name
+
 1. Open Terminal.
 
 2. Set a Git username:
-
-```bash
-$ git config --global user.name "yourname"
-```
+`git config --global user.name "yourname"`
 
 3. Confirm that you have set the Git username correctly:
 
@@ -31,13 +30,11 @@ $ git config --global user.name
 ```
 
 ## User email
+
 1. Open Terminal.
 
 2. Set a Git useremail:
-
-```bash
-$ git config --global user.email "email@addr.com"
-```
+`git config --global user.email "email@addr.com"`
 
 3. Confirm that you have set the Git user email correctly:
 
@@ -49,19 +46,37 @@ $ git config --global user.email
 ## Set proxy
 
 ### set a socks5 proxy
-```
+
+```bash
 git config --global http.proxy socks5://127.0.0.1:1080
 git config --global https.proxy socks5://127.0.0.1:1080
 ```
 
 ### set a http proxy
-```
+
+```bash
 git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy http://127.0.0.1:1080
 ```
 
 ### unset proxy
-```
+
+```bash
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
+## Git_synctips
+
+### The remote repository has changed and the local repository has not changed
+
+>1. git remote -v
+>2. git fetch origin master
+>3. git log master.. origin/master
+>4. git merge origin/master
+
+### The remote repository has not changed and the local repository has changed
+
+>1. git add -A or git add . or git add --all
+>2. git commit -m "the content of your modify"
+>3. git push -u origin master
