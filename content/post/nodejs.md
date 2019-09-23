@@ -8,11 +8,12 @@ url:
 tags:
     - Tips  
     - Nodejs
+    - Yarn
+    - NPM
 categories:
     - 2019-09
 description: "some tips about nodejs"
 ---
-[TOC]
 
 ## install nodejs10.x
 
@@ -21,9 +22,16 @@ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 sudo yum install nodejs
 ```
 
+## install yarn
+
+```bash
+curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+yum install yarn
+```
+
 ## npm change src mirror
 
-### 更换淘宝源
+### 更换为淘宝源
 
 ```bash
 # temp use

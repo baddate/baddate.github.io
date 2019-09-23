@@ -16,6 +16,7 @@ categories:
 1. 在[这个页面](https://git-scm.com/downloads)下载最新版的Git。
 2. 然后按照wizard指引安装Git。
 3. 配置环境变量
+
 ```mermaid
 graph LR
 a[control panel] --> b[System and Security]
@@ -28,20 +29,25 @@ g[add git path] --> Done!
 ```
 
 ## 创建GitHub账号
-**这个自行[百度](http://www.baidu.com/) or [Google](https://www.google.com/)**        
+
+**这个自行[百度](http://www.baidu.com/) or [Google](https://www.google.com/)**
 
 ## 安装Hugo
-1. 从[Hugo Releases](https://github.com/gohugoio/hugo/releases)下载Hugo压缩包(记得注意系统位数是32 or 64)。
+
+1. 从[Hugo Releases](https://github.com/gohugoio/hugo/releases)下载Hugo压缩包(记得注意系统位数是32 or 64)
 2. 解压压缩包
 3. 配置环境变量(同上)
 
 当然还有其他方法，这边就暂时不介绍了，有兴趣的同学可以参考[这里](https://gohugo.io/getting-started/installing/).
 
 ## 配置Hugo
+
 ### 创建网站
+
 使用`hugo new site sitename`命令来创建一个网站模板
 模板包含下面这些文件
-    
+
+```bash
     ├── archetypes
     ├── content
     ├── data
@@ -49,18 +55,22 @@ g[add git path] --> Done!
     ├── static
     ├── themes
     └── config.toml
-
+```
 
 ### 安装主题
+
 1. 在这个[Hugo 主题](https://themes.gohugo.io/)页面找一个喜欢的主题下载并安装。
 2. 下载的应该是一个压缩包，把它解压到`themes`这个文件夹里面。
-3. 接下来就是配置网站了，在上面我们可以发现有一个名为`config.toml`的文件，所以我们只要编辑这个文件就可以配置我们的网站了。<br>
-我们上面只是下载解压了那个主题文件夹，并没有把它加载到我们的创建的网站上，所以这个时候我们只要在`config.toml`这个文件里添加一行`themes = "theme_name"`就搞定了。<br>
-主题也安装好了，接下来就可以试试效果了：        
+3. 接下来就是配置网站了，在上面我们可以发现有一个名为`config.toml`的文件，所以我们只要编辑这个文件就可以配置我们的网站了。  
+
+------
+
+我们上面只是下载解压了那个主题文件夹，并没有把它加载到我们的创建的网站上，所以这个时候我们只要在`config.toml`这个文件里添加一行`themes = "theme_name"`就搞定了。
+主题也安装好了，接下来就可以试试效果了：
 
 1. 我们在`content`文件夹里面新建一个文件夹，命名为`post`(一定要是这个名字哦，这个是默认的，如果要用其他名字，还需要在**config*文件里面添加一行代码，这里暂时不做讨论了)
 2. 在网站根目录(即: ./sitename下)打开命令行(`win`+`R`,然后输入`cmd`), 输入`hugo server -t theme_name`
-3. 我们打开(http://localhost:1313)就可以看到了！这个时候我们会发现多了一个`public`文件夹，这个文件夹包含了我们生成的网页内容
+3. 我们打开(http://localhost:1313)就可以看到了! 这个时候我们会发现多了一个`public`文件夹，这个文件夹包含了我们生成的网页内容
 当然，这个时候才刚刚完成了一半，因为现在只有我们自己可以看到这个网页，别人是看不到的。所以，这个时候我们就要把它部署到服务器上了，服务器可以有好多选择，这里就只讨论Github pages了，毕竟是免费还不限流量的嘛！
 
 ## 在Github Pages上部署
@@ -70,6 +80,7 @@ g[add git path] --> Done!
 这个可以参考[官方教程](https://pages.github.com/)，就不赘述了，有疑问的同学可以私信我。
 
 ### 在Github上托管
+
 1. 在 GitHub 上创建 `your-project-name` 代码仓库（它将用于托管 Hugo 的内容）
 2. 在 GitHub 上创建 `username.github.io` 代码仓库（它将用于托管 `public` 文件夹：静态的网站）
 3. git clone <your-project-name-url> && cd <your-project-name>

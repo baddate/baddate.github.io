@@ -9,7 +9,7 @@ categories:
     - 2018-08
 url: 
     /tips/git_synctips
-draft: false
+draft: true
 ---
 
 ## The remote repository has changed and the local repository has not changed
