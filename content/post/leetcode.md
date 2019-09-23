@@ -111,14 +111,11 @@ public:
 };
 ```
 
------
-Runtime: 12 ms, faster than 82.24% of C++ online submissions for Longest Substring Without Repeating Characters.
-Memory Usage: 9.1 MB, less than 96.52% of C++ online submissions for Longest Substring Without Repeating Characters.
 __note:__
 
-`a<b?a:b` when it is true,return a
+1. `a<b?a:b` when `a<b` is true,return a.
 
-_3 c++ string comparation methods:_
+2. _3 c++ string comparation methods:_
 
 ```c++
 s1 == s2
