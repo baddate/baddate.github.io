@@ -68,3 +68,60 @@ public:
     }
 };
 ```
+
+## Longest Substring Without Repeating Characters
+
+__problem description:__
+
+<https://leetcode.com/problems/longest-substring-without-repeating-characters/>
+
+__thought:__
+
+Using the `Sliding Window`
+
+_p.s. maybe we can use hashmap for optimizing._
+
+__solution:__
+
+```c++
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        if(!s.size())
+            return 0;
+        int i=0, j=0, len=0, max=0;
+        for(;i<s.size()&&len<s.size()-i;i++){//reduce loop size
+            int flag=0;
+            for(j=i;j<i+len&&flag!=1;j++){
+                if(s[j]==s[i+len]){
+                    flag=1;
+                }
+            }
+            if(flag==0){
+                i--;
+                len++;
+            }else{
+                len=len-((j-1)-i);
+                i=j-1;
+            }
+        max = max<len?len:max;
+        }
+        return max;
+    }
+};
+```
+
+-----
+Runtime: 12 ms, faster than 82.24% of C++ online submissions for Longest Substring Without Repeating Characters.
+Memory Usage: 9.1 MB, less than 96.52% of C++ online submissions for Longest Substring Without Repeating Characters.
+__note:__
+
+`a<b?a:b` when it is true,return a
+
+_3 c++ string comparation methods:_
+
+```c++
+s1 == s2
+s1.c_str() == s2.c_str()
+strcmp(s1.c_str(),a2.c_str()) == 0
+```
