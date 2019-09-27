@@ -8,7 +8,6 @@ tags:
 categories:
     - 2019-02
 draft: true
-
 ---
 
 ## List Docker CLI commands

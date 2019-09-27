@@ -8,6 +8,7 @@ url:
     /notes/x86asm
 categories:
     - 2018-07
+draft: true
 ---
 
 ## Registers
