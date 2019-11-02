@@ -14,7 +14,7 @@ googleAnalytics = "UA-126758542-2"
 [params]
 
   RSSName = "RSS"
-  favicon = "/static/img/favicon/icon2.svg"
+  favicon = "/static/img/favicon/favicon.jpg"
   author = "Alex"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "post"
