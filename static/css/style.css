@@ -36,7 +36,7 @@
 .base0e { color: #cc99cc; color: var(--base0e); }
 .base0f { color: #d27b53; color: var(--base0f); }
 
-@custom-media --breakpoint-md (max-width: 52em);
+@custom-media --breakpoint-md (max-width: 100em);
 
 /* General Page Layout */
 
@@ -52,7 +52,7 @@ body {
 }
 
 .container {
-  max-width: 52em;
+  max-width: 77em;
   margin-left: auto;
   margin-right: auto;
 }
