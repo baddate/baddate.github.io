@@ -12,6 +12,7 @@ googleAnalytics = "UA-126758542-2"
   email = "badgatex@outlook.com"
 
 
+
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
