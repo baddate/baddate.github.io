@@ -19,7 +19,7 @@ googleAnalytics = "UA-126758542-2"
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "post"
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
+  themeColor = "red"
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 5
   # set theme to full screen width
