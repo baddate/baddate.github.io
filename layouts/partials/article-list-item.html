@@ -1,4 +1,7 @@
 <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  {{ with .Params.Cover }}
+      <img src="{{ . | absURL }}" class="cover" />
+  {{ end }}
   <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
   <div class="meta">
 {{ if not .Date.IsZero }}
@@ -6,6 +9,7 @@
     <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>
 {{ end }}
   </div>
+  
   <section class="summary">
     {{ if .Truncated }} 
       {{ .Summary | markdownify }} <br>

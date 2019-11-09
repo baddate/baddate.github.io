@@ -330,6 +330,18 @@ article.single .meta .key {
   color: var(--base03);
 }
 
+article.single .cover {
+  border: 20px solid var(--accent);
+  background: transparent;
+  margin: 20px 0;
+  padding: 20px;
+  
+  @media (--phone) {
+    padding: 10px;
+    border-width: 10px;
+  }
+}
+
 article.single .meta .val, article.single .meta .val a {
   color: #cc99cc;
   color: var(--base0e);
