@@ -21,7 +21,7 @@
   <section class="categories">
     {{ range $name, $value := . }}
     <h2 class="category">
-      <a href="{{ $baseurl }}categories/{{ $name | urlize }}">{{ humanize $name | title }}</a>
+      <a href="{{ $baseurl }}/categories/{{ $name | urlize }}">{{ humanize $name | title }}</a>
       <small>({{ .Count }})</small>
     </h2>
     {{ end }}
@@ -36,7 +36,7 @@
   <section class="tags">
     {{ range $name, $value := . }}
     <span class="tag">
-      <a href="{{ $baseurl }}tags/{{ $name | urlize }}">{{ $name }}</a>
+      <a href="{{ $baseurl }}/tags/{{ $name | urlize }}">{{ $name }}</a>
       <small>({{ .Count }})</small>
     </span>
     {{ end }}

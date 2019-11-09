@@ -1,6 +1,5 @@
 baseurl = "https://baddate.top"
 languageCode = "en-us"
-theme = ""
 paginate = 10
 
 enableRobotsTXT = true
