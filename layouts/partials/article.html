@@ -27,4 +27,20 @@
   <section class="body" itemprop="articleBody">
     {{ .Content }}
   </section>
+
+<nav class="paginator">
+  <div align="center">
+    {{ if .NextInSection }}
+    <span align="left">
+      <a class="nav-left" href="{{ .NextInSection.Permalink }}">&lt;- {{ .NextInSection.Title }}</a>
+    </span>
+    {{ end }}
+
+    {{ if .PrevInSection }}
+    <span align="right">
+      <a class="nav-right" href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }} -&gt;</a>
+    </span>
+    {{ end }}
+  </div>
+</nav>
 </article>

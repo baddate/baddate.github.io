@@ -7,6 +7,11 @@
 {{ end }}
   </div>
   <section class="summary">
-    {{ .Summary }} {{ if .Truncated }} <a href="{{ .RelPermalink }}">Read More...</a>{{ end }}
+    {{ if .Truncated }} 
+      {{ .Summary | markdownify }} <br>
+      <a href="{{ .RelPermalink }}">Read More...</a>
+    {{ else }} 
+      {{.Description | markdownify}} 
+    {{ end }}
   </section>
 </article>
