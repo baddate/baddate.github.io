@@ -1,7 +1,7 @@
 baseurl = "https://baddate.top"
 languageCode = "en-us"
-theme = "terminal"
-paginate = 8
+theme = ""
+paginate = 10
 
 enableRobotsTXT = true
 enableEmoji = true
@@ -11,23 +11,6 @@ googleAnalytics = "UA-126758542-2"
   name = "Alex"
   email = "badgatex@outlook.com"
 
-[params]
-
-  RSSName = "RSS"
-  favicon = "/static/img/favicon/favicon.jpg"
-  author = "Alex"
-  # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "post"
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "red"
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 5
-  # set theme to full screen width
-  fullWidthTheme = false
-  # center theme with default width
-  centerTheme = true
-  # set a custom favicon (default is a `themeColor` square)
-  # favicon = "favicon.ico"
 
 [sitemap]
   changefreq = "weekly"
@@ -44,42 +27,3 @@ googleAnalytics = "UA-126758542-2"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
-
-    [languages.en.params.logo]
-      logoText = "bAdDatE"
-      logoHomeLink = "/"
-
-    # [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "email"
-        name = "Email"
-        url = "mailto:badgatex@outlook.com"
-      [[languages.en.menu.main]]
-        identifier = "twitter"
-        name = "Twitter"
-        url = "https://twitter.com/Alex_Hans"
-
-# set output format to htm
-# [mediaTypes]
-#   [mediaTypes."text/html"]
-#   suffix = "htm"
-
-# Redefine HTML to update its media type.
-# [outputFormats]
-#   [outputFormats.HTML]
-#     mediaType = "text/html"
-
-# [outputs]
-#   home = ["HTML", "AMP", "RSS"]
-#   page = ["HTML"]
-# set frontmatter
-# [frontmatter]
-#   date = ["date", "publishDate", "lastmod"]
-#   lastmod = [":git", "lastmod", "date", "publishDate"]
-#   publishDate = ["publishDate", "date"]
-#   expiryDate = ["expiryDate"]
-#   title = [":filename",":default"]
-
-# set default permalinks
-# [permalinks]
-#   post = "/:year/:month/:title/"
