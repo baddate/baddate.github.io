@@ -52,9 +52,22 @@ body {
 }
 
 .container {
-  max-width: 70em;
+  max-width: 80em;
   margin-left: auto;
   margin-right: auto;
+}
+
+div.toc {
+  float:right;
+  width:20%;
+  padding-left:4rem;
+  
+}
+
+div.content {
+  float:left;
+  width:80%;
+  padding-right:4rem;
 }
 
 div.right {
@@ -77,7 +90,7 @@ article.single section,
   background-color: var(--base07);
   color: #2d2d2d;
   color: var(--base00);
-  padding-left: 8rem;
+  padding-left: 6rem;
   padding-right: 8rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
