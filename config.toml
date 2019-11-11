@@ -2,6 +2,8 @@ baseurl = "https://baddate.top"
 languageCode = "en-us"
 paginate = 10
 
+rssLimit = 20
+
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
