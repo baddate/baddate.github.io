@@ -10,8 +10,6 @@ hasCJKLanguage = true
   name = "Alex"
   email = "badgatex@outlook.com"
 
-[params]
-  description = "test"
 
 [sitemap]
   changefreq = "weekly"
@@ -24,3 +22,4 @@ hasCJKLanguage = true
     subtitle = "The most incomprehensible thing about the world is that it is at all comprehensible."
     #这世界最費解的，是它竟可被理解。
     keywords = ""
+    email = "badgatex@outlook.com"
