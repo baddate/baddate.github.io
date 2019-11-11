@@ -2,7 +2,8 @@
 title: "About"
 
 menu: "main"
-
+url:
+    /aboutme
 weight: 50
 
 ---
