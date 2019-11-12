@@ -1,29 +1,26 @@
 baseurl = "https://baddate.top"
 languageCode = "en-us"
-paginate = 10
-
-rssLimit = 20
 
 enableRobotsTXT = true
 enableEmoji = true
 hasCJKLanguage = true
-
-
-
 
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
+[author]
+  name = "Alex"
+  email = "badgatex@outlook.com"
+  twitter = "https://twitter.com/Alex_Hans"
+
 [languages]
   [languages.en]
     title = "alEx's blOg"
+    contentDir = "content/"
+    weight = 1
     subtitle = "The most incomprehensible thing about the world is that it is at all comprehensible."
     #这世界最費解的，是它竟可被理解。
     keywords = ""
     copyright = "alex@CC BY-NC-ND 4.0"
-  [author]
-    name = "Alex"
-    email = "badgatex@outlook.com"
-    twitter = "https://twitter.com/Alex_Hans"
