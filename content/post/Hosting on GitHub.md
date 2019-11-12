@@ -8,6 +8,7 @@ url:
     /tips/github_tips
 categories:
     - 2018-07
+cover: '/cover/cover (7).jpg'
 ---
 
 

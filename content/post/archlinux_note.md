@@ -11,6 +11,7 @@ tags:
 categories:
     - 2019-07
 description: "some tips about archlinux"
+cover: '/cover/cover (3).jpg'
 ---
 
 ------------------

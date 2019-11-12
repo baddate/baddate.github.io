@@ -12,6 +12,7 @@ tags:
 categories:
     - 2019-07
 description: "some tips about git"
+cover: '/cover/cover (6).jpg'
 ---
 
 

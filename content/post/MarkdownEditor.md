@@ -8,6 +8,8 @@ tags:
 categories:
     - 2018-09
 url: /tools/markdown
+draft: true
+cover: '/cover/cover (10).jpg'
 ---
 
 

@@ -10,6 +10,7 @@ url:
     /tips/windows_tips
 categories:
     - 2018-08
+cover: '/cover/cover (5).jpg'
 ---
 
 > 有的时候我们会发现自己常用的“新建”文件类型丢失了，这时候我们可以修改注册表来添加找回。

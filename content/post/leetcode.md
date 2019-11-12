@@ -11,6 +11,7 @@ categories:
     - 2019-09
 description: "some leetcode's solutions"
 draft: false
+cover: '/cover/cover (2).jpg'
 ---
 
 ## 3Sum

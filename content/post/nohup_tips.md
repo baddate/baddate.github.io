@@ -11,6 +11,7 @@ tags:
     - CMD
 categories:
     - 2019-07
+cover: '/cover/cover (10).jpg'
 ---
 
 

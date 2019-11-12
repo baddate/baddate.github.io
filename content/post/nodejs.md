@@ -13,7 +13,7 @@ tags:
 categories:
     - 2019-09
 description: "some tips about nodejs"
-cover: '/img/test.jpg'
+cover: '/cover/cover (14).jpg'
 ---
 
 ## install nodejs10.x

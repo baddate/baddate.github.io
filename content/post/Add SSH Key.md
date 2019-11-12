@@ -9,7 +9,7 @@ categories:
     - 2018-09
 url: 
     /tips/git_addSSHKey
-
+cover: '/cover/cover (1).jpg'
 ---
 
 >OS: archlinux	

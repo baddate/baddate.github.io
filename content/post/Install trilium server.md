@@ -14,7 +14,7 @@ url:
     /tips/trilium-server
 
 description: "install trilium server and set https"
-
+cover: '/cover/cover (8).jpg'
 ---
 
 > OS: CentOS7     
