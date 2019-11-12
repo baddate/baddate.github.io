@@ -22,8 +22,8 @@ hasCJKLanguage = true
     subtitle = "The most incomprehensible thing about the world is that it is at all comprehensible."
     #这世界最費解的，是它竟可被理解。
     keywords = ""
-    email = "badgatex@outlook.com"
-    copyright = "created by alex"
+    copyright = "alex@CC BY-NC-ND 4.0"
   [author]
     name = "Alex"
     email = "badgatex@outlook.com"
+    twitter = "https://twitter.com/Alex_Hans"
