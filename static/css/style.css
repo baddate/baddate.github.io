@@ -170,6 +170,7 @@ pre, code {
 
 header a.path {
   color: #6699cc;
+  text-decoration: none;
   color: var(--base0d);
 }
 
