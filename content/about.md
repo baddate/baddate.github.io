@@ -1,9 +1,9 @@
 ---
-title: "About"
-
-menu: "main"
+title: About
+date: 2018-07-10
+lastmod: 2018-07-10
 url:
-    /aboutme
+    aboutme
 weight: 50
 
 ---
