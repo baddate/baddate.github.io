@@ -348,14 +348,11 @@ article.single .cover {
   border: 20px solid var(--accent);
   background: transparent;
   margin: 20px 0;
-  max-width: 100%;
+  
   width: 100%;
   border-radius: 3px;
-  @media (--phone) {
-    width: 100%;
-    border-radius: 3px;
-    border-width: 10px;
-  }
+  max-width: 100%;
+  max-height: 100%;
 }
 
 article.single .meta .val, article.single .meta .val a {

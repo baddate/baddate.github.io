@@ -13,6 +13,7 @@
 {{ end }}
     </span>
 {{ end }}
+
 {{ with .Params.tags }}
     <br>
     <span class="key">tags:</span>
@@ -23,6 +24,7 @@
     </span>
 {{ end }}
   </div>
+  
   {{ with .Params.Cover }}
       <img src="{{ . | absURL }}" class="cover" />
     {{ end }}
