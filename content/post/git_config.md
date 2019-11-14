@@ -9,6 +9,7 @@ tags:
     - Tips  
     - Git
     - Proxy
+    - SSH
 categories:
     - 2019-07
 description: "some tips about git"
