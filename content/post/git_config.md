@@ -1,7 +1,7 @@
 ---
-title: Git config username & user-email and proxy
+title: Git config tips
 date: 2019-07-10
-lastmod: 2019-09-23 
+lastmod: 2019-11-14 
 weight: 4
 url:
     /git/config
@@ -43,6 +43,11 @@ $ git config --global user.name
 $ git config --global user.email
 > email@addr.com
 ```
+
+## Add ssh key
+### generate ssh key
+1. Open git bash and run `ssh-keygen -t rsa -C "youremail"`
+2. Open github settings and add `rsa.pub` file to ssh key
 
 ## Set proxy
 
