@@ -13,8 +13,6 @@ tags:
 categories:
     - 2019-07
 cover: '/cover/cover (11).jpg'
-coverH: 50%
-coverW: 50%
 ---
 
 > platform: VS2019	
