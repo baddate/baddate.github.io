@@ -1,6 +1,8 @@
 <article class="list-item" itemscope itemtype="http://schema.org/Blog">
   {{ with .Params.Cover }}
+    <div style="text-align: center;">
       <img src="{{ . | absURL }}" class="cover" />
+    </div> 
   {{ end }}
   <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
   <div class="meta">
