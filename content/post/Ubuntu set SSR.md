@@ -8,7 +8,7 @@ tags:
     - Ubuntu
 categories:
     - 2018-11
-cover: '/cover/cover (12).jpg'
+
 ---
 #### 1. Install a client from [HERE](https://github.com/erguotou520/electron-ssr), It is an amazing ssr GUI!
 **...**

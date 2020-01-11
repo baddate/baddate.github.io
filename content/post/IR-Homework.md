@@ -11,7 +11,7 @@ url:
     /translate/ir_homework
 
 description: "信息检索作业-翻译论文"
-cover: '/cover/cover (9).jpg'
+
 ---
 
 ## ABSTRACT

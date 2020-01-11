@@ -8,7 +8,7 @@ tags:
     - Ubuntu
 categories:
     - 2018-12
-cover: '/cover/cover (4).jpg'
+
 ---
 
 

@@ -12,7 +12,7 @@ tags:
     - C++
 categories:
     - 2019-07
-cover: '/cover/cover (11).jpg'
+
 ---
 
 > platform: VS2019	
