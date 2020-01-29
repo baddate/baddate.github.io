@@ -22,11 +22,11 @@ Nohup prevents the processes or jobs from receiving the SIGHUP (Signal Hang UP) 
 
 ## Nohup Command Syntax
 Nohup command syntax is as follows:
-```
+```bash
 nohup command arguments
 ```
 OR
-```
+```bash
 nohup options
 ```
 
@@ -35,17 +35,17 @@ nohup options
 ### Starting a process using Nohup
 
 To redirect to a file and to standard error and output use the `> filename 2>&1` attribute:
-```
+```bash
 nohup command > file 2>&1
 ```
 
 ### Starting a process in the background using Nohup
 To start a process in the background use the & symbol at the end of the command:
-```
+```bash
 nohup ping google.com &
 ```
 To check the process when resuming the shell use the `pgrep` command:
-```
+```bash
 pgrep -a ping
 ``` 
 
@@ -59,7 +59,7 @@ pgrep -a ping
 |2	|stderr	|Standard error|
 
 Examples:
-```
+```bash
 # executes command, directing the standard input stream to file
 command > file
 command 1> file
@@ -76,4 +76,4 @@ https://www.journaldev.com/27875/nohup-command-in-linux
 
 https://en.wikipedia.org/wiki/Nohup
 
-https://en.wikipedia.org/wiki/Redirection_(computing)
+(https://en.wikipedia.org/wiki/Redirection_(computing))
