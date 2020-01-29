@@ -76,4 +76,4 @@ https://www.journaldev.com/27875/nohup-command-in-linux
 
 https://en.wikipedia.org/wiki/Nohup
 
-https://en.wikipedia.org/wiki/Redirection_(computing\)
+[wikipedia](https://en.wikipedia.org/wiki/Redirection_(computing))
