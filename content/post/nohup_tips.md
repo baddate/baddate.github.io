@@ -1,7 +1,7 @@
 ---
-title: NOHUP command details 
+title: NOHUP command details
 date: 2019-07-10
-lastmod: 2019-07-10 
+lastmod: 2020-01-29 
 weight: 2
 url:
     /linux/nohup
@@ -9,25 +9,71 @@ tags:
     - Tips  
     - Linux
     - CMD
+    - Redirecting
 categories:
     - 2019-07
 
 ---
 
+## Nohup Command
+Nohup, short for _NO HANG UP_ is a command in Linux systems that keep processes running even after exiting the shell or terminal.
 
- **操作系统中有三个常用的流：**
+Nohup prevents the processes or jobs from receiving the SIGHUP (Signal Hang UP) signal. This is a signal that is sent to a process upon closing or exiting the terminal.
 
-> 0：标准输入流 stdin	    
-> 1：标准输出流 stdout	
-> 2：标准错误流 stderr	
-> 一般当我们用 > console.txt，实际是 1>console.txt的省略用法；< console.txt ，实际是 0 < console.txt的省略用法。	
-  
-例子：   
-```bash
-nohup ./start-dishi.sh >output 2>&1 &
+## Nohup Command Syntax
+Nohup command syntax is as follows:
+```
+nohup command arguments
+```
+OR
+```
+nohup options
 ```
 
-解释：	
+## Usage
 
- 1. 带&的命令行，即使terminal（终端）关闭，或者电脑死机程序依然运行（前提是你把程序递交到服务器上)； 
- 2. 2>&1的意思是把标准错误（2）重定向到标准输出中（1），而标准输出又导入文件output里面，所以结果是标准错误和标准输出都导入文件output里面了。 至于为什么需要将标准错误重定向到标准输出的原因，那就归结为标准错误没有缓冲区，而stdout有。这就会导致 >output 2>output 文件output被两次打开，而stdout和stderr将会竞争覆盖，这肯定不是我门想要的. 这就是为什么有人会写成： nohup ./command.sh >output 2>output出错的原因了
+### Starting a process using Nohup
+
+To redirect to a file and to standard error and output use the `> filename 2>&1` attribute:
+```
+nohup command > file 2>&1
+```
+
+### Starting a process in the background using Nohup
+To start a process in the background use the & symbol at the end of the command:
+```
+nohup ping google.com &
+```
+To check the process when resuming the shell use the `pgrep` command:
+```
+pgrep -a ping
+``` 
+
+
+## Redirection in linux
+
+|Handle	|Name	|Description|
+|-------|-------|-----------|
+|0	|stdin	|Standard input|
+|1	|stdout	|Standard output|
+|2	|stderr	|Standard error|
+
+Examples:
+```
+# executes command, directing the standard input stream to file
+command > file
+command 1> file
+# executes command, directing the standard error stream to file
+command 2> file
+# merge standard error into standard output so error messages can be processed together with (or alternately to) the usual output.
+command > file 2>&1
+```
+
+By the way, `command 2>&1 > file`&`command > file 2>&1` is [different](https://en.wikipedia.org/wiki/Redirection_(computing)#Redirecting_to_and_from_the_standard_file_handles).
+
+## Reference
+https://www.journaldev.com/27875/nohup-command-in-linux
+
+https://en.wikipedia.org/wiki/Nohup
+
+https://en.wikipedia.org/wiki/Redirection_(computing)
