@@ -1,5 +1,6 @@
-{{ partial "header.html" . }}
-
-{{ partial "homepage.html" . }}
-
-{{ partial "footer.html" . }}
+{{- define "main" -}}
+{{- partial "homepage-body.html" . -}}
+{{- $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+{{- partial "note-list.html" $paginator -}}
+{{- partial "pagination.html" $paginator -}}
+{{- end -}}

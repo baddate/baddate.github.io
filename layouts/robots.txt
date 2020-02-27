@@ -1,2 +1,3 @@
 User-agent: *
-Sitemap: {{ "sitemap.xml" | absURL }}
+Disallow: 
+Sitemap: /sitemap.xml

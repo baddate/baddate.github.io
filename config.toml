@@ -1,10 +1,20 @@
 baseurl = "https://baddate.top"
-languageCode = "en-us"
+title = "alEx's blOg # _"
+copyright = "©2020 Alex."
+
+languageCode = "en"  # for the RSS generation
+defaultContentLanguage = "en"
+
+hasCJKLanguage = true
 
 enableRobotsTXT = true
-enableEmoji = true
-hasCJKLanguage = true
-rssLimit = 5
+
+# Enable Disqus
+#disqusShortname = "XXX"
+
+# Google Analytics
+googleAnalytics = "UA-126758542-1"
+
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
@@ -15,12 +25,44 @@ rssLimit = 5
   email = "badgatex@outlook.com"
   twitter = "https://twitter.com/Alex_Hans"
 
-[languages]
-  [languages.en]
-    title = "alEx's blOg"
-    contentDir = "content/"
-    weight = 1
-    subtitle = "The most incomprehensible thing about the world is that it is at all comprehensible."
-    #这世界最費解的，是它竟可被理解。
-    keywords = ""
-    copyright = "alex@CC BY-NC-ND 4.0"
+[markup.highlight]
+codeFences = true
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true  # enable raw HTML in Markdown
+
+[params]
+style = "dark"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
+dateFormat = "Jan 02, 2006"  # if unset, default is "2006-01-02"
+readingTime = false  # show reading time after article date
+logo = "img/logo.jpg"
+slogan = "[ alex(❤ω❤) ] # _"
+license = "<a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt=Creative Commons License style=border-width:0 src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png /></a><br />This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>."
+
+#[params.assets]
+#css = ["css/fonts.css"]
+
+[params.comments]
+enable = false  # En/Disable comments globally, default: false. You can always enable comments on per page.
+
+[params.math]
+enable = false # load math globally, default: false. You can always enable math on per page.
+use = "katex"  # builtin: "katex", "mathjax".  default: "katex"
+
+[params.syntax]
+use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
+theme = "xcode"
+darkTheme = "xcode-dark"
+
+[params.nav]
+showCategories = true       # /categories/
+showTags = true             # /tags/
+
+[[params.nav.custom]]
+title = "About"
+url = "/about/"
+
+[[params.nav.custom]]
+title = "Github"
+url = "https://github.com/baddate"

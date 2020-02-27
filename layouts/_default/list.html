@@ -1,11 +1,20 @@
-{{ partial "header.html" . }}
-{{ $paginator := .Paginate (where .Data.Pages "Section" "post") (or .Site.Params.paginate 3) }}
-<main role="main" class="article-list">
-  
-  <h1 class="list-title">{{ .Title }}</h1>
-  {{ range $paginator.Pages }}
-    {{ partial "article-list-item.html" . }}
-  {{ end }}
-</main>
-{{ partial "paginator.html" $paginator }}
-{{ partial "footer.html" . }}
+{{- define "main" -}}
+{{- $paginator := .Paginator -}}
+
+{{- $title := T .Title -}}
+{{- if not $title -}}
+{{- $title = .Title -}}
+{{- end -}}
+<section class="article header"><h1>{{- $title -}}</h1></section>
+{{- if .Content -}}
+<article class="article markdown-body">
+    <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+    {{- .Content -}}
+</article>
+{{- end -}}
+<!-- Ranges through content/posts/*.md -->
+
+{{- partial "note-list.html" $paginator -}}
+{{- partial "pagination.html" $paginator -}}
+
+{{- end -}}
