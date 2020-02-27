@@ -10,6 +10,5 @@ tags:
 categories:
     - 
 description: ""
-cover: 
 draft: false
 ---
