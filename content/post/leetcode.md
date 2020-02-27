@@ -2,7 +2,6 @@
 title: Solutions of Leetcode
 date: 2019-09-23
 lastmod: 2019-09-23
-weight: 1
 url:
     /solutions/leetcode
 tags:

@@ -2,7 +2,6 @@
 title: Git config tips
 date: 2019-07-10
 lastmod: 2019-11-14 
-weight: 4
 url:
     /git/config
 tags:
