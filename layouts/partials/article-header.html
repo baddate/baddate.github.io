@@ -5,7 +5,7 @@
     {{- $lastmodFormat := "" -}}
     {{- $lastmod := .Lastmod -}}
     {{- if $lastmod -}}
-        {{- $lastmodFormat := $lastmod.Format $dateFormat -}}
+        {{- $lastmodFormat = $lastmod.Format $dateFormat -}}
     {{- end -}}
     {{- if .Date -}}
         {{- $dateFormat := .Date.Format $dateFormat -}}
