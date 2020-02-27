@@ -11,7 +11,7 @@
         {{- $dateFormat := .Date.Format $dateFormat -}}
         <p class="article date">{{- $dateFormat -}}
             {{- if ne $lastmodFormat $dateFormat -}}
-                <span class="lastmod">{{- printf (T "edited") $lastmodFormat -}}</span>
+                <span class="lastmod">{{- printf (T "edited") $lastmod -}}</span>
             {{- end -}}
             {{- if or (eq .Params.readingTime true) (and (not (eq .Params.readingTime false)) (eq site.Params.readingTime true)) -}}
             <span class="reading-time">{{ T "readingTime" .ReadingTime }}</span>
