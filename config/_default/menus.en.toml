@@ -2,13 +2,13 @@
   identifier = "about"
   name = "About"
   url = "about"
-  weight = 1
+  weight = 4
 
 [[main]]
   identifier = "archive"
   name = "Archive"
   url = "archive"
-  weight = 2
+  weight = 3
 
 # [[main]]
 #   identifier = "presentation"
@@ -16,27 +16,27 @@
 #   url = "presentation"
 #   weight = 3
 
-# [[main]]
-#   identifier = "gallery"
-#   name = "Gallery"
-#   url = "gallery"
-#   weight = 4
+[[main]]
+  identifier = "gallery"
+  name = "Gallery"
+  url = "gallery"
+  weight = 2
     
-# [[main]]
-#   parent = "gallery"
-#   name = "Cartoon"
-#   url = "gallery/cartoon"
+[[main]]
+  parent = "gallery"
+  name = "Cartoon"
+  url = "gallery/cartoon"
 
-# [[main]]
-#   parent = "gallery"
-#   name = "Photo"
-#   url = "gallery/photo"
+[[main]]
+  parent = "gallery"
+  name = "Photo"
+  url = "gallery/photo"
 
 [[main]]
   identifier = "posts"
   name = "Posts"
   url = "posts"
-  weight = 5
+  weight = 1
 
 # [[main]]
 #   identifier = "showcase"

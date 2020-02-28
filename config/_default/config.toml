@@ -1,5 +1,5 @@
 baseURL = "http://example.org"
-title = "Hugo Zzo Theme"
+title = "alEx's blOg # _"
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
@@ -8,7 +8,7 @@ hasCJKLanguage = true
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy;{year}, All Rights Reserved"
+copyright = "&copy;{year}, All Rights Reserved."
 timeout = 10000
 enableEmoji = true
 paginate = 13

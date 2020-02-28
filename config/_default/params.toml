@@ -1,6 +1,6 @@
-logoText = "Zzo"
+logoText = "Alex"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "aLEX's BloG site."
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -39,14 +39,14 @@ talksGroupByDate = "2006"
 pubPaginate = 20
 
 # whoami
-myname = "zzossig"
-email = "zzossig@gmail.com"
-whoami = "Web Developer"
+myname = "alex"
+email = "alex.ra.code@gmail.com"
+whoami = "Nineightfive Student"
 bioImageUrl = ""
 useGravatar = false
-location = "Seoul, Korea"
-organization = "Hugo"
-link = "https://zzossig.io/ko"
+location = "CA, US"
+organization = "FREELANCER"
+link = "https://baddate.top/en"
 
 # sidebar
 enableBio = true
@@ -122,7 +122,7 @@ commento = false
   appKey = '你的appKey'
   notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
   verify = false # Verification code
-  avatar = 'mm' 
+  avatar = 'mm'
   placeholder = '说点什么吧...'
   visitor = false
 
@@ -140,11 +140,11 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  email = "mailto:your@email.com"
+  email = "mailto:alex.ra.code@email.com"
   phone = ""
   facebook = "http://example.org/"
-  twitter = "http://example.org/"
-  github = "https://github.com/zzossig/hugo-theme-zzo"
+  twitter = "http://twitter.com/Alex_Hans"
+  github = "https://github.com/baddate"
   stack-overflow = ""
   instagram = ""
   google-plus = ""
