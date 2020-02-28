@@ -11,13 +11,11 @@ categories:
 
 ---
 
-
-
 ## Pre-requirements
 1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
 2. gnome-tweak-tool
 	`sudo apt-get update` and `sudo apt-get gnome-tweak-tool`
-![Tweak](/img/tweak-screen.png)
+![Tweaks](/img/tweak-screen.png)
 3. Install an gnome shell Extension
 `sudo apt-get install gnome-shell-extensions`
 **Reboot after executing this command**

@@ -9,8 +9,7 @@ tags:
     - C++
 categories:
     - 2019-12
-description: ""
-
+description: "string, char*, const char*, int type conversion"
 ---
 
 **string, char\*, const char\*, int type conversion**
