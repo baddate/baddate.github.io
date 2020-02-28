@@ -2,7 +2,6 @@
 title: Solution for _CRT_SECURE_NO_WARNINGS 
 date: 2019-07-10
 lastmod: 2019-07-10 
-weight: 5
 url:
     /solution/windows_vs2019
 tags:

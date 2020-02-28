@@ -1,8 +1,7 @@
 ---
 title: Git config tips
 date: 2019-07-10
-lastmod: 2019-11-14 
-weight: 4
+lastmod: 2019-12-14 
 url:
     /git/config
 tags:
@@ -87,3 +86,23 @@ git config --global --unset https.proxy
 >1. git add -A or git add . or git add --all
 >2. git commit -m "the content of your modify"
 >3. git push -u origin master
+
+## Git log prettify
+### 4 formats
+```bash
+git log --color --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit  
+
+git log --color --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit  
+
+git log --color --stat --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+git log --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit  
+```
+### Config with alias
+__For example:__
+
+_use 4th format._
+
+```bash
+git config --global alias.logs "log --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
