@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = "Hugo, the world’s fastest framework for building websites"
+description = "a nineightfive student."
 type = "about"
 date = "2019-02-28"
 +++
