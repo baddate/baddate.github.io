@@ -31,7 +31,7 @@ description: ""
 *   基类的友元函数。
 
 #### 一个问题
-
+```cpp
     #include <iostream>
     class A{
     private:
@@ -56,7 +56,7 @@ description: ""
         cout<<sizeof(test)<<endl;
      // output is 8
     }
-
+```
 > 如果把A的`private`属性`a`,`b`变成`public`属性，那么`test`的size就变成了12
 
 ### 继承类型
@@ -108,7 +108,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
 
 ### 实例
 
-    
+```cpp
     class A
     {
     public:
@@ -116,10 +116,10 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     	{
     		cout<<"Parent"<<endl;
     	}
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;virtual void foo()
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;{
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;cout<<"A::foo() is called"<<endl;
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;}
+        virtual void foo()
+        {
+            cout<<"A::foo() is called"<<endl;
+        }
     };
     class B:public A
     {
@@ -128,20 +128,20 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     	{
     		cout<<"Child"<<endl;
     	}
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;void foo()
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;{
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;cout<<"B::foo() is called"<<endl;
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;}
+        virtual void foo()
+        {
+            cout<<"B::foo() is called"<<endl;
+        }
     };
     int main(void)
     {
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;A *a = new B();
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;a->fee();	// 输出为：Parent
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;a->foo();&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; // 输出为：B::foo() is called
-    &amp;amp;amp;nbsp;&amp;amp;amp;nbsp; &amp;amp;amp;nbsp;return 0;
+    A *a = new B();
+    a->fee();	// 输出为：Parent
+    a->foo();   // 输出为：B::foo() is called
+    return 0;
     }
     
-
+```
 ### 虚函数底层实现机制
 
 **实现原理：虚函数表+虚表指针**
@@ -158,7 +158,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
 ![](api/images/999Yw3pmkXIA/虚表指针.jpg)
 
 基类虚表指针
-
+```cpp
     class A {
     public:
         virtual void vfunc1();
@@ -184,8 +184,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     private:
         int m_data1, m_data4;
     };
-    
-
+```
 类A是基类，类B继承类A，类C又继承类B：
 
 ![](api/images/QKs9akFzvofb/20160528104806455.jpg)
