@@ -8,7 +8,7 @@ header:
     title:
       - ALEX
     subtitle:
-      - The most incomprehensible thing about the world is that it is at all comprehensible.
+      - 这世界最費解的，是它竟可被理解。
     titleColor: 
     titleShadow: true
     titleFontSize: 44

@@ -1,6 +1,6 @@
 logoText = "Alex"
 logoType = "short" # long, short
-description = "aleX's bLoG site."
+description = "aLEX's BloG site."
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -41,11 +41,11 @@ pubPaginate = 20
 # whoami
 myname = "alex"
 email = "alex.ra.code@gmail.com"
-whoami = "Nineightfive Student:)"
+whoami = "Nineightfive Student"
 bioImageUrl = ""
 useGravatar = false
-location = "Nanjing, China"
-organization = "SEU"
+location = "CA, US"
+organization = "FREELANCER"
 link = "https://baddate.top/en"
 
 # sidebar
@@ -68,7 +68,7 @@ tocLevels = ["h2", "h3", "h4"]
 enableSidebarPostsByOrder = false
 
 # footer
-showPoweredBy = false
+showPoweredBy = true
 showFeedLinks = true
 showSocialLinks = true
 enableLangChange = true
@@ -83,7 +83,7 @@ busuanziSitePV = true
 busuanziPagePV = true
 
 # rss
-updatePeriod = "weekly" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
+updatePeriod = "" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
 updateFrequency = ""
 fullContents = false
 
@@ -122,7 +122,7 @@ commento = false
   appKey = '你的appKey'
   notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
   verify = false # Verification code
-  avatar = 'mm' 
+  avatar = 'mm'
   placeholder = '说点什么吧...'
   visitor = false
 
@@ -140,10 +140,10 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  #email = "mailto:alex.ra.code@gmail.com"
+  email = "mailto:alex.ra.code@email.com"
   phone = ""
-  facebook = ""
-  twitter = "https://twitter.com/Alex_Hans"
+  facebook = "http://example.org/"
+  twitter = "http://twitter.com/Alex_Hans"
   github = "https://github.com/baddate"
   stack-overflow = ""
   instagram = ""
@@ -191,10 +191,3 @@ commento = false
 [[footerLinks]]
   name = ""
   link = ""
-
-# custom copyright
-[copyrightOptions]
-  enableCopyrightLink = false
-  copyrightLink = "https://..."
-  copyrightLinkImage = "https://..."
-  copyrightLinkText = "copyright link text"

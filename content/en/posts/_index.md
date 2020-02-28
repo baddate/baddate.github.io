@@ -1,8 +1,7 @@
 +++
 aliases = ["posts","articles","blog","showcase","docs"]
 title = "Posts"
-author = "alex"
-authorEmoji= "👻"
+author = "Alex"
 tags = ["index"]
 description = "Post page"
 +++

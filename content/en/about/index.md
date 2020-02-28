@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = ""
+description = "a nineightfive student."
 type = "about"
 date = "2019-02-28"
 +++
@@ -14,6 +14,3 @@ date = "2019-02-28"
 <p align="right">--Albert Einstein&emsp;&emsp;&emsp;</p>
 
 ---
-
-
-
