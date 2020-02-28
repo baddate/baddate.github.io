@@ -68,7 +68,7 @@ tocLevels = ["h2", "h3", "h4"]
 enableSidebarPostsByOrder = false
 
 # footer
-showPoweredBy = true
+showPoweredBy = false
 showFeedLinks = true
 showSocialLinks = true
 enableLangChange = true
@@ -142,7 +142,7 @@ commento = false
 [socialOptions]
   email = "mailto:alex.ra.code@email.com"
   phone = ""
-  facebook = "http://example.org/"
+  facebook = ""
   twitter = "http://twitter.com/Alex_Hans"
   github = "https://github.com/baddate"
   stack-overflow = ""
@@ -173,7 +173,7 @@ commento = false
 
 [donationOptions]
   enable = false
-  alipay = "" 
+  alipay = ""
   wechat = ""
   paypal = ""
   patreon = ""
