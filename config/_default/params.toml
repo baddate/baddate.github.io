@@ -191,3 +191,10 @@ commento = false
 [[footerLinks]]
   name = ""
   link = ""
+
+# custom copyright
+[copyrightOptions]
+  enableCopyrightLink = false
+  copyrightLink = "https://..."
+  copyrightLinkImage = "https://..."
+  copyrightLinkText = "copyright link text"

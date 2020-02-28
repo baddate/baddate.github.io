@@ -2,24 +2,13 @@
   identifier = "about"
   name = "关于我"
   url = "about"
-  weight = 1
+  weight = 5
 
 [[main]]
   identifier = "archive"
   name = "归档"
   url = "archive"
   weight = 2
-
-[[main]]
-  identifier = "gallery"
-  name = "画廊"
-  url = "gallery"
-  weight = 3
-    
-[[main]]
-  parent = "gallery"
-  name = "fiverr"
-  url = "gallery/mine"
 
 [[main]]
   identifier = "posts"
