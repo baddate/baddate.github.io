@@ -5,7 +5,7 @@
   languagedir = "ltr"
   contentdir = "content/en"
 
-[ko]
+[ch]
   title = "alEx's blOg # _"
   languageName = "Chinese"
   weight = 2

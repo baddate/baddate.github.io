@@ -15,18 +15,18 @@ categories:
 1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
 2. gnome-tweak-tool
 	`sudo apt-get update` and `sudo apt-get gnome-tweak-tool`
-![Tweaks](/post/tweak-screen.png)
+![Tweaks](/img/tweak-screen.png)
 3. Install an gnome shell Extension
 `sudo apt-get install gnome-shell-extensions`
 **Reboot after executing this command**
 Then you can find a extensions named *user themes*
 Make it `on`
-![extensions](/post/tweak-extensions.png)
+![extensions](/img/tweak-extensions.png)
 
 ## Start!
 ### Install an GTK+ themes
 1. Download themes files from [here](https://www.opendesktop.org/s/Gnome/p/1241688).
-![test](/post/macthemes.png)
+![test](/img/macthemes.png)
 2. Decompression files use these commands
 `xz -d filename.tar.xz`
 `tar xvf filename.tar`
@@ -34,7 +34,7 @@ then you can see a folder on current directiry
 3. Move the folder to *themes* folder
 `sudo mv filename /usr/share/themes`
 4. Open Tweaks and change themes on *Appearence->Themes->Applications*
-![them-done](/post/themes-done.png)
+![them-done](/img/themes-done.png)
 
 ### Install macOS ICON
 1. Download file from [here](https://www.opendesktop.org/s/Gnome/p/1102582/)
