@@ -3,7 +3,7 @@ title: nodejs10.x on CentOS7.6
 date: 2019-09-23
 lastmod: 2019-11-23
 url:
-    /nodejs
+    /zh/nodejs
 tags:
     - Tips  
     - Nodejs

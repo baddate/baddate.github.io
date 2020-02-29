@@ -7,8 +7,8 @@ lastmod: 2018-10-01 23:01:00
 draft: true
 description: "HTTP Note"
 thumbnail: "images/HTTP Protocol.gif"
-url: /notes/http
-
+url: 
+  /en/notes/http
 categories:
     - 2018-07
 ---

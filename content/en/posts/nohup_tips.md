@@ -3,7 +3,7 @@ title: NOHUP command details
 date: 2019-07-10
 lastmod: 2020-01-29 
 url:
-    /linux/nohup
+    /en/linux/nohup
 tags:
     - Tips  
     - Linux

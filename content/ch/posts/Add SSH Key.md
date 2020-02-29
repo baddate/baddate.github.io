@@ -8,7 +8,7 @@ tags:
 categories: 
     - 2018-09
 url: 
-    /tips/git_addSSHKey
+    /zh/tips/git_addSSHKey
 
 ---
 

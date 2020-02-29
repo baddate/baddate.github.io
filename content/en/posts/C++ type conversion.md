@@ -3,7 +3,7 @@ title: C++ type conversion
 date: 2019-12-27
 lastmod: 2019-12-27 
 url:
-    /tips/type-conversion
+    /en/tips/type-conversion
 tags:
     - Tips  
     - C++

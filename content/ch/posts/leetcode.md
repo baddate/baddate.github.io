@@ -3,7 +3,7 @@ title: Solutions of Leetcode
 date: 2019-09-23
 lastmod: 2019-09-23
 url:
-    /solutions/leetcode
+    /zh/solutions/leetcode
 tags:
     - Leetcode
 categories:

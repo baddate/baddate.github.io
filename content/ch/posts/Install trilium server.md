@@ -11,7 +11,7 @@ tags:
 categories: 
     - 2019-06
 url: 
-    /tips/trilium-server
+    /zh/tips/trilium-server
 
 description: "install trilium server and set https"
 
