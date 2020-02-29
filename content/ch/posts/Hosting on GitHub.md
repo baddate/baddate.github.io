@@ -5,7 +5,7 @@ lastmod: 2018-10-01 22:49:16
 tags:
     - Tips
 url:
-    /tips/github_tips
+    /zh/tips/github_pages_with_hugo
 categories:
     - 2018-07
 

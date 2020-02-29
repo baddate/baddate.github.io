@@ -3,7 +3,7 @@ title: Archlinux Install & Config
 date: 2019-07-10
 lastmod: 2019-07-10 
 url:
-    /linux/arch
+    /zh/linux/arch
 tags:
     - Tips  
     - Linux

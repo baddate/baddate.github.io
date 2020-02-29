@@ -3,7 +3,7 @@ title: Make a TODO robot with Github Actions
 date: 2020-01-03
 lastmod: 2020-02-07
 url:
-    /tips/auto_email
+    /zh/tips/auto_email
 tags:
     - Github
     - Tips

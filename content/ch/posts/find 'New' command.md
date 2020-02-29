@@ -6,8 +6,9 @@ date:
 lastmod: 2019-01-10 17:37:00
 tags:
     - Tips
+    - Windows
 url:
-    /tips/windows_tips
+    /zh/tips/windows_tips
 categories:
     - 2018-08
 

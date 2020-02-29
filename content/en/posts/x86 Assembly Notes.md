@@ -5,7 +5,7 @@ tags:
 date: 2018-07-25 22:20:20
 description: "Some Assembly note"
 url:
-    /notes/x86asm
+    /en/notes/x86asm
 categories:
     - 2018-07
 draft: false

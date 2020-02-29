@@ -6,11 +6,11 @@ date:
 lastmod: 2019-01-10 17:37:00
 tags:
     - Tips
+    - Windows
 url:
-    /tips/windows_tips
+    /en/tips/windows_tips
 categories:
     - 2018-08
-
 ---
 
 > 有的时候我们会发现自己常用的“新建”文件类型丢失了，这时候我们可以修改注册表来添加找回。

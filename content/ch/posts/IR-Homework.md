@@ -8,7 +8,7 @@ tags:
 categories: 
     - 2019-03
 url: 
-    /translate/ir_homework
+    /zh/translate/ir_homework
 
 description: "信息检索作业-翻译论文"
 draft: false

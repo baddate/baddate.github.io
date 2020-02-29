@@ -3,7 +3,7 @@ title: Git config tips
 date: 2019-07-10
 lastmod: 2019-12-14 
 url:
-    /git/config
+    /en/git/config
 tags:
     - Tips  
     - Git

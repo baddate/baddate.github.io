@@ -2,10 +2,11 @@
 title: Customize Ubuntu themes, icons and Shell
 date: 2018-12-07
 lastmod: 2018-12-11 22:38:58
-url:
+url: /en/linux/ubuntu_customize
 tags:
     - Tips  
     - Ubuntu
+    - Linux
 categories:
     - 2018-12
 
