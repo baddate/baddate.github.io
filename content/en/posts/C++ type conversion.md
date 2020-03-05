@@ -67,10 +67,9 @@ description: "string, char*, const char*, int type conversion"
     std::string x = "hello world";
     const char* p_c_str = x.c_str();
     const char* p_data = x.data();
-    const char* p_x0 = &x[0];
-    
+   
     char* p_writable_data = x.data(); // for non-const x from C++17 
-    char* p_x0_rw = &x[0];  // compiles iff x is not const...
+    char* p_x0_rw = &x[0];  // compiles if x is not const...
     
     //------------------------------------------//
     std::vector<char> cstr(str.c_str(), str.c_str() + str.size() + 1);
