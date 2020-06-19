@@ -8,7 +8,7 @@ hasCJKLanguage = true
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy;{year}, All Rights Reserved."
+copyright = "&copy;{year}, Alex."
 timeout = 10000
 enableEmoji = true
 paginate = 10
