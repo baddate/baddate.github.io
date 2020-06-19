@@ -13,11 +13,11 @@
         {{ $selected := false }}
           {{ if eq $pageLang .Lang }}
             {{ if .LanguageName }}
-              <a href="{{ $translation.Permalink }}" data-lang="{{ .Lang }}" class="dropdown-item is-active">{{ .LanguageName }}</a>
+              <a href="{{ $translation.Permalink }}" data-lang="{{ .Lang }}" class="dropdown-item">{{ .LanguageName }}</a>
             {{ end }}
           {{ else }}
             {{ if .LanguageName }}
-              <a href="{{ $translation.Permalink }}" data-lang="{{ .Lang }}" class="dropdown-item">{{ .LanguageName }}</a>
+              <a href="{{ $translation.Permalink }}" data-lang="{{ .Lang }}" class="dropdown-item is-active">{{ .LanguageName }}</a>
             {{ end }}
           {{ end }}
         {{ end }}
