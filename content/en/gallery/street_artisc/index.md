@@ -7,4 +7,4 @@ description: "Street Art Gallery"
 image: images/feature2/content.png
 ---
 
-Images from My [Pinterest Board](https://www.pinterest.com/alexhandroid/arts/).
+Images from My [Pinterest Board](https://www.pinterest.com/realAlexHans/boards/).
