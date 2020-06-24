@@ -3,7 +3,7 @@ title: "[译]费曼技巧：最好的学习方式"
 date: 2020-06-24
 lastmod: 2020-06-24
 url:
-    /tips/feynman_technique_zh
+    /zh/tips/feynman_technique_zh
 tags:
     - Tips
     - Translate
