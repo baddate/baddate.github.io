@@ -9,11 +9,12 @@ enableTocContent: false
 tocPosition: inner
 tocLevels: ["h2", "h3", "h4"]
 tags:
--
+- Git
+- Tips
 series:
--
+- Git
 categories:
--
+- 2020-06
 image:
 ---
 
