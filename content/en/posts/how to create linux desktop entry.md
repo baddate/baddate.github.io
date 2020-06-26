@@ -1,6 +1,6 @@
 ---
 title: "How to Create Linux Desktop Entry"
-date: 2020-06-26T10:11:55+08:00
+date: 2020-05-13T10:11:55+08:00
 description:
 draft: false
 hideToc: false
