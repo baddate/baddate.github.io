@@ -4,8 +4,9 @@ date: 2018-07-25T20:14:36+08:00
 lastmod: 2018-10-01 22:49:16
 tags:
     - Tips
+    - Git
 url:
-    /zh/tips/github_pages_with_hugo
+    /cn/tips/github_pages_with_hugo
 categories:
     - 2018-07
 

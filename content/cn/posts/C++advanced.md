@@ -1,9 +1,9 @@
 ---
-title: C++继承/多态/虚函数
+title: "C++继承/多态/虚函数"
 date: 2019-12-20
 lastmod: 2019-12-27 
 url:
-    /zh/tips/cpp-advanced
+    /cn/tips/cpp-advanced
 tags:
     - Tips  
     - C++

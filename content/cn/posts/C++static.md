@@ -3,7 +3,7 @@ title: C++ Static关键字详解
 date: 2019-12-21
 lastmod: 2019-12-27 
 url:
-    /zh/tips/cpp-static
+    /cn/tips/cpp-static
 tags:
     - Tips
     - C++
