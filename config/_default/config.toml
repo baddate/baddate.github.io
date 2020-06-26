@@ -8,7 +8,7 @@ hasCJKLanguage = true
 summaryLength = 70
 buildFuture = true
 
-copyright = "&copy;{year}, Alex."
+copyright = "&copy;{year}, Powered by [Hugo](https://gohugo.io)."
 timeout = 10000
 enableEmoji = true
 paginate = 10
