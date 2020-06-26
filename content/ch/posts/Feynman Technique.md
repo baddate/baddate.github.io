@@ -1,7 +1,15 @@
 ---
 title: "[译]费曼技巧：最好的学习方式"
 date: 2020-06-24
-lastmod: 2020-06-24
+description:
+draft: false
+hideToc: false
+enableToc: true
+enableTocContent: false
+tocPosition: inner
+tocLevels: ["h2", "h3", "h4"]
+series:
+-
 url:
     /zh/tips/feynman_technique_zh
 tags:
