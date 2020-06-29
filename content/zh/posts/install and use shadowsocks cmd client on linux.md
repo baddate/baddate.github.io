@@ -1,7 +1,7 @@
 ---
 title: "Install and Use Shadowsocks Cmd Client on Linux"
 date: 2020-06-27T21:46:36+08:00
-description: "在Fedora 32上使用命令行的shadowsocks"
+description: "在Linux上使用shadowsocks的命令行客户端"
 url:
     /zh/tips/install_shadowsocks_cmd_client_on_linux
 draft: false
@@ -21,19 +21,14 @@ series:
 -
 categories:
 - 2020-06
-image:
+image: /img/shadowsocks_gfw.jpeg
 ---
 
 最近在[Fedora](https://fedoraproject.org/)上安装shadowsocks-qt5一直提示依赖库缺失，最后也没找到解决办法，所以就想着安装命令行客户端来应急使用，本文记录了一下自己的安装经验。
 
 ## 安装命令行客户端
 
-shadowsocks没有收录在fedora的软件包中，所以需要使用`pip`来安装它：
-```
-sudo yum install python-setuptools   or   sudo dnf install python-setuptools
-sudo easy_install pip
-sudo pip install shadowsocks
-```
+~~shadowsocks没有收录在fedora的软件包中，所以需要使用`pip`来安装它：`sudo yum install python-setuptools` or `sudo dnf install python-setuptools` and `sudo easy_install pipsudo pip install shadowsocks`~~
 
 shadowsocks已经收录在fedora的软件包中，直接使用dnf来安装即可：
 ```bash
