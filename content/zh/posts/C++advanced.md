@@ -3,13 +3,15 @@ title: "C++继承/多态/虚函数"
 date: 2019-12-20
 lastmod: 2019-12-27 
 url:
-    /cn/tips/cpp-advanced
+    /zh/tips/cpp_advanced
 tags:
     - Tips  
     - C++
 categories:
     - 2019-12
 description: ""
+series:
+-
 ---
 
 

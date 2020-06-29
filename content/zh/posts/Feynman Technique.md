@@ -11,7 +11,7 @@ tocLevels: ["h2", "h3", "h4"]
 series:
 -
 url:
-    /cn/tips/feynman_technique_cn
+    /zh/tips/feynman_technique_cn
 tags:
     - Tips
     - Translate

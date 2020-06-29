@@ -44,9 +44,9 @@ email = "alex.ra.code@gmail.com"
 whoami = "Nineightfive Student"
 bioImageUrl = ""
 useGravatar = false
-location = "JS, CN"
+location = "Shanghai, CN"
 organization = "FREELANCER"
-link = "https://baddate.top/cn"
+link = "https://baddate.top/zh"
 
 # sidebar
 enableBio = true
