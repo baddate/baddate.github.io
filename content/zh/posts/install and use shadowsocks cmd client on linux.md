@@ -3,6 +3,7 @@ title: "Install and Use Shadowsocks Cmd Client on Linux"
 date: 2020-06-27T21:46:36+08:00
 description: "在Fedora 32上使用命令行的shadowsocks"
 url:
+    /zh/tips/install_shadowsocks_cmd_client_on_linux
 draft: false
 hideToc: false
 enableToc: true

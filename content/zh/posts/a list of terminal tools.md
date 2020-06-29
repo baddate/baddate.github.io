@@ -2,6 +2,8 @@
 title: "A List of Terminal Tools"
 date: 2020-03-27T13:05:26+08:00
 description: "自己使用的一些好用的命令行工具"
+url:
+    /zh/tools/a_list_of_terminal_tools
 draft: false
 hideToc: false
 enableToc: true

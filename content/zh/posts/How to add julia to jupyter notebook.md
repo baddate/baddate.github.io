@@ -2,6 +2,8 @@
 title: "如何将Julia添加到Jupyter Notebook"
 date: 2020-06-29T10:34:22+08:00
 description: "How to Add Julia to Jupyter Notebook"
+url:
+    /zh/tips/add_julia_to_jupyter
 draft: false
 hideToc: false
 enableToc: true

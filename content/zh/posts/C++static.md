@@ -3,13 +3,15 @@ title: C++ Static关键字详解
 date: 2019-12-21
 lastmod: 2019-12-27 
 url:
-    /cn/tips/cpp-static
+    /zh/tips/cpp-static
 tags:
     - Tips
     - C++
 categories:
     - 2019-12
 description: ""
+series:
+-
 ---
 C++的static有两种用法：面向过程程序设计中的static(延续C语言)和面向对象程序设计中的static。
 

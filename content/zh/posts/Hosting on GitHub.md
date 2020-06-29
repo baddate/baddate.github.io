@@ -6,7 +6,7 @@ tags:
     - Tips
     - Git
 url:
-    /cn/tips/github_pages_with_hugo
+    /zh/tips/github_pages_with_hugo
 categories:
     - 2018-07
 

@@ -7,7 +7,7 @@ tags:
     - Tips
     - Windows
 url:
-    /cn/tips/recover_new
+    /zh/tips/recover_new
 categories:
     - 2019-01
 ---
