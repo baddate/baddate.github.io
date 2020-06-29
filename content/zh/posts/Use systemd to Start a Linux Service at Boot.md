@@ -1,6 +1,6 @@
 ---
 title: "Use Systemd to Start a Linux Service at Boot"
-date: 2020-06-29T18:17:20+08:00
+date: 2020-06-26T18:17:20+08:00
 description:
 url: /zh/tips/autostart_a_service_at_boot_on_linux
 draft: false
