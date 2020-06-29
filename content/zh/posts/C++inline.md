@@ -3,7 +3,7 @@ title: C++ inline关键字详解
 date: 2019-12-22
 lastmod: 2019-12-27
 url:
-    /cn/tips/cpp-inline
+    /zh/tips/cpp-inline
 tags:
     - Tips
     - C++
