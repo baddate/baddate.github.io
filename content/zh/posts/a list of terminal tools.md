@@ -53,7 +53,7 @@ image:
 ## tig
 [tig](https://github.com/jonas/tig)是git的基于ncurses的文本模式界面。主要用于浏览代码仓库，也可以当作git来使用，不过值得一提的是，`tig`的命令输出样式更为美观。你可以把它当作一个git的美化版。
 
-下图展示了tig浏览代码仓库时，回车查看commit的diff细节，具体的操作命令可以按`h`来获取快捷键：
+下图展示了tig浏览代码仓库时，回车查看commit的diff细节，具体的操作命令可以按`h`来获取其他快捷键：
 ![tig screenshot](/img/tig_screenshot.png)
 
 暂时就介绍这么多了，之后碰到好用的会再补充。
