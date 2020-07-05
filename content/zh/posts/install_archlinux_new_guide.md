@@ -20,8 +20,7 @@ tags:
 categories:
 - 2020-07
 
-image: /cover/feynman_technique.jpg
-
+image:
 --- 
 
 
