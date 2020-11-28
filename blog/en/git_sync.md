@@ -1,4 +1,4 @@
-@def title = ""
+@def title = "How to syn git repo between locally and remotely."
 @def published = "22 June 2019"
 @def tags = ["Tips", "Git"]
 

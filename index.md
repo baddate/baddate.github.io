@@ -4,44 +4,14 @@
 <h1>Hi there!</h1>
 ~~~
 
-I'm Abhinav, an open-source contributor working with the Julia community on
-building high quality scientific software.
+I'm Alex, an open-source contributor.
 
----
-
-~~~
-<h1>Experience</h1>
-
-<h2>MLH Fellowship</h2>
-~~~
-
-One of the MLH fellows contributing to Julia projects including
-[Flux.jl](https://fluxml.ai/) and
-[Documenter.jl](https://github.com/JuliaDocs/Documenter.jl/).
+>~Now I am looking for a job:|~ I'm working on Backend Dev.
+>~I will graduate this year.~ I graduated.
+>And I love especially arch linux.
+>And I am interested in linux dev & C++ & others.
 
 ~~~
-<h2>coala Maintainer</h2>
+<p style="color:#aa7631;font-size:23px;">The most incomprehensible thing about the world is that it is at all comprehensible.</p>
+<p align="right">--Albert Einstein&emsp;&emsp;&emsp;</p>
 ~~~
-
-I currently maintain [coala](https://github.com/coala), an open-source project
-that helps you write the cleanest code irrespective of the language and all
-of that in a single config file which works nicely with your CI configuration.
-
----
-
-~~~
-<h1>Achievements</h1>
-
-<h2>Google Code-in Winner</h2>
-~~~
-
-I was one of the 50 winners in
-[Google Code-in competition](https://codein.withgoogle.com)
-while contributing to [The Julia Programming Language](https://julialang.org).
-Contributed over several open-source packages and repositories. In love with
-Julia ever since. :heart:
-
----
-
-:star: Do checkout my blog on [#covid](/tag/covid), [#julia](/tag/julia),
-[#code-in](/tag/code-in), [#mlh](/tag/mlh).
