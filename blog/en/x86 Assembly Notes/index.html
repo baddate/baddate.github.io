@@ -1,0 +1,253 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/ocean.min.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <title>Alex's Blog | x86 Assembly Note</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #ffffff;" href="https://github.com/abhishalya"><i class="fab fa-github"></i></a> <a style="color: #ffffff;" href="https://www.linkedin.com/in/abhishalya/"><i class="fab fa-linkedin"></i></a> <a style="color: #ffffff;" href="https://twitter.com/abhishalya"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><p>﻿</p> <h2 id=registers ><a href="#registers">Registers</a></h2> <p><img src="/_img/x86-registers.png" alt=Registers  /></p> <p><em>eight 32-bit general purpose registers</em></p> <p><strong>When referring to registers in assembly language, the names are not case-sensitive.</strong></p> <h2 id=memory_and_addressing_modes ><a href="#memory_and_addressing_modes">Memory and Addressing Modes</a></h2> <h3 id=declaring_static_data_regions ><a href="#declaring_static_data_regions">Declaring Static Data Regions</a></h3> <blockquote> <p>Data declarations should be preceded by the .DATA directive.</p> </blockquote> <p><strong>located in memory next to one another.</strong></p> <blockquote> <p><em>DB</em>–-one byte <br /><em>DW</em>–-two bytes <br /><em>DD</em>–-four bytes</p> </blockquote> <p><strong>Example</strong></p> <pre><code class=language-julia >.DATA
+var     DB 64           ; _Declare a byte, referred to as location var, containing the value 64._
+var2    DB ?            ; _Declare an uninitialized byte, referred to as location var2._
+        DB 10           ; _Declare a byte with no label, containing the value 10. Its location is var2 &#43; 1._
+X       DW ?            ; _Declare a 2-byte uninitialized value, referred to as location X._
+Y       DD 30000        ; _Declare a 4-byte value, referred to as location Y, initialized to 30000._
+bytes   DB 10 DUP&#40;?&#41;    ; Declare 10 uninitialized bytes starting at location bytes.
+arr     DD 100 DUP&#40;0&#41;   ; Declare 100 4-byte words starting at location arr, all initialized to 0</code></pre> <h3 id=addressing_memory ><a href="#addressing_memory">Addressing Memory</a></h3> <p>Some examples of <code>mov</code> instructions using address computations are:</p> <p>mov eax, &#91;ebx&#93; ; <em>Move the 4 bytes in memory at the address contained in EBX into EAX</em></p> <p>mov &#91;var&#93;, ebx ; <em>Move the contents of EBX into the 4 bytes at memory address <em>var</em>. &#40;Note, <em>var</em> is a 32-bit constant&#41;.</em></p> <p>mov eax, &#91;esi-4&#93; ; <em>Move 4 bytes at memory address ESI &#43; &#40;-4&#41; into EAX</em></p> <p>mov &#91;esi&#43;eax&#93;, cl ; <em>Move the contents of CL into the byte at address ESI&#43;EAX</em></p> <p>mov edx, &#91;esi&#43;4<em>ebx&#93;	; *Move the 4 bytes of data at address ESI&#43;4</em>EBX into EDX*</p> <hr /> <p>Some examples of <strong>invalid address</strong> calculations include:</p> <p>mov eax, &#91;ebx-ecx&#93; ; <em>Can only <strong>add</strong> register values</em></p> <p>mov &#91;eax&#43;esi&#43;edi&#93;, ebx	; <em>At most <strong>2</strong> registers in address computation</em></p> <h3 id=size_directives ><a href="#size_directives">Size Directives</a></h3> <table><tr><th align=center >instruction<th align=center >size<tr><td align=center ><code>BYTE PTR</code><td align=center >1 byte<tr><td align=center ><code>WORD PTR</code><td align=center >2 bytes<tr><td align=center ><code>DWORD PTR</code><td align=center >4 bytes</table> <p><strong>Example:</strong> mov BYTE PTR &#91;ebx&#93;, 2 ; <em>Move 2 into the single byte at the address stored in EBX.</em></p> <p>mov WORD PTR &#91;ebx&#93;, 2 ; <em>Move the 16-bit integer representation of 2 into the 2 bytes starting at the address in EBX.</em></p> <p>mov DWORD PTR &#91;ebx&#93;, 2 ; <em>Move the 32-bit integer representation of 2 into the 4 bytes starting at the address in EBX.</em></p> <h2 id=instructions ><a href="#instructions">Instructions</a></h2> <p><strong>three categories:</strong></p> <p><em>data movement</em></p> <p><em>arithmetic/logic</em></p> <p><em>control-flow</em></p> <p><strong>notation:</strong></p> <pre><code class=language-julia >&lt;reg32&gt;		Any 32-bit register &#40;EAX,  EBX,  ECX,  EDX,  ESI,  EDI,  ESP, or  EBP&#41;
+
+  &lt;reg16&gt;		Any 16-bit register &#40;AX,  BX,  CX, or  DX&#41;
+
+  &lt;reg8&gt;		Any 8-bit register &#40;AH,  BH,  CH,  DH,  AL,  BL,  CL, or  DL&#41;
+
+  &lt;reg&gt;			Any register
+
+  &lt;mem&gt;		A memory address &#40;e.g.,  &#91;eax&#93;,  &#91;var &#43; 4&#93;, or  dword ptr &#91;eax&#43;ebx&#93;&#41;
+
+  &lt;con32&gt;		Any 32-bit constant
+
+  &lt;con16&gt;		Any 16-bit constant
+
+  &lt;con8&gt;		Any 8-bit constant
+
+  &lt;con&gt;			Any 8-, 16-, or 32-bit constant</code></pre> <h3 id=data_movement_instructions ><a href="#data_movement_instructions">Data Movement Instructions</a></h3> <p><code>mov</code> –- Move &#40;Opcodes: 88, 89, 8A, 8B, 8C, 8E, ...&#41;</p> <p><em>copy the data item referred to by its second operand into the location referred to by its first operand.</em></p> <p><em>Syntax</em></p> <pre><code class=language-julia >mov &lt;reg&gt;,&lt;reg&gt;
+  mov &lt;reg&gt;,&lt;mem&gt;
+  mov &lt;mem&gt;,&lt;reg&gt;
+  mov &lt;reg&gt;,&lt;const&gt;
+  mov &lt;mem&gt;,&lt;const&gt;</code></pre> <p><code>push</code> –- Push stack &#40;Opcodes: FF, 89, 8A, 8B, 8C, 8E, ...&#41;</p> <p><em>places its operand onto the top of the hardware supported stack in memory. Specifically, <code>push</code> first <strong>decrements ESP by 4</strong>, then places its operand into the contents of the 32-bit location at address &#91;ESP&#93;.</em> <em>Syntax</em></p> <pre><code class=language-julia >push &lt;reg32&gt;
+  push &lt;mem&gt;
+  push &lt;con32&gt;</code></pre> <p><strong><code>pop</code></strong> — Pop stack</p> <p><em>removes the 4-byte data element from the top of the hardware-supported stack into the specified operand. It first <strong>moves the 4 bytes</strong> located at memory location &#91;SP&#93; into the specified <strong>register or memory location</strong>, and then <strong>increments SP by 4</strong>.</em></p> <p><em>Syntax</em></p> <pre><code class=language-julia >pop &lt;reg32&gt;
+  pop &lt;mem&gt;</code></pre> <p><strong><code>lea</code></strong> –- Load effective address</p> <p>The <code>lea</code> instruction places the <em>address</em> specified by its second operand into the register specified by its first operand. Note, the <em>contents</em> of the memory location are <strong>not loaded</strong>, only the <strong>effective address</strong> is computed and placed into the register. This is useful for obtaining a pointer into a memory region.</p> <p><em>Syntax</em></p> <pre><code class=language-julia >lea &lt;reg32&gt;,&lt;mem&gt;</code></pre>
+<h3 id=arithmetic_and_logic_instructions ><a href="#arithmetic_and_logic_instructions">Arithmetic and Logic Instructions</a></h3>
+<p><strong><code>add</code></strong> — Integer Addition</p>
+<p>The <code>add</code> instruction adds together its two operands, storing the result in its first operand.	<strong>just like <code>&#43;&#61;</code></strong></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >add &lt;reg&gt;,&lt;reg&gt;
+  add &lt;reg&gt;,&lt;mem&gt;
+  add &lt;mem&gt;,&lt;reg&gt;
+  add &lt;reg&gt;,&lt;con&gt;
+  add &lt;mem&gt;,&lt;con&gt;</code></pre>
+<p><strong><code>sub</code></strong> — Integer Subtraction</p>
+<p>The <code>sub</code> instruction stores in the value of its <strong>first operand</strong> the <strong>result</strong> of subtracting the value of its second operand from the value of its first operand.		&#40;i.e. <strong>first &#61; first - second</strong>&#41;</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >sub &lt;reg&gt;,&lt;reg&gt;
+  sub &lt;reg&gt;,&lt;mem&gt;
+  sub &lt;mem&gt;,&lt;reg&gt;
+  sub &lt;reg&gt;,&lt;con&gt;
+  sub &lt;mem&gt;,&lt;con&gt;</code></pre>
+<p><strong><code>inc</code>, <code>dec</code></strong> — Increment, Decrement</p>
+<p><em>The <code>inc</code> instruction increments the contents of its operand by one.</em></p>
+<p><em>The <code>dec</code> instruction decrements the contents of its operand by one.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >inc &lt;reg&gt;
+  inc &lt;mem&gt;
+  dec &lt;reg&gt;
+  dec &lt;mem&gt;</code></pre>
+<p><strong><code>imul</code></strong> — Integer Multiplication</p>
+<p>The <em>two-operand</em> form multiplies its two operands together and stores the result in the first operand. The <strong>result &#40;i.e. first&#41; operand must be a register</strong>.</p>
+<p>&#40;i.e. <strong>first &#61; first*second</strong>&#41;</p>
+<p>The <em>three operand</em> form multiplies its second and third operands together and stores the <strong>result in its first operand</strong>. Again, <strong>the result operand must be a register</strong>. Furthermore, <strong>the third operand is restricted to being a constant value</strong>.</p>
+<p>&#40;i.e. <strong>first &#61; second*third</strong>&#41;</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >imul &lt;reg32&gt;,&lt;reg32&gt;
+  imul &lt;reg32&gt;,&lt;mem&gt;
+  imul &lt;reg32&gt;,&lt;reg32&gt;,&lt;con&gt;
+  imul &lt;reg32&gt;,&lt;mem&gt;,&lt;con&gt;</code></pre>
+<p><strong><code>idiv</code></strong> — Integer Division</p>
+<p>The <code>idiv</code> instruction divides the contents of the 64 bit integer <strong>EDX:EAX</strong> &#40;constructed by <strong>viewing EDX as the most significant four bytes</strong> and <strong>EAX as the least significant four bytes</strong>&#41; by <strong>the specified operand value&#40;i.e. the parameter&#41;</strong>. <strong>The quotient result of the division is stored into EAX</strong>, while <strong>the remainder is placed in EDX</strong>.</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >idiv &lt;reg32&gt;
+  idiv &lt;mem&gt;</code></pre>
+<p><em>Examples</em></p>
+<p>idiv ebx  –- divide the contents of EDX:EAX by the contents of EBX. Place the quotient in EAX and the remainder in EDX.</p>
+<p><strong><code>and</code>, <code>or</code>, <code>xor</code></strong> — <em>Bitwise logical and</em>, <em>or</em> and <em>exclusive or</em></p>
+<p><em>These instructions perform the specified logical operation &#40;logical bitwise and, or, and exclusive or, respectively&#41; on their operands, placing <strong>the result in the first operand location</strong>.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >and &lt;reg&gt;,&lt;reg&gt;
+  and &lt;reg&gt;,&lt;mem&gt;
+  and &lt;mem&gt;,&lt;reg&gt;
+  and &lt;reg&gt;,&lt;con&gt;
+  and &lt;mem&gt;,&lt;con&gt;
+
+  or &lt;reg&gt;,&lt;reg&gt;
+  or &lt;reg&gt;,&lt;mem&gt;
+  or &lt;mem&gt;,&lt;reg&gt;
+  or &lt;reg&gt;,&lt;con&gt;
+  or &lt;mem&gt;,&lt;con&gt;
+
+  xor &lt;reg&gt;,&lt;reg&gt;
+  xor &lt;reg&gt;,&lt;mem&gt;
+  xor &lt;mem&gt;,&lt;reg&gt;
+  xor &lt;reg&gt;,&lt;con&gt;
+  xor &lt;mem&gt;,&lt;con&gt;</code></pre>
+<p><strong><code>not</code></strong> — Bitwise Logical Not</p>
+<p><strong>Logically negates</strong> the operand contents &#40;that is, flips all bit values in the operand&#41;.</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >not &lt;reg&gt;
+  not &lt;mem&gt;</code></pre>
+<p><em>Example</em></p>
+<p>not BYTE PTR &#91;var&#93; — negate all bits in the byte at the memory location <em>var</em></p>
+<p><strong><code>neg</code></strong> — Negate</p>
+<p><em>Performs the two&#39;s <strong>complement negation</strong> of the operand contents.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >neg &lt;reg&gt;
+  neg &lt;mem&gt;</code></pre>
+<p><em>Example</em></p>
+<p>neg eax — EAX → - EAX</p>
+<p><hr /> <strong><code>shl</code>, <code>shr</code></strong> — Shift Left, Shift Right</p>
+<p><em>These instructions <strong>shift the bits in their first operand&#39;s contents</strong> left and right, <strong>padding the resulting empty bit positions with zeros</strong>. The shifted operand can be shifted up to 31 places. The number of bits to shift is specified by the second operand, which can be either an 8-bit constant or <strong>the register CL</strong>. In either case, <strong>shifts counts of greater then 31 are performed modulo 32</strong>.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-asm >shl &lt;reg&gt;,&lt;con8&gt;
+  shl &lt;mem&gt;,&lt;con8&gt;
+  shl &lt;reg&gt;,&lt;cl&gt;
+  shl &lt;mem&gt;,&lt;cl&gt;
+
+  shr &lt;reg&gt;,&lt;con8&gt;
+  shr &lt;mem&gt;,&lt;con8&gt;
+  shr &lt;reg&gt;,&lt;cl&gt;
+  shr &lt;mem&gt;,&lt;cl&gt;</code></pre>
+<hr />
+<h3 id=control_flow_instructions ><a href="#control_flow_instructions">Control Flow Instructions</a></h3>
+<p>notation &lt;label&gt; to refer to labeled locations in the program text. <strong><code>jmp</code></strong> — Jump</p>
+<p>Transfers program control flow to the instruction at the memory location indicated by the operand.</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-asm >jmp &lt;label&gt;</code></pre>
+<p><em>Example</em></p>
+<pre><code class=language-asm >jmp begin  — Jump to the instruction labeled  begin.</code></pre>
+<p><strong><code>jcondition</code></strong> — Conditional Jump</p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >je &lt;label&gt; &#40;jump when equal&#41;
+  jne &lt;label&gt; &#40;jump when not equal&#41;
+  jz &lt;label&gt; &#40;jump when last result was zero&#41;
+  jg  &lt;label&gt; &#40;jump when greater than&#41;
+  jge &lt;label&gt; &#40;jump when greater than or equal to&#41;
+  jl &lt;label&gt; &#40;jump when less than&#41;
+  jle &lt;label&gt; &#40;jump when less than or equal to&#41;</code></pre>
+<p><strong><code>cmp</code></strong> — Compare</p>
+<p><em>Compare the values of the two specified operands, setting the condition codes in the machine status word appropriately. The <strong>result of the subtraction is discarded</strong>.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-asm >cmp &lt;reg&gt;,&lt;reg&gt;
+  cmp &lt;reg&gt;,&lt;mem&gt;
+  cmp &lt;mem&gt;,&lt;reg&gt;
+  cmp &lt;reg&gt;,&lt;con&gt;</code></pre>
+<p><strong><code>call</code></strong>,  <strong><code>ret</code></strong> — Subroutine call and return</p>
+<p><em>The <code>call</code> instruction first <strong>pushes</strong> the current code location onto the hardware supported stack in memory, and then performs an unconditional <strong>jump to the code location indicated by the label operand</strong>. Unlike the simple jump instructions, <strong>the call instruction saves the location to return to when the subroutine completes</strong>.</em></p>
+<p><em>The <code>ret</code>  instruction implements a subroutine return mechanism. This instruction first <strong>pops</strong> a code location off the hardware supported in-memory stack. It then performs an unconditional <strong>jump to the retrieved code location</strong>.</em></p>
+<p><em>Syntax</em></p>
+<pre><code class=language-julia >call &lt;label&gt;
+ret</code></pre>
+<h2 id=calling_convention ><a href="#calling_convention">Calling Convention</a></h2>
+<p><em>To allow separate programmers to share code and develop libraries for use by many programs, and to simplify the use of subroutines in general, programmers typically adopt a common <strong>calling convention</strong>. The calling convention is <strong>a protocol about how to call and return from routines</strong>.</em></p>
+<p><img src="/_img/stack-convention.png &quot;Stack during Subroutine Call&quot;" alt="Stack during Subroutine Call" /></p>
+<p>The image above depicts the contents of the stack during the execution of a subroutine with three parameters and three local variables. The cells depicted in the stack are 32-bit wide memory locations, thus the memory addresses of the cells are 4 bytes apart. The first parameter resides at an offset of 8 bytes from the base pointer. Above the parameters on the stack &#40;and below the base pointer&#41;, the call instruction placed the return address, thus leading to an extra 4 bytes of offset from the base pointer to the first parameter. When the ret instruction is used to return from the subroutine, it will jump to the return address stored on the stack. &#40;p.s. <em>ESP &#40;the stack pointer&#41;, EBP&#40;the base pointer&#41;</em>&#41;</p>
+<h4 id=caller_rules ><a href="#caller_rules">Caller Rules</a></h4>
+<p>To make a subrouting call, the caller should:</p>
+<ol>
+<li><p>Before calling a subroutine, the caller should save the contents of certain registers that are designated  <em>caller-saved</em>. The caller-saved registers are EAX, ECX, EDX. Since the called subroutine is <strong>allowed to modify these registers</strong>, if the caller relies on their values after the subroutine returns, the caller must push the values in these registers onto the stack &#40;so they can be restore after the subroutine returns&#41;.</p>
+
+<li><p>To pass parameters to the subroutine, <strong>push them onto the stack before the call</strong>. The parameters should <strong>be pushed in inverted order</strong> &#40;i.e. last parameter first&#41;. Since the stack grows down, the first parameter will be stored at the lowest address &#40;this inversion of parameters was historically used to allow functions to be passed a variable number of parameters&#41;.</p>
+
+<li><p>To call the subroutine, use the <code>call</code>  instruction. This instruction places the return address on top of the parameters on the stack, and branches to the subroutine code. This invokes the subroutine, which should <strong>follow the callee rules</strong> below.</p>
+
+</ol>
+<p>After the subroutine returns &#40;immediately following the <code>call</code> instruction&#41;, <strong>the caller can</strong> expect to <strong>find the return value of the subroutine in the register EAX</strong>. <em>To restore the machine state, the caller should:</em></p>
+<ol>
+<li><p><em>Remove the parameters from stack</em>. This restores the stack to its state before the call was performed.</p>
+
+<li><p><em>Restore the contents of caller-saved registers &#40;EAX, ECX, EDX&#41; by popping them off of the stack</em>. The caller can assume that no other registers were modified by the subroutine.</p>
+
+</ol>
+<p><strong>Example</strong></p>
+<pre><code class=language-julia >push &#91;var&#93; ; Push last parameter first
+	push 216   ; Push the second parameter
+	push eax   ; Push first parameter last
+
+	call _myFunc ; Call the function &#40;assume C naming&#41;
+
+	add esp, 12</code></pre>
+<p><strong>Note that</strong> after the call returns, the caller cleans up the stack using the add instruction. We have 12 bytes &#40;3 parameters * 4 bytes each&#41; on the stack, and the stack grows down. Thus, <strong>to get rid of the parameters, we can simply add 12 to the stack pointer</strong>.</p>
+<h4 id=callee_rules ><a href="#callee_rules">Callee Rules</a></h4>
+<p>The definition of the subroutine should adhere to the following rules at the beginning of the subroutine:</p>
+<ol>
+<li><p>Push the value of EBP onto the stack, and then copy the value of ESP into EBP using the following instructions: <code>push ebp</code> <code>mov  ebp, esp</code>  This initial action maintains the  <em>base pointer</em>, EBP. The base pointer is used by convention as a point of reference for finding parameters and local variables on the stack. When a subroutine is executing, the base pointer holds a copy of the stack pointer value from when the subroutine started executing. Parameters and local variables will always be located at known, constant offsets away from the base pointer value. We push the old base pointer value at the beginning of the subroutine so that we can later restore the appropriate base pointer value for the caller when the subroutine returns. Remember, the caller is not expecting the subroutine to change the value of the base pointer. We then move the stack pointer into EBP to obtain our point of reference for accessing parameters and local variables.</p>
+
+<li><p>Next, allocate local variables by making space on the stack. Recall, the stack grows down, so to make space on the top of the stack, the stack pointer should be decremented. The amount by which the stack pointer is decremented depends on the number and size of local variables needed. For example, if 3 local integers &#40;4 bytes each&#41; were required, the stack pointer would need to be decremented by 12 to make space for these local variables &#40;i.e.,  sub esp, 12&#41;. As with parameters, local variables will be located at known offsets from the base pointer.</p>
+
+<li><p>Next, save the values of the  <em>callee-saved</em>  registers that will be used by the function. To save registers, push them onto the stack. The callee-saved registers are EBX, EDI, and ESI &#40;ESP and EBP will also be preserved by the calling convention, <strong>but need not be pushed on the stack during this step</strong>&#41;.</p>
+
+</ol>
+<p>After these three actions are performed, the body of the subroutine may proceed. When the subroutine is returns, it must follow these steps:</p>
+<ol>
+<li><p>Leave the return value in EAX.</p>
+
+<li><p><strong>Restore the old values of any callee-saved registers &#40;EDI and ESI&#41; that were modified</strong>. The register contents are restored by popping them from the stack. The registers should be popped in the inverse order that they were pushed.</p>
+
+<li><p><strong>Deallocate local variables</strong>. The obvious way to do this might be to add the appropriate value to the stack pointer &#40;since the space was allocated by subtracting the needed amount from the stack pointer&#41;. In practice, a less error-prone way to deallocate the variables is to move the value in the base pointer into the stack pointer:  mov esp, ebp. This works because the base pointer always contains the value that the stack pointer contained immediately prior to the allocation of the local variables.</p>
+
+<li><p><strong>Immediately before returning, restore the caller&#39;s base pointer value</strong> by popping EBP off the stack. Recall that the first thing we did on entry to the subroutine was to push the base pointer to save its old value.</p>
+
+<li><p>Finally, <strong>return to the caller by executing a <code>ret</code>  instruction</strong>. This instruction will find and remove the appropriate return address from the stack.</p>
+
+</ol>
+<p><strong>Example</strong></p>
+<pre><code class=language-asm >.486
+.MODEL FLAT
+.CODE
+PUBLIC _myFunc
+_myFunc PROC
+  ; Subroutine Prologue
+  push ebp     ; Save the old base pointer value.
+  mov ebp, esp ; Set the new base pointer value.
+  sub esp, 4   ; Make room for one 4-byte local variable.
+  push edi     ; Save the values of registers that the function
+  push esi     ; will modify. This function uses EDI and ESI.
+  ; &#40;no need to save EBX, EBP, or ESP&#41;
+
+  ; Subroutine Body
+  mov eax, &#91;ebp&#43;8&#93;   ; Move value of parameter 1 into EAX
+  mov esi, &#91;ebp&#43;12&#93;  ; Move value of parameter 2 into ESI
+  mov edi, &#91;ebp&#43;16&#93;  ; Move value of parameter 3 into EDI
+
+  mov &#91;ebp-4&#93;, edi   ; Move EDI into the local variable
+  add &#91;ebp-4&#93;, esi   ; Add ESI into the local variable
+  add eax, &#91;ebp-4&#93;   ; Add the contents of the local variable
+                     ; into EAX &#40;final result&#41;
+
+  ; Subroutine Epilogue
+  pop esi      ; Recover register values
+  pop  edi
+  mov esp, ebp ; Deallocate local variables
+  pop ebp ; Restore the caller&#39;s base pointer value
+  ret
+_myFunc ENDP
+END</code></pre>
+<p>The subroutine prologue performs the standard actions of saving a snapshot of the stack pointer in EBP &#40;the base pointer&#41;, allocating local variables by decrementing the stack pointer, and saving register values on the stack.</p>
+<p>In the body of the subroutine we can see the use of the base pointer. Both parameters and local variables are located at constant offsets from the base pointer for the duration of the subroutines execution. In particular, we notice that since parameters were placed onto the stack before the subroutine was called, they are always located below the base pointer &#40;i.e. at higher addresses&#41; on the stack. The first parameter to the subroutine can always be found at memory location &#91;EBP&#43;8&#93;, the second at &#91;EBP&#43;12&#93;, the third at &#91;EBP&#43;16&#93;. Similarly, since local variables are allocated after the base pointer is set, they always reside above the base pointer &#40;i.e. at lower addresses&#41; on the stack. In particular, the first local variable is always located at &#91;EBP-4&#93;, the second at &#91;EBP-8&#93;, and so on. This conventional use of the base pointer allows us to quickly identify the use of local variables and parameters within a function body.</p>
+<p>The function epilogue is basically a mirror image of the function prologue. The caller&#39;s register values are recovered from the stack, the local variables are deallocated by resetting the stack pointer, the caller&#39;s base pointer value is recovered, and the ret instruction is used to return to the appropriate code location in the caller.</p>
+<h2 id=reference ><a href="#reference">Reference</a></h2>
+<p><a href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html ">x86 Assembly Guide</a></p>
+</div>  </main>
+  
+    </div>  
+    
+    
+        <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
+
+    
+    <footer>
+      &copy; Alex.
+      Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>
+      and <a href="https://julialang.org">The Julia Programming Language</a>.
+    </footer>

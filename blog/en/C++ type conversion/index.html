@@ -1,0 +1,115 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/ocean.min.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <title>Alex's Blog | C++ type conversion</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #ffffff;" href="https://github.com/abhishalya"><i class="fab fa-github"></i></a> <a style="color: #ffffff;" href="https://www.linkedin.com/in/abhishalya/"><i class="fab fa-linkedin"></i></a> <a style="color: #ffffff;" href="https://twitter.com/abhishalya"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><h2 id=string_char_const_char_int_type_conversion ><a href="#string_char_const_char_int_type_conversion"><strong>string, char&#42;, const char&#42;, int type conversion</strong></a></h2> <h3 id=a_hrefhttpsstackoverflowcomquestions7663709how-can-i-convert-a-stdstring-to-intstring_to_intfloatdouble ><a href="#a_hrefhttpsstackoverflowcomquestions7663709how-can-i-convert-a-stdstring-to-intstring_to_intfloatdouble"><a href="https://stackoverflow.com/questions/7663709/how-can-i-convert-a-stdstring-to-int">string to int/float/double</a></a></h3> <pre><code class="cpp hljs"><span class=hljs-comment >//older version</span>
+    atoi( str.c_str() )
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-comment >// C++11</span>
+    <span class=hljs-comment >// string -&gt; integer</span>
+    <span class=hljs-keyword >int</span> i = <span class=hljs-built_in >std</span>::stoi(s);
+    
+    <span class=hljs-comment >// string -&gt; float</span>
+    <span class=hljs-keyword >float</span> f = <span class=hljs-built_in >std</span>::stof(s);
+    
+    <span class=hljs-comment >// string -&gt; double </span>
+    <span class=hljs-keyword >double</span> d = <span class=hljs-built_in >std</span>::stod(s);
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;sstream&gt;</span></span>
+    <span class=hljs-comment >// string -&gt; integer</span>
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >istringstream</span> ( str ) &gt;&gt; i;
+    
+    <span class=hljs-comment >// string -&gt; float</span>
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >istringstream</span> ( str ) &gt;&gt; f;
+    
+    <span class=hljs-comment >// string -&gt; double </span>
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >istringstream</span> ( str ) &gt;&gt; d;
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-comment >// Boost&#x27;s lexical_cast</span>
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;boost/lexical_cast.hpp&gt;</span></span>
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;string&gt;</span></span>
+    
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> str;
+    
+    <span class=hljs-keyword >try</span> {
+    	<span class=hljs-keyword >int</span> i = boost::lexical_cast&lt;<span class=hljs-keyword >int</span>&gt;( str.c_str());
+    	<span class=hljs-keyword >float</span> f = boost::lexical_cast&lt;<span class=hljs-keyword >int</span>&gt;( str.c_str());
+    	<span class=hljs-keyword >double</span> d = boost::lexical_cast&lt;<span class=hljs-keyword >int</span>&gt;( str.c_str());
+    	} <span class=hljs-keyword >catch</span>( boost::bad_lexical_cast <span class=hljs-keyword >const</span>&amp;amp;amp; ) {
+    		<span class=hljs-comment >// Error management</span>
+    }</code></pre> <h3 id=a_hrefhttpsstackoverflowcomquestions7352099stdstring-to-charstringto_char_or_const_char ><a href="#a_hrefhttpsstackoverflowcomquestions7352099stdstring-to-charstringto_char_or_const_char"><a href="https://stackoverflow.com/questions/7352099/stdstring-to-char">stringto char&#42; or const char&#42;</a></a></h3> <p><a href="https://stackoverflow.com/questions/347949/how-to-convert-a-stdstring-to-const-char-or-char/4152881#4152881">https://stackoverflow.com/questions/347949/how-to-convert-a-stdstring-to-const-char-or-char/4152881#4152881</a></p> <pre><code class="cpp hljs"><span class=hljs-function ><span class=hljs-keyword >char</span>* <span class=hljs-title >strtoch</span><span class=hljs-params >(<span class=hljs-built_in >string</span> str)</span></span>{
+        <span class=hljs-keyword >char</span> *cstr = <span class=hljs-keyword >new</span> <span class=hljs-keyword >char</span>[str.length() + <span class=hljs-number >1</span>];
+        <span class=hljs-built_in >strcpy</span>(cstr, str.c_str());
+        <span class=hljs-keyword >return</span> cstr;
+    }
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> x = <span class=hljs-string >&quot;hello world&quot;</span>;
+    <span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span>* p_c_str = x.c_str();
+    <span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span>* p_data = x.data();
+   
+    <span class=hljs-keyword >char</span>* p_writable_data = x.data(); <span class=hljs-comment >// for non-const x from C++17 </span>
+    <span class=hljs-keyword >char</span>* p_x0_rw = &amp;x[<span class=hljs-number >0</span>];  <span class=hljs-comment >// compiles if x is not const...</span>
+    
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-function ><span class=hljs-built_in >std</span>::<span class=hljs-built_in >vector</span>&lt;<span class=hljs-keyword >char</span>&gt; <span class=hljs-title >cstr</span><span class=hljs-params >(str.c_str(), str.c_str() + str.size() + <span class=hljs-number >1</span>)</span></span>;
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> str;
+    <span class=hljs-function ><span class=hljs-built_in >std</span>::<span class=hljs-built_in >vector</span>&lt;<span class=hljs-keyword >char</span>&gt; <span class=hljs-title >writable</span><span class=hljs-params >(str.begin(), str.end())</span></span>;
+    writable.push_back(<span class=hljs-string >&#x27;\0&#x27;</span>);</code></pre> <h3 id=char_to_int ><a href="#char_to_int">char&#42; to int</a></h3> <pre><code class="cpp hljs"><span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;stdlib.h&gt;</span></span>
+    
+    <span class=hljs-function ><span class=hljs-keyword >int</span> <span class=hljs-title >atoi</span><span class=hljs-params >(<span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span> *nptr)</span></span>;
+    <span class=hljs-function ><span class=hljs-keyword >long</span> <span class=hljs-title >atol</span><span class=hljs-params >(<span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span> *nptr)</span></span>;
+    <span class=hljs-function ><span class=hljs-keyword >long</span> <span class=hljs-keyword >long</span> <span class=hljs-title >atoll</span><span class=hljs-params >(<span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span> *nptr)</span></span>;
+    <span class=hljs-function ><span class=hljs-keyword >long</span> <span class=hljs-keyword >long</span> <span class=hljs-title >atoq</span><span class=hljs-params >(<span class=hljs-keyword >const</span> <span class=hljs-keyword >char</span> *nptr)</span></span>;</code></pre> <h3 id=char_to_int__2 ><a href="#char_to_int__2">char&#42; to int</a></h3> <pre><code class="cpp hljs"><span class=hljs-comment >// read the value as an ascii code</span>
+    <span class=hljs-keyword >char</span> a = <span class=hljs-string >&#x27;a&#x27;</span>;
+    <span class=hljs-comment >// to</span>
+    <span class=hljs-keyword >int</span> ia = (<span class=hljs-keyword >int</span>)a; 
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-keyword >int</span> ia = a;
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-keyword >int</span> num = <span class=hljs-keyword >static_cast</span>&lt;<span class=hljs-keyword >int</span>&gt;(letter); <span class=hljs-comment >// if letter=&#x27;a&#x27;, num=97</span>
+    <span class=hljs-comment >//------------------------------------------//</span>
+    <span class=hljs-comment >//convert the character &#x27;0&#x27; -&gt; 0, &#x27;1&#x27; -&gt; 1, etc</span>
+    <span class=hljs-keyword >char</span> a = <span class=hljs-string >&#x27;4&#x27;</span>;
+    <span class=hljs-keyword >int</span> ia = a - <span class=hljs-string >&#x27;0&#x27;</span>; <span class=hljs-comment >// a - &#x27;0&#x27; is equivalent to ((int)a) - ((int)&#x27;0&#x27;)</span></code></pre> <h3 id=a_hrefhttpsstackoverflowcomquestions4629050convert-an-int-to-ascii-characterint_to_char ><a href="#a_hrefhttpsstackoverflowcomquestions4629050convert-an-int-to-ascii-characterint_to_char"><a href="https://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character">int to char</a></a></h3> <pre><code class="cpp hljs"><span class=hljs-keyword >int</span> i = <span class=hljs-number >49</span>;
+    <span class=hljs-keyword >char</span> c = i; <span class=hljs-comment >// c=&#x27;1&#x27; 49=1</span>
+    <span class=hljs-keyword >char</span> c = (<span class=hljs-keyword >char</span>)i; <span class=hljs-comment >// c=&#x27;1&#x27; 49=1</span>
+    <span class=hljs-keyword >char</span> c = <span class=hljs-string >&#x27;0&#x27;</span>+i; <span class=hljs-comment >// c=&#x27;a&#x27; 48+49=97=a</span></code></pre> <h3 id=a_hrefhttpwwwcpluspluscomreferencecstdlibitoakwitoaint_to_charcstring ><a href="#a_hrefhttpwwwcpluspluscomreferencecstdlibitoakwitoaint_to_charcstring"><a href="http://www.cplusplus.com/reference/cstdlib/itoa/?kw&#61;itoa">int to char&#42;/cstring</a></a></h3> <pre><code class="cpp hljs"><span class=hljs-keyword >int</span> i = <span class=hljs-number >49</span>;
+    <span class=hljs-keyword >char</span> buffer[<span class=hljs-number >33</span>];
+    <span class=hljs-keyword >char</span> *c = itoa(i,buffer,<span class=hljs-number >10</span>);
+``
+### [<span class=hljs-keyword >int</span> to <span class=hljs-built_in >string</span>](https:<span class=hljs-comment >//stackoverflow.com/questions/5590381/easiest-way-to-convert-int-to-string-in-c)</span>
+
+```cpp
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;string&gt; </span></span>
+    
+    <span class=hljs-keyword >int</span> i = <span class=hljs-number >49</span>;
+    
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> s = <span class=hljs-built_in >std</span>::to_string(i);
+    
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-keyword >auto</span> s = <span class=hljs-built_in >std</span>::to_string(i);
+    
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-keyword >char</span> *intStr = itoa(i);
+    <span class=hljs-built_in >string</span> str = <span class=hljs-built_in >string</span>(intStr);
+    
+    <span class=hljs-comment >// or</span>
+    
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;sstream&gt;</span></span>
+    
+    <span class=hljs-built_in >stringstream</span> ss;
+    ss &lt;&lt; a;
+    <span class=hljs-built_in >string</span> str = ss.str();
+    
+    <span class=hljs-comment >// or</span>
+    
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;sstream&gt;</span></span>
+    
+    <span class=hljs-keyword >template</span> &lt;<span class=hljs-keyword >typename</span> T&gt;
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> NumberToString ( T Number )
+    {
+       <span class=hljs-built_in >std</span>::<span class=hljs-built_in >ostringstream</span> ss;
+       ss &lt;&lt; Number;
+       <span class=hljs-keyword >return</span> ss.str();
+    }
+    <span class=hljs-comment >// or</span>
+    <span class=hljs-meta >#<span class=hljs-meta-keyword >include</span> <span class=hljs-meta-string >&lt;boost/lexical_cast.hpp&gt;</span></span>
+    <span class=hljs-keyword >int</span> num = <span class=hljs-number >4</span>;
+    <span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span> str = boost::lexical_cast&lt;<span class=hljs-built_in >std</span>::<span class=hljs-built_in >string</span>&gt;(num);</code></pre> </div> </main> </div> <footer> &copy; Alex. Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and <a href="https://julialang.org">The Julia Programming Language</a>. </footer>

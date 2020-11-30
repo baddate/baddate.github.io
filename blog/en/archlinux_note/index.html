@@ -1,0 +1,272 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/ocean.min.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <title>Alex's Blog | Archlinux Install & Config</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #ffffff;" href="https://github.com/abhishalya"><i class="fab fa-github"></i></a> <a style="color: #ffffff;" href="https://www.linkedin.com/in/abhishalya/"><i class="fab fa-linkedin"></i></a> <a style="color: #ffffff;" href="https://twitter.com/abhishalya"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><h2 id=arch_linux_config_backlight ><a href="#arch_linux_config_backlight">Arch Linux config backlight</a></h2> <h3 id=get_your_graphics_card_folder ><a href="#get_your_graphics_card_folder">Get your graphics card folder</a></h3> <pre><code class="julia hljs">ls /sys/class/backlight/</code></pre>
+<p><em>note: the folder name depends on your graphics card</em></p>
+<h3 id=change_the_work_directory ><a href="#change_the_work_directory">Change the work directory</a></h3>
+<pre><code class="julia hljs">cd /sys/class/backlight/intel_backlight <span class=hljs-comment >#maybe your folder name is another.</span></code></pre>
+<h3 id=edit_the_file_named_brightness ><a href="#edit_the_file_named_brightness">Edit the file named <code>brightness</code></a></h3>
+<p><em>note: you can <code>cat</code> the <code>max_brightness</code> to get the max brightness</em></p>
+<pre><code class="julia hljs">vim brightness</code></pre>
+<hr />
+<h2 id=arch_linux_config_touchpad ><a href="#arch_linux_config_touchpad">Arch Linux config touchpad</a></h2>
+<blockquote>
+<p>Driver: libinput</p>
+</blockquote>
+<ol>
+<li><p>Open the config file</p>
+
+</ol>
+<pre><code class="julia hljs">vim /usr/share/X11/xorg.conf.d/<span class=hljs-number >40</span>-libinput.conf</code></pre>
+<p><em>note: maybe you can edit <code>/etc/X11/xorg.conf.d/40-libinput.conf</code> after running <code>ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf</code>, but I haven&#39;t try it.</em></p>
+<ol start=2 >
+<li><p>Edit the section that contains <code>MatchIsTouchpad &quot;on&quot;</code> and add the following code:</p>
+
+</ol>
+<pre><code class="julia hljs">Option <span class=hljs-string >&quot;Tapping&quot;</span> <span class=hljs-string >&quot;on&quot;</span> <span class=hljs-comment ># tap-to-click</span>
+
+Option <span class=hljs-string >&quot;ClickMethod&quot;</span> <span class=hljs-string >&quot;clickfinger&quot;</span> <span class=hljs-comment ># two-finger click is a context click and three-finger click is a middle click</span>
+
+Option <span class=hljs-string >&quot;NaturalScrolling&quot;</span> <span class=hljs-string >&quot;true&quot;</span> <span class=hljs-comment ># reverse scrolling</span></code></pre>
+<hr />
+<h2 id=linux_running_python_scripts_in_the_background ><a href="#linux_running_python_scripts_in_the_background">Linux running python scripts in the background</a></h2>
+<p>Run <code>nohup python filename.py &gt;filename.out 2&gt;&amp;1 &amp;</code></p>
+<p><em>note: <code>filename.out</code> is a log file</em></p>
+<p>For details, you can refer the <a href="https://www.gnu.org/software/coreutils/manual/html_node/nohup-invocation.html#nohup-invocation">gnu coreutils</a></p>
+<h2 id=linux_kill_python_scripts ><a href="#linux_kill_python_scripts">Linux kill python scripts</a></h2>
+<pre><code class="julia hljs">pgrep -f blabla.py <span class=hljs-comment ># will give you its pid</span>
+
+  
+
+pkill -<span class=hljs-number >9</span> -f blabla.py <span class=hljs-comment ># kills the matching pid</span></code></pre>
+<hr />
+<h2 id=arch_linux_install_mysql ><a href="#arch_linux_install_mysql">Arch Linux install MySQL</a></h2>
+<p>Since 2013 MariaDB is Arch Linux&#39;s default implementation of MySQL. So we can easily install <strong>mariadb</strong> with <code>pacman</code>. Of course, you still can install mysql referring to <a href="https://dev.mysql.com/doc/refman/5.7/en/installing.html">official guide</a>.</p>
+<p>I choose <em>mariadb</em> due to convenience.</p>
+<h3 id=step_1_install_the_package ><a href="#step_1_install_the_package">Step 1: Install the package</a></h3>
+<p>Execute this command: <code>sudo pacman -S mariadb</code></p>
+<h3 id=step_2_basical_config ><a href="#step_2_basical_config">Step 2: Basical config</a></h3>
+<p>Run the following command as <strong>root</strong> before starting the mariadb:</p>
+<pre><code class="julia hljs">mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</code></pre>
+<h3 id=step_3_start_mariadb ><a href="#step_3_start_mariadb">Step 3: Start mariadb</a></h3>
+<pre><code class="julia hljs">systemctl start mariadb
+
+mysql_secure_installation //the mariadb default passwd is none, and you can set your passwd
+
+systemctl restart mariadb</code></pre>
+<h3 id=step_4_log_in ><a href="#step_4_log_in">Step 4: Log in</a></h3>
+<p>To log in as <code>root</code> on the MySQL server, use the command: <code>mysql -u root -p</code></p>
+<hr />
+<h2 id=arch_linux_disable_beep ><a href="#arch_linux_disable_beep">Arch Linux disable beep</a></h2>
+<p>i tried this <a href="https://wiki.archlinux.org/index.php/PC_speaker">arch wiki</a>, but it useless. so I tried this method, luckily, it works.</p>
+<ul>
+<li><p>Log in as &#39;root&#39;</p>
+
+<li><p>Run:</p>
+
+</ul>
+<code>echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf</code>
+<ul>
+<li><p>Reboot</p>
+
+</ul>
+<hr />
+<h2 id=arch_linux_reset_root_passwd ><a href="#arch_linux_reset_root_passwd">Arch Linux reset root passwd</a></h2>
+<p>&#40;https://www.ostechnix.com/how-to-reset-or-recover-root-user-password-in-linux/&#41;</p>
+<p>i <strong>haven&#39;t</strong> try it, so i don&#39;t know if it works.</p>
+<hr />
+<h2 id=arch_linux_installation_guide_on_hp_pavilion ><a href="#arch_linux_installation_guide_on_hp_pavilion">Arch Linux Installation Guide on HP Pavilion</a></h2>
+<p>My computer details:</p>
+<blockquote>
+<p>Computer: HP Pavilion laptop</p>
+</blockquote>
+<blockquote>
+<p>CPU: Intel i5-8250U</p>
+</blockquote>
+<blockquote>
+<p>GPU: NVIDIA MX150</p>
+</blockquote>
+<h2 id=pre-installation ><a href="#pre-installation">Pre-installation</a></h2>
+<h3 id=verify_the_boot_mode ><a href="#verify_the_boot_mode">Verify the boot mode</a></h3>
+<p>To verify if it is UEFI mode, use this command:</p>
+<code>ls /sys/firmware/efi/efivars</code>
+<p>If it show some details, the system is UEFI. Otherwise, the system may be booted in BIOS or CSM mode.</p>
+<h3 id=connect_to_the_internet ><a href="#connect_to_the_internet">Connect to the internet</a></h3>
+<p>Because I&#39;m using HP laptop. so i just need connect to wifi with this command <code>wifi-menu</code>. If you want to connect to wired network, reference official guide about <a href="https://wiki.archlinux.org/index.php/Dhcpcd#Installation">dhcpcd</a></p>
+<p>You can check this connection by <code>ping www.archlinux.org</code>.</p>
+<h3 id=update_the_system_clock ><a href="#update_the_system_clock">Update the system clock</a></h3>
+<p>Use <code>timedatectl set-ntp true</code> to ensure the system clock is accurate, to check the service status, use <code>timedatectl status</code>.</p>
+<h3 id=partition_the_disks ><a href="#partition_the_disks">Partition the disks</a></h3>
+<p>Use <code>lsblk</code> or <code>fdisk -l</code> to vertified device.</p>
+<p>First, run <code>fdisk /dev/sda</code>（note: if your device is /dev/sdX, run <code>fdisk /dev/sdX</code>&#41;, and you will enter the <em>fdisk</em> dialog.</p>
+<p>Next enter <code>m</code> you will get help details. If you use a separate hard drive. enter <code>g</code> to format it as GPT.</p>
+<p>Next, enter <code>n</code> to create new partitions, enter <code>w</code> to exit if you finished.</p>
+<p>This is my partition layout:</p>
+<p>Mount points | Partition | Partition Type | Size</p>
+<p>|––|–-|–-|–-|</p>
+<p>/mnt | /dev/sda3 | linux filesystem |50G</p>
+<p>/mnt/boot | /dev/sda2 | linux filesystem|500M</p>
+<p>/mnt/boot/EFI | /dev/sda1 | EFI system partition|500M</p>
+<p>&#91;swap&#93; | /dev/sda4 | linux swap|16G</p>
+<p>/mnt/home | /dev/sda5|linux filesystem|300G</p>
+<h3 id=format_the_partitions ><a href="#format_the_partitions">Format the partitions</a></h3>
+<p>If the EFI partition is on /dev/sdX0, run:</p>
+<code>mkfs.fat -F32 /dev/sdX0</code>
+<p>If the root partition is on* /dev/sdX1* and will contain the ext4 file system, run:</p>
+<code>mkfs.ext4 /dev/sdX1</code>
+<p>If you created a partition for swap, initialize it with mkswap:</p>
+<pre><code class="julia hljs">mkswap /dev/sdX2
+
+swapon /dev/sdaX2</code></pre>
+<p>Run these commands if you use my layout:</p>
+<pre><code class="julia hljs">mkfs.fat -F32 /dev/sda1
+
+mkfs.ext4 /dev/sda2
+
+mkfs.ext4 /dev/sda3
+
+mkfs.ext4 /dev/sda5
+
+mkswap /dev/sda4
+
+swapon /dev/sda4</code></pre>
+<h3 id=mount_the_file_systems ><a href="#mount_the_file_systems">Mount the file systems</a></h3>
+<p>Run these commands if you use my layout:</p>
+<pre><code class="julia hljs">mount /dev/sda3 /mnt
+
+mkdir /mnt/boot
+
+mount /dev/sda2 /mnt/boot
+
+mkdir /mnt/boot/EFI
+
+mount /dev/sda1 /mnt/EFI
+
+mkdir /mnt/home
+
+mount /dev/sda5 /mnt/home</code></pre>
+<h2 id=installation ><a href="#installation">Installation</a></h2>
+<h3 id=select_mirrors ><a href="#select_mirrors">Select mirrors</a></h3>
+<ul>
+<li><p>Open mirrorlist file by <code>nano /etc/pacman.d/mirrorlist</code></p>
+
+<li><p>Uncomment your selected server.</p>
+
+<li><p>save changes</p>
+
+</ul>
+<h3 id=install_the_base_packages ><a href="#install_the_base_packages">Install the base packages</a></h3>
+<p>Use <code>pacstrap /mnt base base-devel</code></p>
+<h2 id=configure_the_system ><a href="#configure_the_system">Configure the system</a></h2>
+<h3 id=generate_an_fstab_file ><a href="#generate_an_fstab_file">Generate an fstab file</a></h3>
+<ul>
+<li><p>Use <code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
+
+<li><p>Check it in case of errors: <code>cat /mnt/etc/fstab</code></p>
+
+</ul>
+<h3 id=into_new_system ><a href="#into_new_system">Into new system</a></h3>
+<p>Run <code>arch-chroot /mnt</code></p>
+<h3 id=timezone_and_location ><a href="#timezone_and_location">Timezone and Location</a></h3>
+<ul>
+<li><p>Set Timezone:</p>
+
+</ul>
+<code>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime</code>
+<ul>
+<li><p>Set the hardware clock:</p>
+
+</ul>
+<code>hwclock --systohc</code>
+<ul>
+<li><p>Set location</p>
+
+</ul>
+<ol>
+<li><p>Uncomment en_US.UTF-8 UTF-8 and other needed locales in <strong>/etc/locale.gen</strong>, and generate it:</p>
+
+</ol>
+<pre><code class="julia hljs">nano /etc/locale.gen
+
+locale-gen</code></pre>
+<p>By the way, the new system doesn&#39;t have <code>vim</code>.</p>
+<ol start=2 >
+<li><p>Create the <code>locale.conf</code> and set <code>LANG</code>variable:</p>
+
+</ol>
+<pre><code class="julia hljs">nano /etc/locale.conf
+
+LANG= en_US.UTF-<span class=hljs-number >8</span> UTF-<span class=hljs-number >8</span></code></pre>
+<h3 id=network_config ><a href="#network_config">Network Config</a></h3>
+<ul>
+<li><p>Create the <em>hostname</em> file and enter your hostname: <code>nano /etc/hostname</code>.</p>
+
+<li><p>Add matching entries to <em>hosts</em>:</p>
+
+</ul>
+<pre><code class="julia hljs"><span class=hljs-number >127.0</span><span class=hljs-number >.0</span><span class=hljs-number >.1</span> localhost
+
+::<span class=hljs-number >1</span> localhost
+
+<span class=hljs-number >127.0</span><span class=hljs-number >.1</span><span class=hljs-number >.1</span> myhostname.localdomain myhostname</code></pre>
+<h3 id=set_root_password ><a href="#set_root_password">Set root password</a></h3>
+<p>Run <code>passwd</code></p>
+<h3 id=enable_microcode_updates ><a href="#enable_microcode_updates">Enable microcode updates</a></h3>
+<pre><code class="julia hljs">pacman -S intel-ucode <span class=hljs-comment ># for intel CPU</span>
+
+pacman -S amd-ucode <span class=hljs-comment ># for amd CPU</span></code></pre>
+<h3 id=install_and_set_bootloader ><a href="#install_and_set_bootloader">Install and set Bootloader</a></h3>
+<p>I use <a href="https://en.wikipedia.org/wiki/GNU_GRUB">grub</a>, so:</p>
+<ul>
+<li><p>Install related packages:</p>
+
+</ul>
+<code>pacman -S grub dosfstools efibootmgr</code>
+<ul>
+<li><p>Install grub</p>
+
+</ul>
+<code>grub-install --target&#61;x86_64-efi --efi-directory&#61;/boot/EFI --recheck</code>
+<ul>
+<li><p>Use the grub-mkconfig tool to generate /boot/grub/grub.cfg:</p>
+
+</ul>
+<code>grub-mkconfig -o /boot/grub/grub.cfg</code>
+<h3 id=install_wireless_lan_tools ><a href="#install_wireless_lan_tools">Install Wireless LAN tools</a></h3>
+<p>I use <code>wifi-menu</code> to connect to wifi, so I need this packages:</p>
+<code>pacman -S wpa_supplicant dialog iw</code>
+<h3 id=add_a_user ><a href="#add_a_user">Add a user</a></h3>
+<ul>
+<li><p>Add a user</p>
+
+</ul>
+<code>useradd -m -g users -s /bin/bash username</code>
+<ul>
+<li><p>Set password for user</p>
+
+</ul>
+<code>passwd username</code>
+<ul>
+<li><p>Privilege escalation&#40;sudo&#41;</p>
+
+</ul>
+<p><code>nano /etc/sudoers</code> and add <code>username ALL&#61;&#40;ALL&#41; ALL</code> below <code>root ALL&#61;&#40;ALL&#41; ALL</code></p>
+<h2 id=post-installation ><a href="#post-installation">Post-Installation</a></h2>
+<h3 id=install_display_server ><a href="#install_display_server">Install display server</a></h3>
+<p>Run the minimal command: <code>pacman -S xorg-server</code>.</p>
+<h3 id=install_display_driver ><a href="#install_display_driver">Install display driver</a></h3>
+<p>Because I use<em>NVIDIA MX150</em> graphics card, I use this <code>xf86-video-nouveau</code>driver. For details you can referrence <a href="https://wiki.archlinux.org/index.php/NVIDIA">this</a>. If you use <em>amd card</em>, you can read <a href="https://wiki.archlinux.org/index.php/Xorg#AMD">this</a></p>
+<hr />
+<p><strong>Thank you for reading&#33;</strong></p>
+<p>I will continue to update this article later if I find something.</p>
+</div>  </main>
+  
+    </div>  
+    
+    
+        
+
+
+    
+    <footer>
+      &copy; Alex.
+      Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>
+      and <a href="https://julialang.org">The Julia Programming Language</a>.
+    </footer>

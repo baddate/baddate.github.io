@@ -1,0 +1,29 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/ocean.min.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <title>Alex's Blog | 206. Reverse Linked List</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #ffffff;" href="https://github.com/abhishalya"><i class="fab fa-github"></i></a> <a style="color: #ffffff;" href="https://www.linkedin.com/in/abhishalya/"><i class="fab fa-linkedin"></i></a> <a style="color: #ffffff;" href="https://twitter.com/abhishalya"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><p><strong>problem description:</strong></p> <p><a href="https://leetcode.com/problems/reverse-linked-list/">https://leetcode.com/problems/reverse-linked-list/</a></p> <p><strong>thought:</strong></p> <p>iteration solutions:</p> <p>initial two pointers&#40;<code>prev</code>&amp;<code>cur</code>&#41; as <code>NULL</code>, <code>head-&gt;next</code> for iteration.</p> <p>reversing <code>head</code> and iteration.</p> <p><strong>solution:</strong></p> <h2 id=iteration ><a href="#iteration">iteration</a></h2> <h3 id=c ><a href="#c">C&#43;&#43;</a></h3> <pre><code class="cpp hljs"><span class=hljs-class ><span class=hljs-keyword >class</span> <span class=hljs-title >Solution</span> {</span>
+<span class=hljs-keyword >public</span>:
+    <span class=hljs-function >ListNode* <span class=hljs-title >reverseList</span><span class=hljs-params >(ListNode* head)</span> </span>{
+        ListNode* prev=<span class=hljs-literal >NULL</span>;
+        ListNode* cur;
+        <span class=hljs-keyword >while</span>(head!=<span class=hljs-literal >NULL</span>){
+            cur=head-&gt;next;
+            head-&gt;next=prev;
+            prev=head;
+            head=cur;
+        }
+        <span class=hljs-keyword >return</span> prev;
+    }
+};</code></pre> <h3 id=python ><a href="#python">Python</a></h3> <pre><code class="py hljs"><span class=hljs-class ><span class=hljs-keyword >class</span> <span class=hljs-title >Solution</span>:</span>
+    <span class=hljs-function ><span class=hljs-keyword >def</span> <span class=hljs-title >reverseList</span>(<span class=hljs-params >self, head: ListNode</span>) -&gt; ListNode:</span>
+        cur,prev=head,<span class=hljs-literal >None</span>
+        <span class=hljs-keyword >while</span> cur:
+            cur.<span class=hljs-built_in >next</span>,prev,cur=prev,cur,cur.<span class=hljs-built_in >next</span>
+        <span class=hljs-keyword >return</span> prev</code></pre> <h2 id=recursion ><a href="#recursion">recursion</a></h2> <h3 id=c__2 ><a href="#c__2">C&#43;&#43;</a></h3> <pre><code class="cpp hljs"><span class=hljs-class ><span class=hljs-keyword >class</span> <span class=hljs-title >Solution</span> {</span>
+<span class=hljs-keyword >public</span>:
+    <span class=hljs-function >ListNode* <span class=hljs-title >reverseList</span><span class=hljs-params >(ListNode* head)</span> </span>{
+        <span class=hljs-keyword >if</span>(head==<span class=hljs-literal >NULL</span>||head-&gt;next == <span class=hljs-literal >NULL</span>)
+            <span class=hljs-keyword >return</span> head;
+        ListNode* cur = reverseList(head-&gt;next);
+        head-&gt;next-&gt;next = head;
+        head-&gt;next = <span class=hljs-literal >NULL</span>;
+        <span class=hljs-keyword >return</span> cur;
+    }
+};</code></pre> </div> </main> </div> <footer> &copy; Alex. Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and <a href="https://julialang.org">The Julia Programming Language</a>. </footer>

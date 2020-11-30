@@ -1,0 +1,21 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/ocean.min.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <title>Alex's Blog | How to prettify git log output</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #ffffff;" href="https://github.com/abhishalya"><i class="fab fa-github"></i></a> <a style="color: #ffffff;" href="https://www.linkedin.com/in/abhishalya/"><i class="fab fa-linkedin"></i></a> <a style="color: #ffffff;" href="https://twitter.com/abhishalya"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><h3 id=4_formats ><a href="#4_formats">4 formats</a></h3> <pre><code class="bash hljs">git <span class=hljs-built_in >log</span> --color --date=format:<span class=hljs-string >&#x27;%Y-%m-%d %H:%M:%S&#x27;</span> --pretty=format:<span class=hljs-string >&#x27;%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset&#x27;</span> --abbrev-commit
+
+git <span class=hljs-built_in >log</span> --color --date=format:<span class=hljs-string >&#x27;%Y-%m-%d %H:%M:%S&#x27;</span> --pretty=format:<span class=hljs-string >&#x27;%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27;</span> --abbrev-commit
+
+git <span class=hljs-built_in >log</span> --color --<span class=hljs-built_in >stat</span> --date=format:<span class=hljs-string >&#x27;%Y-%m-%d %H:%M:%S&#x27;</span> --pretty=format:<span class=hljs-string >&#x27;%C(cyan)%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset&#x27;</span> --abbrev-commit
+
+git <span class=hljs-built_in >log</span> --graph --date=format:<span class=hljs-string >&#x27;%Y-%m-%d %H:%M:%S&#x27;</span> --pretty=format:<span class=hljs-string >&#x27;%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset&#x27;</span> --abbrev-commit</code></pre> <h3 id=config_with_alias ><a href="#config_with_alias">Config with alias</a></h3> <p><strong>For example:</strong></p> <p><em>use 4th format.</em></p> <pre><code class="bash hljs">git config --global alias.logs <span class=hljs-string >&quot;log --graph --date=format:&#x27;%Y-%m-%d %H:%M:%S&#x27; --pretty=format:&#x27;%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit&quot;</span></code></pre>
+</div>  </main>
+  
+    </div>  
+    
+    
+        
+
+
+    
+    <footer>
+      &copy; Alex.
+      Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>
+      and <a href="https://julialang.org">The Julia Programming Language</a>.
+    </footer>
