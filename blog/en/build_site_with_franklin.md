@@ -40,7 +40,7 @@ Last but not least, Franklin.jl has many features:
 ```julia
 julia> using Franklin
 julia> newsite("mySite", template="pure-sm")
-- Website folder generated at "mySite" (now the current directory).
+✓ Website folder generated at "mySite" (now the current directory).
 → Use serve() from Franklin to see the website in your browser.
 ```
 Once you excuted the command above, this Julia REPL workspace will be in your site folder.
@@ -51,7 +51,7 @@ Once you excuted the command above, this Julia REPL workspace will be in your si
 julia> serve()
 → Initial full pass...
 → Starting the server...
-- LiveServer listening on http://localhost:8000/ ...
+✓ LiveServer listening on http://localhost:8000/ ...
   (use CTRL+C to shut down)
 ```
 you can get this page in your browser:
@@ -100,7 +100,7 @@ your `mySite` folder structure like this:
 ```
 
 The `.github` folder is generated for Github Actions, you can config some fields for your customization.Fox example, you can change trigger branch from `dev` to your __workspace branch__ like `master`.
-```diff
+```yaml
 name: Build and Deploy
 on:
   push:
@@ -110,7 +110,7 @@ on:
 ```
 
 Then you should change another __BRANCH__(I named it as site branch) field here:
-```diff
+```yaml
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
@@ -130,10 +130,10 @@ If you use config above, your `master` branch is your workspace branch and your 
 
 2. Open local folder you created with Franklin before with bash or any other shell.
 
-3. Follow these steps below to config your repo:
-i)`git remote add origin URL_TO_YOUR_REPO`
-ii)`git add . && git commit -m "initial files"`
-iii)`git push -u origin master`
+3. Follow these steps below to config your repo: \
+    i)`git remote add origin URL_TO_YOUR_REPO` \
+    ii)`git add . && git commit -m "initial files"` \
+    iii)`git push -u origin master`
 
 ### github config
 
