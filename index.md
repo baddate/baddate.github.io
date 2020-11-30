@@ -6,9 +6,9 @@
 
 I'm Alex, an open-source contributor.
 
->~Now I am looking for a job:|~ I'm working on Backend Dev.
->~I will graduate this year.~ I graduated.
->And I love especially arch linux.
+>~~Now I am looking for a job:|~~ I'm working on Backend Dev. \
+>~~I will graduate this year.~~ I graduated. \
+>And I love especially arch linux. \
 >And I am interested in linux dev & C++ & others.
 
 ~~~
