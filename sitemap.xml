@@ -62,6 +62,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://blog.johan.zone/blog/en/build_site_with_franklin/index.html</loc>
+    <lastmod>2020-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://blog.johan.zone/blog/en/git_sync/index.html</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -74,13 +80,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://blog.johan.zone/blog/zh/IR-Homework/index.html</loc>
+    <loc>https://blog.johan.zone/blog/en/15%203Sum/index.html</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://blog.johan.zone/blog/en/15%203Sum/index.html</loc>
+    <loc>https://blog.johan.zone/blog/zh/IR-Homework/index.html</loc>
     <lastmod>2020-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

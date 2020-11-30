@@ -1,0 +1,52 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/styles/github.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <link rel=apple-touch-icon  sizes=180x180  href="/assets/apple-touch-icon.png"> <link rel=icon  type="image/png" sizes=32x32  href="/assets/favicon-32x32.png"> <link rel=icon  type="image/png" sizes=16x16  href="/assets/favicon-16x16.png"> <link rel=manifest  href="/assets/site.webmanifest"> <title>Alex's Blog | Build site with Franklin.jl</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #126add;" href="https://github.com/baddate"><i class="fab fa-github"></i></a> <a style="color: #126add;" href="mailto:alexdemail@e.email"><i class="fas fa-envelope"></i></a> <a style="color: #126add;" href="https://twitter.com/realAlexHans"><i class="fab fa-twitter"></i></a> </div> </nav> </header> <main> <div class=container ><h2 id=forward ><a href="#forward">Forward</a></h2> <blockquote> <p><a href="https://franklinjl.org/">Franklin.jl</a> is a simple, customisable static site generator oriented towards technical blogging and light, fast-loading pages.</p> </blockquote> <p>At first, I want to learning Julia with a small open source project, smaller and better. Then I search on github with topic<code>#julia</code>, and I find this tool. As I learned about it on its site, I think I can use this for my massively personal site&#40;maybe it is beautiful, but too complex&#41;, and learning Julia when rebuilding my site.</p> <p>Therefore, I write this tutorial as my beginning.</p> <p>Last but not least, Franklin.jl has many features:</p> <ul> <li><p>Augmented markdown allowing definition of LaTeX-like commands,</p> <li><p>Easy inclusion of user-defined div-blocks,</p> <li><p>Maths rendered via KaTeX, code via highlight.js both can be pre-rendered,</p> <li><p>Can live-evaluate Julia code blocks,</p> <li><p>Live preview of modifications,</p> <li><p>Simple optimisation step to compress and pre-render the website,</p> <li><p>Simple publication step to deploy the website,</p> <li><p>Straightforward integration with Literate.jl.</p> </ul> <h2 id=setup_environment ><a href="#setup_environment">Setup Environment</a></h2> <ol> <li><p>Download Julia from <a href="https://julialang.org/downloads/">official site</a> for your OS.</p> <li><p>Install it.</p> <li><p>Open julia REPL.</p> <li><p>Then excute <code>using Pkg; Pkg.add&#40;Franklin&#41;</code></p> </ol> <h2 id=start_building ><a href="#start_building">Start building</a></h2> <ol> <li><p>New a site with the following scripts:</p> </ol> <pre><code class="julia hljs">julia&gt; <span class=hljs-keyword >using</span> Franklin
+julia&gt; newsite(<span class=hljs-string >&quot;mySite&quot;</span>, template=<span class=hljs-string >&quot;pure-sm&quot;</span>)
+- Website folder generated at <span class=hljs-string >&quot;mySite&quot;</span> (now the current directory).
+→ Use serve() from Franklin to see the website <span class=hljs-keyword >in</span> your browser.</code></pre> <p>Once you excuted the command above, this Julia REPL workspace will be in your site folder.</p> <ol start=2 > <li><p>Start local server for debug:</p> </ol> <pre><code class="julia hljs">julia&gt; serve()
+→ Initial full pass...
+→ Starting the server...
+- LiveServer listening on http://localhost:<span class=hljs-number >8000</span>/ ...
+  (use CTRL+C to shut down)</code></pre> <p>you can get this page in your browser: <img src="/_img/franklin_example_page.png" alt="Franklin Example" /> <em>note: this <code>mySite</code> folder will be created in your current directory. You can check your current directory with<code>pwd&#40;&#41;</code>.</em></p> <h2 id=site_structure ><a href="#site_structure">Site Structure</a></h2> <h3 id=page_structure ><a href="#page_structure">Page structure</a></h3> <p>your <code>mySite</code> folder structure like this:</p> <pre><code class="julia hljs">├─.github
+│  └─workflows
+├─_assets
+│  └─scripts
+│      └─output
+├─_css
+├─_layout
+├─_libs
+│  ├─highlight
+│  ├─katex
+│  │  └─fonts
+│  └─pure
+└─__site
+    ├─assets
+    │  ├─menu1
+    │  │  ├─code
+    │  │  │  └─output
+    │  │  └─output
+    │  └─scripts
+    │      └─output
+    ├─css
+    ├─layout
+    ├─libs
+    │  ├─highlight
+    │  ├─katex
+    │  │  └─fonts
+    │  └─pure
+    ├─menu1
+    ├─menu2
+    ├─menu3
+    └─tag
+        ├─code
+        ├─image
+        └─syntax</code></pre> <p>The <code>.github</code> folder is generated for Github Actions, you can config some fields for your customization.Fox example, you can change trigger branch from <code>dev</code> to your <strong>workspace branch</strong> like <code>master</code>.</p> <pre><code class="yaml hljs"><span class=hljs-attr >name:</span> <span class=hljs-string >Build</span> <span class=hljs-string >and</span> <span class=hljs-string >Deploy</span>
+<span class=hljs-attr >on:</span>
+  <span class=hljs-attr >push:</span>
+    <span class=hljs-attr >branches:</span>
+<span class=hljs-bullet >-</span>      <span class=hljs-bullet >-</span> <span class=hljs-string >dev</span>
+<span class=hljs-string >+</span>      <span class=hljs-bullet >-</span> <span class=hljs-string >master</span></code></pre> <p>Then you should change another <strong>BRANCH</strong>&#40;I named it as site branch&#41; field here:</p> <pre><code class="yaml hljs"><span class=hljs-bullet >-</span> <span class=hljs-attr >name:</span> <span class=hljs-string >Build</span> <span class=hljs-string >and</span> <span class=hljs-string >Deploy</span>
+      <span class=hljs-attr >uses:</span> <span class=hljs-string >JamesIves/github-pages-deploy-action@releases/v3</span>
+      <span class=hljs-attr >with:</span>
+        <span class=hljs-attr >GITHUB_TOKEN:</span> <span class=hljs-string >${{</span> <span class=hljs-string >secrets.GITHUB_TOKEN</span> <span class=hljs-string >}}</span>
+<span class=hljs-bullet >-</span>       <span class=hljs-attr >BRANCH:</span> <span class=hljs-string >master</span>
+<span class=hljs-string >+</span>       <span class=hljs-attr >BRANCH:</span> <span class=hljs-string >dev</span>
+        <span class=hljs-attr >FOLDER:</span> <span class=hljs-string >__site</span></code></pre> <p><em>NOTE: you must keep the site branch <strong>different from</strong> the workspace branch&#40;in the case it&#39;s <code>master</code>&#41;, because you site files will be generated on <code>dev</code> branch</em></p> <p>If you use config above, your <code>master</code> branch is your workspace branch and your <code>dev</code> branch is your Github Pages site branch.</p> <h2 id=deploying_on_github ><a href="#deploying_on_github">Deploying on GitHub</a></h2> <h3 id=local_config ><a href="#local_config">local config</a></h3> <ol> <li><p>Create a personal repo on github, named <code>username.github.io</code>, or you can name it whatever you want to if you have a domain.</p> <li><p>Open local folder you created with Franklin before with bash or any other shell.</p> <li><p>Follow these steps below to config your repo: <br /> i&#41;<code>git remote add origin URL_TO_YOUR_REPO</code> <br /> ii&#41;<code>git add . &amp;&amp; git commit -m &quot;initial files&quot;</code> <br /> iii&#41;<code>git push -u origin master</code></p> </ol> <h3 id=github_config ><a href="#github_config">github config</a></h3> <ol> <li><p>Open <code>Settings</code> on your repo page, and scrolling down until you find <code>GitHub Pages</code> option.</p> <li><p>Config it as below:</p> </ol> <p><img src="/_img/githubpage.png" alt="Github Pages on Settings" /></p> <p>note: you must make the branch __same__ as the **site branch** in the &#96;deploy.yml&#96;</p> <p><strong>DONE&#33;</strong></p> <p>You can find some examples of websites using Franklin.jl from <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>.</p> <p>By the way, I following this <a href="https://abhishalya.github.io/">blog site</a> as templates and customizing it. It is a very simple and wonderful site.</p> <p>Please email me if there are any errors.</p> <h2 id=reference ><a href="#reference">REFERENCE</a></h2> <p><a href="https://franklinjl.org/">https://franklinjl.org/</a></p> <p><a href="https://github.com/abhishalya/abhishalya.github.io">https://github.com/abhishalya/abhishalya.github.io</a></p> <p><a href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages">https://docs.github.com/</a></p> </div> </main> </div> <footer> &copy; Alex. Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and <a href="https://julialang.org">The Julia Programming Language</a>. </footer>
