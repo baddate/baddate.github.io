@@ -2,6 +2,7 @@
 @def published = "10 July 2019"
 @def tags = ["Tips", "Arch", "Linux"]
 
+\toc
 
 ## Arch Linux config backlight
 
@@ -17,7 +18,7 @@ ls /sys/class/backlight/
 
 ### Change the work directory
 
-  
+
 
 ```
 
@@ -35,11 +36,11 @@ vim brightness
 
 ```
 
-  
+
 
 ------------------
 
-  
+
 
 ## Arch Linux config touchpad
 
@@ -53,7 +54,7 @@ vim /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 ```
 
-  
+
 
 *note: maybe you can edit `/etc/X11/xorg.conf.d/40-libinput.conf` after running `ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf`, but I haven't try it.*
 
@@ -69,11 +70,11 @@ Option "NaturalScrolling" "true" # reverse scrolling
 
 ```
 
-  
+
 
 ------------------
 
-  
+
 
 ## Linux running python scripts in the background
 
@@ -89,17 +90,17 @@ For details, you can refer the [gnu coreutils](https://www.gnu.org/software/core
 
 pgrep -f blabla.py # will give you its pid
 
-  
+
 
 pkill -9 -f blabla.py # kills the matching pid
 
 ```
 
-  
+
 
 ------------------
 
-  
+
 
 ## Arch Linux install MySQL
 
@@ -107,7 +108,7 @@ Since 2013 MariaDB is Arch Linux's default implementation of MySQL. So we can ea
 
 I choose _mariadb_ due to convenience.
 
-  
+
 
 ### Step 1: Install the package
 
@@ -139,11 +140,11 @@ systemctl restart mariadb
 
 To log in as `root` on the MySQL server, use the command: `mysql -u root -p`
 
-  
+
 
 ------------------
 
-  
+
 
 ## Arch Linux disable beep
 
@@ -157,11 +158,11 @@ i tried this [arch wiki](https://wiki.archlinux.org/index.php/PC_speaker), but i
 
 - Reboot
 
-  
+
 
 ------------------
 
-  
+
 
 ## Arch Linux reset root passwd
 
@@ -169,11 +170,11 @@ i tried this [arch wiki](https://wiki.archlinux.org/index.php/PC_speaker), but i
 
 i **haven't** try it, so i don't know if it works.
 
-  
+
 
 ------------------
 
-  
+
 
 ## Arch Linux Installation Guide on HP Pavilion
 
@@ -205,7 +206,7 @@ You can check this connection by `ping www.archlinux.org`.
 
 Use ` timedatectl set-ntp true` to ensure the system clock is accurate, to check the service status, use `timedatectl status`.
 
-  
+
 
 ### Partition the disks
 
@@ -217,11 +218,11 @@ Next enter `m` you will get help details. If you use a separate hard drive. ente
 
 Next, enter `n` to create new partitions, enter `w` to exit if you finished.
 
-  
+
 
 This is my partition layout:
 
-  
+
 
 Mount points | Partition | Partition Type | Size
 
@@ -237,7 +238,7 @@ Mount points | Partition | Partition Type | Size
 
 /mnt/home | /dev/sda5|linux filesystem|300G
 
-  
+
 
 ### Format the partitions
 
@@ -245,13 +246,13 @@ If the EFI partition is on /dev/sdX0, run:
 
 `mkfs.fat -F32 /dev/sdX0`
 
-  
+
 
 If the root partition is on* /dev/sdX1* and will contain the ext4 file system, run:
 
 `mkfs.ext4 /dev/sdX1`
 
-  
+
 
 If you created a partition for swap, initialize it with mkswap:
 
@@ -263,7 +264,7 @@ swapon /dev/sdaX2
 
 ```
 
-  
+
 
 Run these commands if you use my layout:
 
@@ -337,13 +338,13 @@ Run `arch-chroot /mnt`
 
 `ln -sf /usr/share/zoneinfo/Region/City /etc/localtime`
 
-  
+
 
 - Set the hardware clock:
 
 `hwclock --systohc`
 
-  
+
 
 - Set location
 
@@ -359,7 +360,7 @@ locale-gen
 
 By the way, the new system doesn't have `vim`.
 
-  
+
 
 2. Create the `locale.conf` and set `LANG`variable:
 
@@ -391,7 +392,7 @@ LANG= en_US.UTF-8 UTF-8
 
 Run `passwd`
 
-  
+
 
 ### Enable microcode updates
 
@@ -419,7 +420,7 @@ I use [grub](https://en.wikipedia.org/wiki/GNU_GRUB), so:
 
 `grub-mkconfig -o /boot/grub/grub.cfg`
 
-  
+
 
 ### Install Wireless LAN tools
 
@@ -441,7 +442,7 @@ I use `wifi-menu` to connect to wifi, so I need this packages:
 
 `nano /etc/sudoers` and add `username ALL=(ALL) ALL` below `root ALL=(ALL) ALL`
 
-  
+
 
 ## Post-Installation
 
@@ -453,11 +454,11 @@ Run the minimal command: `pacman -S xorg-server`.
 
 Because I use*NVIDIA MX150* graphics card, I use this `xf86-video-nouveau`driver. For details you can referrence [this](https://wiki.archlinux.org/index.php/NVIDIA). If you use *amd card*, you can read [this](https://wiki.archlinux.org/index.php/Xorg#AMD)
 
-  
+
 
 ------------------
 
-  
+
 
 __Thank you for reading!__
 

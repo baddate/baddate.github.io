@@ -2,6 +2,8 @@
 @def published = "30 November 2020"
 @def tags = ["Courses", "Julia", "Franklin.jl", "Github"]
 
+\toc
+
 ## Forward
 
 >[Franklin.jl](https://franklinjl.org/) is a simple, customisable static site generator oriented towards technical blogging and light, fast-loading pages.

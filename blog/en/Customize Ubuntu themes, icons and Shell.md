@@ -2,9 +2,10 @@
 @def published = "07 December 2018"
 @def tags = ["Tips", "Ubuntu", "Linux"]
 
+\toc
 
 ## Pre-requirements
-1. gtk+3 [download](https://www.gtk.org/download/linux.php)	
+1. gtk+3 [download](https://www.gtk.org/download/linux.php)
 2. gnome-tweak-tool
 	`sudo apt-get update` and `sudo apt-get gnome-tweak-tool`
 ![Tweaks](/_img/tweak-screen.png)
