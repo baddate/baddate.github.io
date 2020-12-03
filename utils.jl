@@ -173,3 +173,21 @@ function hfun_blogposts_en()
     write(io, "</ul>")
     return String(take!(io))
 end
+
+##############################
+
+function hfun_recentblogposts()
+    list = readdir("blog/en")
+    filter!(f -> endswith(f, ".md"), list)
+    dates = [stat(joinpath("blog/en", f)).mtime for f in list]
+    perm = sortperm(dates, rev=true)
+    idxs = perm[1:min(3, length(perm))]
+    io = IOBuffer()
+    write(io, "<ul>")
+    for (k, i) in enumerate(idxs)
+        fi = "/blog/en/" * splitext(list[i])[1] * "/"
+        write(io, """<li><a href="$fi">Post $k</a></li>\n""")
+    end
+    write(io, "</ul>")
+    return String(take!(io))
+end

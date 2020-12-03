@@ -1,0 +1,109 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/styles/github.css"> <link rel=stylesheet  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous  /> <link rel=stylesheet  href="/css/franklin.css"> <link rel=icon  href="/assets/favicon.ico"> <link rel=apple-touch-icon  sizes=180x180  href="/assets/apple-touch-icon.png"> <link rel=icon  type="image/png" sizes=32x32  href="/assets/favicon-32x32.png"> <link rel=icon  type="image/png" sizes=16x16  href="/assets/favicon-16x16.png"> <link rel=manifest  href="/assets/site.webmanifest"> <title>Alex's Blog | Linux创建cron定时任务</title> <header> <a class=title  href="/"><h2>Alex</h2></a> <nav> <a href="/">Home</a> / <a href="/blog/zh">ZH-Blog</a> / <a href="/blog/en">EN-Blog</a> <div class=social-media > <a style="color: #101011;" href="https://github.com/baddate"><i class="fab fa-github"></i></a> <a style="color: #101011;" href="mailto:alexdemail@e.email"><i class="fas fa-envelope"></i></a> <a style="color: #101011;" href="https://twitter.com/realAlexHans"><i class="fab fa-twitter"></i></a> <a href="https://dev.to/baddate"> <img src="/assets/dev-badge.svg" alt="Alex Hans's DEV Profile" height=16  width=16 > </a> </div> </nav> </header> <main> <div class=container ><p>Cron是Linux一个很有用的工具，也是开发人员最喜欢的工具，因为它可以让你使用通用脚本和特定于任务的脚本在特定的时间段、日期和间隔自动运行命令。有了该描述，你可以想象系统管理员如何使用它来自动执行备份任务、目录清除、通知等。</p> <p>Cron作业在后台运行，并不断检查<code>/etc/crontab</code>文件，<code>/etc/cron.*/</code>和<code>/var/spool/cron/</code>目录。我们最好不要直接编辑cron文件，因为每个用户都有唯一的crontab。</p> <p>那你应该如何创建和编辑cron作业？我们可以使用crontab命令。crontab是用于创建，编辑，安装，卸载和列出cron作业的方法。</p> <p>创建和编辑cron作业的命令是相同而且很简单。而且更酷的是，你无需在创建新文件或编辑现有文件后重新启动cron。</p> <pre><code class="bash hljs">$ crontab -e</code></pre>
+<h3 id="cron语法"><a href="#cron语法"><strong>Cron语法</strong></a></h3>
+<p>就像使用任何语言一样，当你了解<strong>cron</strong>的语法时，使用<strong>cron</strong>会容易得多，它的语法有两种格式：</p>
+<pre><code class="bash hljs">A B C D E USERNAME /path/to/<span class=hljs-built_in >command</span> arg1 arg2
+OR
+A B C D E USERNAME /root/backup.sh</code></pre>
+<p>以上cron语法的说明：</p>
+<ul>
+<li><p><strong>A：分钟</strong>范围：<strong>0 – 59</strong></p>
+
+<li><p><strong>B：时间</strong>范围：<strong>0 – 23</strong></p>
+
+<li><p><strong>C：天数</strong>范围：<strong>1 – 31</strong></p>
+
+<li><p><strong>D：月</strong>范围：<strong>1 – 12</strong> or <strong>JAN-DEC</strong></p>
+
+<li><p><strong>E：星期几</strong>：<strong>0 – 6</strong> or <strong>SUN-SAT，Sunday&#61;0 or 7</strong>。</p>
+
+<li><p><strong>USERNAME：</strong> 用户名</p>
+
+<li><p><strong>/path/to/command</strong> – 你要计划的脚本或命令的名称</p>
+
+</ul>
+<p>形象一点表示就是：</p>
+<pre><code class="julia hljs">┌───────────── minute (<span class=hljs-number >0</span> - <span class=hljs-number >59</span>)
+│ ┌───────────── hour (<span class=hljs-number >0</span> - <span class=hljs-number >23</span>)
+│ │ ┌───────────── day of the month (<span class=hljs-number >1</span> - <span class=hljs-number >31</span>)
+│ │ │ ┌───────────── month (<span class=hljs-number >1</span> - <span class=hljs-number >12</span> or JAN-DEC)
+│ │ │ │ ┌───────────── day of the week (<span class=hljs-number >0</span> - <span class=hljs-number >6</span> or SUN-SAT, Sunday=<span class=hljs-number >0</span> or <span class=hljs-number >7</span>)
+│ │ │ │ │
+│ │ │ │ │
+│ │ │ │ │
+* * * * *</code></pre>
+<p>此外，Cron使用3个运算符，可以在字段中指定多个值：</p>
+<ol>
+<li><p><strong>星号<code>&#40;*&#41;</code></strong>：指定字段的所有可能值，<code>* * * * *</code> 在每天的每分钟运行。</p>
+
+<li><p><strong>逗号<code>&#40;,&#41;</code></strong>：指定值列表，<code>2,10 4,5 * * *</code>在每天第 4 和第 5 小时的第 2 和第 10 分钟运行。</p>
+
+<li><p><strong>破折号<code>&#40;-&#41;</code></strong>：指定值范围，<code>0 4-6 * * *</code> 在第 4、5、6 小时的第 0 分钟运行。</p>
+
+<li><p><strong>分隔符<code>&#40;/&#41;</code></strong>：指定步长值，<code>20/15 * * * *</code> 从第 20 分钟到第 59 分钟每隔 15 分钟运行（第 20、35 和 50 分钟）。</p>
+
+</ol>
+<p>Cron的语法和运算符大概就这么多，下面展示一些cron示例。</p>
+<h3 id="cron工作示例"><a href="#cron工作示例"><strong>Cron工作示例</strong></a></h3>
+<p>运行cron命令的第一步是使用以下命令安装crontab：</p>
+<pre><code class="julia hljs"><span class=hljs-comment >#crontab -e</span></code></pre>
+<p>在每天<strong>凌晨3点</strong>运行<code>/root/backup.sh</code>：</p>
+<pre><code class="bash hljs">0 3 * * * /root/backup.sh</code></pre>
+<p>在每个月的第二天的<strong>下午4:30</strong>运行<code>script.sh</code>：</p>
+<pre><code class="bash hljs">30 16 2 * * /path/to/script.sh</code></pre>
+<p>在每周工作日的晚上<strong>10点</strong>运行<code>/scripts/phpscript.php</code>：</p>
+<pre><code class="bash hljs">0 22 * * 1-5 /scripts/phpscript.php</code></pre>
+<p>在每天的午夜，凌晨2点和凌晨4点后的<strong>23分钟</strong>，运行<code>perlscript.pl</code>：</p>
+<pre><code class="bash hljs">23 0-23 / 2 * * * /path/to/perlscript.pl</code></pre>
+<p>每个星期日的04:05运行Linux命令：</p>
+<pre><code class="bash hljs">5 4 * * sun /path/to/linuxcommand</code></pre>
+<h3 id="cron选项"><a href="#cron选项"><strong>Cron选项</strong></a></h3>
+<p>列出cron作业。</p>
+<pre><code class="julia hljs"><span class=hljs-comment >#crontab -l</span>
+OR
+<span class=hljs-comment >#crontab -u username -l</span></code></pre>
+<p>删除所有crontab作业。</p>
+<pre><code class="julia hljs"><span class=hljs-comment >#crontab -r</span></code></pre>
+<p>删除特定用户的Cron作业。</p>
+<pre><code class="julia hljs"><span class=hljs-comment >#crontab -r -u username</span></code></pre>
+<h3 id="crontab中的字符串"><a href="#crontab中的字符串"><strong>Crontab中的字符串</strong></a></h3>
+<p>字符串是开发人员最喜欢的东西，因为它们通过消除重复的书写来帮助节省时间。Cron具有特定的字符串，可用于更快地创建命令：</p>
+<ol>
+<li><p><code>@hourly</code>：每小时运行一次，即&quot;<strong>0 &#42; &#42; &#42; &#42;</strong>&quot;</p>
+
+<li><p><code>@midnight</code>：每天运行一次，即&quot;<strong>0 0 &#42; &#42; &#42;</strong>&quot;</p>
+
+<li><p><code>@daily</code>：与午夜相同</p>
+
+<li><p><code>@weekly</code>：每周运行一次，即&quot;<strong>0 0 &#42; &#42; 0</strong>&quot;</p>
+
+<li><p><code>@monthly</code>：每月运行一次，即&quot;<strong>0 0 1 &#42; &#42;&quot;</strong></p>
+
+<li><p><code>@annually</code>：每年运行一次，即&quot;<strong>0 0 1 1 &#42;</strong>&quot;</p>
+
+<li><p><code>@yearly</code>：与<strong>@annually</strong>相同</p>
+
+<li><p><code>@reboot</code>：每次启动时运行一次</p>
+
+</ol>
+<p>例如，这是每天备份系统的方法：</p>
+<pre><code class="bash hljs">@daily /path/to/backup/script.sh</code></pre>
+<p>至此，你已经拥有使用<strong>Cron</strong>创建和管理系统任务所需的全部内容。现在，你可以开始使用计划的命令来设置和维护多个环境。</p>
+<p>当你对Crontab的工作方式了解得足够多时，可以使用这些漂亮的<a href="https://www.tecmint.com/online-cron-job-generator-and-tester-for-linux/">Crontab生成器实用程序</a>免费生成crontab行。</p>
+<p>另外，你可以在<a href="https://help.ubuntu.com/community/CronHowto">此处</a>阅读Ubuntu的有关如何使用Cron的文章。</p>
+<h2 id=reference ><a href="#reference"><strong>REFERENCE</strong></a></h2>
+<p><a href="https://www.tecmint.com/create-and-manage-cron-jobs-on-linux/">https://www.tecmint.com/create-and-manage-cron-jobs-on-linux/</a></p>
+<p><a href="https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows">https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows</a></p>
+</div>  </main>
+  
+    </div>  
+    
+    
+        
+
+
+    
+    <footer>
+      &copy; Alex.
+      Made with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a>
+      and <a href="https://julialang.org">The Julia Programming Language</a>.
+    </footer>
