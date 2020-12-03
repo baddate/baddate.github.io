@@ -176,6 +176,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://blog.johan.zone/blog/zh/How-to-navigate-to-first-commit-in-any-repo/index.html</loc>
+    <lastmod>2020-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://blog.johan.zone/blog/zh/recoverNEWcommand/index.html</loc>
     <lastmod>2020-12-03</lastmod>
     <changefreq>monthly</changefreq>
