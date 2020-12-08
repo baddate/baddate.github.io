@@ -2,6 +2,13 @@
 @def published = "11 December 2019"
 @def tags = ["Tips", "C++"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ## 继承
 
@@ -28,14 +35,14 @@
     int a;
     char b;
     };
-    
+
     class B: public A{
     public:
     char getc(){return this->c;}
     private:
     char c='j';
     };
-    
+
     int main() {
         B test;
         cout<<test.getc()<<endl;
@@ -77,8 +84,8 @@ C++多态性是通过虚函数来实现的
 
 **多态性**
 
-指相同对象收到不同消息或不同对象收到相同消息时产生不同的实现动作。C++支持两种多态性：编译时多态性，运行时多态性。  
-**  a、编译时多态性：通过重载函数实现**  
+指相同对象收到不同消息或不同对象收到相同消息时产生不同的实现动作。C++支持两种多态性：编译时多态性，运行时多态性。
+**  a、编译时多态性：通过重载函数实现**
 **  b、运行时多态性：通过虚函数实现**
 
 [https://blog.csdn.net/Hackbuteer1/article/details/7475622](https://blog.csdn.net/Hackbuteer1/article/details/7475622)
@@ -129,7 +136,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     a->foo();   // 输出为：B::foo() is called
     return 0;
     }
-    
+
 ```
 ### 虚函数底层实现机制
 
@@ -157,7 +164,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     private:
         int m_data1, m_data2;
     };
-    
+
     class B : public A {
     public:
         virtual void vfunc1();
@@ -165,7 +172,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
     private:
         int m_data3;
     };
-    
+
     class C: public B {
     public:
         virtual void vfunc2();
@@ -201,7 +208,7 @@ C++中的虚函数的作用主要是实现了多态的机制。基类定义虚�
 
 ## Conclusion
 
-在有动态分配堆上内存的时候，析构函数必须是虚函数，但没有必要是纯虚的。  
+在有动态分配堆上内存的时候，析构函数必须是虚函数，但没有必要是纯虚的。
 友元不是成员函数，只有成员函数才可以是虚拟的，因此友元不能是虚拟函数。但可以通过让友元函数调用虚拟成员函数来解决友元的虚拟问题。
 
 析构函数应当是虚函数，将调用相应对象类型的析构函数，因此，如果指针指向的是子类对象，将调用子类的析构函数，然后自动调用基类的析构函数。

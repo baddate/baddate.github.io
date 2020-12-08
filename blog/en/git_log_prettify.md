@@ -2,6 +2,13 @@
 @def published = "07 August 2019"
 @def tags = ["Tips", "Git"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ### 4 formats
 ```bash

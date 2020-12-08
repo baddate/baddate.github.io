@@ -2,6 +2,14 @@
 @def published = "07 December 2018"
 @def tags = ["Tips", "Ubuntu", "Linux"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 \toc
 
 ## Pre-requirements

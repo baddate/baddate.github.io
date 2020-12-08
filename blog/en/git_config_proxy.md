@@ -2,6 +2,13 @@
 @def published = "10 July 2019"
 @def tags = ["Tips", "Git", "Proxy"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ### set a socks5 proxy
 

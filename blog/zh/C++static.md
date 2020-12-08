@@ -2,6 +2,14 @@
 @def published = "21 December 2019"
 @def tags = ["Tips", "C++"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 C++的static有两种用法：面向过程程序设计中的static(延续C语言)和面向对象程序设计中的static。
 
 ## 面向过程：

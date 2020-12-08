@@ -2,6 +2,14 @@
 @def published = "25 July 2018"
 @def tags = ["Tips", "Git"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 ## 安装Git
 
 1. 在[这个页面](https://git-scm.com/downloads)下载最新版的Git。
@@ -52,7 +60,7 @@ g[add git path] --> Done!
 
 1. 在这个[Hugo 主题](https://themes.gohugo.io/)页面找一个喜欢的主题下载并安装。
 2. 下载的应该是一个压缩包，把它解压到`themes`这个文件夹里面。
-3. 接下来就是配置网站了，在上面我们可以发现有一个名为`config.toml`的文件，所以我们只要编辑这个文件就可以配置我们的网站了。  
+3. 接下来就是配置网站了，在上面我们可以发现有一个名为`config.toml`的文件，所以我们只要编辑这个文件就可以配置我们的网站了。
 
 ------
 
@@ -110,6 +118,6 @@ cd ..
 ```
 
 
-**到这里我们的个人网站就建成了！！！**让我们马上看看效果吧(http://username.github.io/), 可能会有些延迟哦，要有耐心。 
+**到这里我们的个人网站就建成了！！！**让我们马上看看效果吧(http://username.github.io/), 可能会有些延迟哦，要有耐心。
 
-## END 
+## END

@@ -2,6 +2,14 @@
 @def published = "3 December 2020"
 @def tags = ["Tips", "Github"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 如果你想要学习一个开源库，最好的方法就是从头开始看源码，所以你可能想要从第一次commit开始看。有的人可能觉得很简单啊，进入commit页面直接翻到最后一页就好了啊。的确，如果是你看的是一个小的项目，提交次数不会太多，你可能翻几页就到最后了，可是，如果是像Linux这种项目，将近100k次提交，手动翻页翻到明年了。。。
 
 ![linux commit](https://cdn.jsdelivr.net/gh/baddate/imagedb/linux-commits-count.png)

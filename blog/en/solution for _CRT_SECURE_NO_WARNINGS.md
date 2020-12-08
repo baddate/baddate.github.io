@@ -2,16 +2,23 @@
 @def published = "10 July 2019"
 @def tags = ["Windows", "VS2019", "C++"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
-> platform: VS2019	
+> platform: VS2019
 > os: win10
 
-Problem:   
+Problem:
 An error about `_CRT_SECURE_NO_WARNINGS` when I use the `std::localtime()` function for getting the current systime.
 
-Solution:   
-1. Use an alternative feature function in C++.	
-2. add this line at the first line.	
+Solution:
+1. Use an alternative feature function in C++.
+2. add this line at the first line.
 ```
 #define _CRT_SECURE_NO_WARNINGS
 ```

@@ -2,9 +2,16 @@
 @def published = "23 September 2019"
 @def tags = ["Tips", "Server", "HTTPS", "TLS", "Trilium"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
-> OS: CentOS7     
-> Let's Encrypt Client: Certbot       
+> OS: CentOS7
+> Let's Encrypt Client: Certbot
 > Package: trilium-server
 
 # Certbot
@@ -41,7 +48,7 @@ instanceName=
 # port setting is relevant only for web deployments, desktop builds run on random free port
 port=8080
 # true for TLS/SSL/HTTPS (secure), false for HTTP (unsecure).
-https=true 
+https=true
 # path to certificate (run "bash bin/generate-cert.sh" to generate self-signed certificate). Relevant only if https=true
 certPath=/etc/letsencrypt/live/[example.com]/fullchain.pem
 keyPath=/etc/letsencrypt/live/[example.com]/privkey.pem

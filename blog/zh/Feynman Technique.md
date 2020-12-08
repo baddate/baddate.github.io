@@ -2,6 +2,14 @@
 @def published = "24 June 2020"
 @def tags = ["Tips", "Translate"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 ## 写在前面
 最近读书的时候偶然发现了费曼技巧，所以查阅了一些资料，找到了这篇文章，写的还不错，就翻译了一下给大家看看，原文在[这里](https://fs.blog/2012/04/feynman-technique/)。
 

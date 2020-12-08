@@ -2,6 +2,13 @@
 @def published = "23 September 2019"
 @def tags = ["Tips", "C++"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ## **string, char\*, const char\*, int type conversion**
 
@@ -13,29 +20,29 @@
     // C++11
     // string -> integer
     int i = std::stoi(s);
-    
+
     // string -> float
     float f = std::stof(s);
-    
-    // string -> double 
+
+    // string -> double
     double d = std::stod(s);
     //------------------------------------------//
     #include <sstream>
     // string -> integer
     std::istringstream ( str ) >> i;
-    
+
     // string -> float
     std::istringstream ( str ) >> f;
-    
-    // string -> double 
+
+    // string -> double
     std::istringstream ( str ) >> d;
     //------------------------------------------//
     // Boost's lexical_cast
     #include <boost/lexical_cast.hpp>
     #include <string>
-    
+
     std::string str;
-    
+
     try {
     	int i = boost::lexical_cast<int>( str.c_str());
     	float f = boost::lexical_cast<int>( str.c_str());
@@ -57,10 +64,10 @@
     std::string x = "hello world";
     const char* p_c_str = x.c_str();
     const char* p_data = x.data();
-   
-    char* p_writable_data = x.data(); // for non-const x from C++17 
+
+    char* p_writable_data = x.data(); // for non-const x from C++17
     char* p_x0_rw = &x[0];  // compiles if x is not const...
-    
+
     //------------------------------------------//
     std::vector<char> cstr(str.c_str(), str.c_str() + str.size() + 1);
     // or
@@ -71,7 +78,7 @@
 ### char\* to int
 ```cpp
     #include <stdlib.h>
-    
+
     int atoi(const char *nptr);
     long atol(const char *nptr);
     long long atoll(const char *nptr);
@@ -82,7 +89,7 @@
     // read the value as an ascii code
     char a = 'a';
     // to
-    int ia = (int)a; 
+    int ia = (int)a;
     // or
     int ia = a;
     // or
@@ -108,31 +115,31 @@
 ### [int to string](https://stackoverflow.com/questions/5590381/easiest-way-to-convert-int-to-string-in-c)
 
 ```cpp
-    #include <string> 
-    
+    #include <string>
+
     int i = 49;
-    
+
     std::string s = std::to_string(i);
-    
+
     // or
     auto s = std::to_string(i);
-    
+
     // or
     char *intStr = itoa(i);
     string str = string(intStr);
-    
+
     // or
-    
+
     #include <sstream>
-    
+
     stringstream ss;
     ss << a;
     string str = ss.str();
-    
+
     // or
-    
+
     #include <sstream>
-    
+
     template <typename T>
     std::string NumberToString ( T Number )
     {

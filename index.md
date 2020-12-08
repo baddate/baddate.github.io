@@ -4,12 +4,12 @@
 <h1>Hi there!</h1>
 ~~~
 
-I'm Alex, an open-source contributor.
+I'm Alex, *almost* an open-source contributor:D
 
->~~Now I am looking for a job:|~~   I'm working on Backend Dev. \
->~~I will graduate this year.~~   I graduated. \
->And I love especially arch linux. \
->And I am interested in linux dev & C++ & others.
+>~~~<strike>Now I am looking for a job:|</strike>~~~ I am now doing __back-end__ development. \
+>~~~<strike>I will graduate this year.</strike>~~~ I graduated. \
+>And I love especially __Arch linux__. \
+>And I am interested in Linux embbed dev & C++ & Julia & Data Science & One Piece.
 
 ~~~
 <p style="color:#aa7631;font-size:23px;">The most incomprehensible thing about the world is that it is at all comprehensible.</p>

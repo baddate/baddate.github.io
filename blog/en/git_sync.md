@@ -2,6 +2,13 @@
 @def published = "22 June 2019"
 @def tags = ["Tips", "Git"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ### The remote repository has changed and the local repository has not changed
 

@@ -2,6 +2,13 @@
 @def published = "22 December 2019"
 @def tags = ["Tips", "C++"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 当程序执行函数调用指令时，CPU将存储该函数调用后指令的内存地址，将函数的参数复制到堆栈上，最后将控制权转移到指定的函数。然后，CPU执行函数代码，将函数返回值存储在预定义的内存位置/寄存器中，并将控制权返回给调用函数。如果函数的执行时间少于从调用者函数到被调用函数（被调用者）的切换时间，则这可能会成为开销。对于大型函数和/或执行复杂任务的函数，与函数运行所花费的时间相比，函数调用的开销通常微不足道。但是，对于小型的常用功能，进行函数调用所需的时间通常比实际执行函数代码所需的时间多得多。对于小功能，由于小功能的执行时间少于切换时间，因此会产生开销。
 
@@ -24,7 +31,7 @@ inline可以显示声明，也可以隐式声明。隐式声明方式是将函�
     inline return-type function-name(parameters)
     {
         // function code
-    }  
+    }
 ```
 此外，inline函数通常放在头文件中，因为大多数build environments在编译期进行inlining，编译器必须知道函数什么样子才能把_函数调用_替换成_函数本体。_
 
@@ -33,7 +40,7 @@ inline可以显示声明，也可以隐式声明。隐式声明方式是将函�
     inline void f() {...}      // assume compilers are willing to inline calls to f
     void (*pf)() = f;          // pf points to f
     ...
-    f();                      // this call will be inlined, because it's a "normal" call 
+    f();                      // this call will be inlined, because it's a "normal" call
     pf();                     // this call probably won't be, because it's through              // a function pointer
 ```
 **内联函数的优点：**

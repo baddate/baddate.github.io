@@ -2,10 +2,17 @@
 @def published = "23 September 2019"
 @def tags = ["Tips", "Notes"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
-# HTTP NOTES     
+# HTTP NOTES
 
-## FEATURES  
+## FEATURES
 ### Architecture
 based on __Client-Server__ Architecture
 ![GitHub](/images/HTTP Protocol.gif "GitHub,Social Coding")
@@ -14,16 +21,16 @@ based on __Client-Server__ Architecture
 
 
 ### HTTP Version
-**syntax**  
+**syntax**
 `HTTP-Version   = "HTTP" "/" 1*DIGIT "." 1*DIGIT`
 
 #### Example
-`HTTP/1.0`  
+`HTTP/1.0`
 
 #### Uniform Resource Identifiers(URI)
-**syntax**  
-`URI = "http:" "//" host [ ":" port ] [ abs_path [ "?" query ]]`    
-_port_can be not given, default: 80     
+**syntax**
+`URI = "http:" "//" host [ ":" port ] [ abs_path [ "?" query ]]`
+_port_can be not given, default: 80
 _characters_are equivalent to their""%" HEX HEX" encoding.
 
 #### Example
@@ -37,7 +44,7 @@ http://ABC.com/%7Esmith/home.html
 _be represented in Greenwich Mean Time (GMT)_
 
 ### Character Sets
-_default: ASCII_  
+_default: ASCII_
 
 ### Content Encodings
 _gzip/compress/deflate_
@@ -57,12 +64,12 @@ _gzip/compress/deflate_
 
 >    + A Start-line
 >    + Zero or more header fields followed by CRLF
->    + An empty line (i.e., a line with nothing preceding the CRLF) 
+>    + An empty line (i.e., a line with nothing preceding the CRLF)
 >    indicating the end of the header fields
 >    + Optionally a message-body
 
 ### Example:
-HTTP request to fetch **t.html** page that does not exist on the web server running on _tutorialspoint.com_.    
+HTTP request to fetch **t.html** page that does not exist on the web server running on _tutorialspoint.com_.
 #### Client request
 ```
 GET /**t.html** HTTP/1.1
@@ -85,33 +92,33 @@ Connection: Closed
 ```
 
 ```html
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">          
-<html>  
-<head>  
-    <title>404 Not Found</title>  
-</head>  
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
 
 <body>
     <h1>Not Found</h1>
-    <p>The requested URL /t.html was not found on this server.</p>  
-</body>  
+    <p>The requested URL /t.html was not found on this server.</p>
+</body>
 </html>
 ```
 ---
 ### Message Start-Line
-**basic format:**       
+**basic format:**
 
     start-line = Request-Line | Status-Line
 
-_Request-line_ sent by the **client**    
+_Request-line_ sent by the **client**
 _Status-Line_ sent by the **server**
 
 ### Message Header Fields
-_header fields provide required information about the request or response, about the object sent in the message body._ 
+_header fields provide required information about the request or response, about the object sent in the message body._
 
 >- **General-header:** These header fields have general applicability for both `request` and `response` messages.
->- **Request-header:** These header fields have applicability only for request messages. 
->- **Response-header:** These header fields have applicability only for response messages. 
+>- **Request-header:** These header fields have applicability only for request messages.
+>- **Response-header:** These header fields have applicability only for response messages.
 >- **Entity-header:**  These header fields define **meta information** about the `entity-body` or, if no body is present, about the resource identified by the `request`.
 
 #### Example
@@ -136,21 +143,21 @@ Content-Type: text/plain
 ```html
 <html>
    <body>
-   
+
       <h1>Hello, World!</h1>
-   
+
    </body>
 </html>
 ```
 
-## Requests   
-**basic format:**   
+## Requests
+**basic format:**
 
 >    - A Request-line
 >    - Zero or more header (General|Request|Entity) fields followed by CRLF
->    - An empty line (i.e., a line with nothing preceding the CRLF) 
->   indicating the end of the header fields 
->    - Optionally a message-body  
+>    - An empty line (i.e., a line with nothing preceding the CRLF)
+>   indicating the end of the header fields
+>    - Optionally a message-body
 
 
 ```mermaid
@@ -163,12 +170,12 @@ Request-line --> Method
 Request-line --> Request-URI
 Request-line --> HTTP-version
 ```
-### Request-line        
+### Request-line
 
-*The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF.*    
+*The Request-Line begins with a method token, followed by the Request-URI and the protocol version, and ending with CRLF.*
 
-**syntax**  
-    
+**syntax**
+
     Request-Line = Method SP Request-URI SP HTTP-Version CRLF
 
 ```mermaid
@@ -182,7 +189,7 @@ Request-Method --> CONNECT
 Request-Method --> OPTIONS
 Request-Method --> TRACE
 ```
-------------    
+------------
 
 | S.N.     | Method and Description                                                                                                                                                                   |
 | :------: | :------------------------                                                                                                                                                                |
@@ -194,12 +201,12 @@ Request-Method --> TRACE
 |6 | __CONNECT__        Establishes a tunnel to the server identified by a given URI.
 |7|__OPTIONS__        Describe the communication options for the target resource.|
 | 8| __TRACE__          Performs a message loop back test along with the path to the target resource.|
-    
+
 #### Request-URI
-    
--------         
-__format__      
-_Request-URI = "*" | absoluteURI | abs_path | authority_    
+
+-------
+__format__
+_Request-URI = "*" | absoluteURI | abs_path | authority_
 
 ```mermaid
 graph TB
@@ -210,54 +217,54 @@ Request-URI --> authority
 
 ```
 
-S.N.  |  Method and Description     
------ | -------   
+S.N.  |  Method and Description
+----- | -------
 1  | The asterisk * is used when an HTTP request does not apply to a particular resource, but to the server itself, and is only allowed when the method used does not necessarily apply to a resource. For example:<br>__OPTIONS * HTTP/1.1__|
-2 | The absoluteURI is used when an HTTP request is being made to a proxy. The proxy is requested to forward the request or service from a valid cache, and return the response. For example: <br>__GET      http://www.w3.org/pub/WWW/TheProject.html HTTP/1.1__| 
+2 | The absoluteURI is used when an HTTP request is being made to a proxy. The proxy is requested to forward the request or service from a valid cache, and return the response. For example: <br>__GET      http://www.w3.org/pub/WWW/TheProject.html HTTP/1.1__|
 3 | The most common form of Request-URI is that used to identify a resource on an origin server or gateway. For example, a client wishing to retrieve a resource directly from the origin server would create a TCP connection to port 80 of the host "www.w3.org" and send the following lines:<br>__GET /pub/WWW/TheProject.html HTTP/1.1 Host: www.w3.org__ <br>*Note that the absolute path cannot be empty; if none is present in the original URI, it MUST be given as "/" (the server root).*
 
 ---
 
 ### Request Header Fields
 
-The request-header fields allow the client to **pass** _additional information about the request_, and _about the client itself_, **to the server**. 
+The request-header fields allow the client to **pass** _additional information about the request_, and _about the client itself_, **to the server**.
 These fields act as request modifiers.
 
 
  -   Accept-Encoding
-    
+
 -   Accept-Language
-    
+
 -   Authorization
-    
+
 -   Expect
-    
+
 -   From
-    
+
 -   Host
-    
+
 -   If-Match
-    
+
 -   If-Modified-Since
-    
+
 -   If-None-Match
-    
+
 -   If-Range
-    
+
 -   If-Unmodified-Since
-    
+
 -   Max-Forwards
-    
+
 -   Proxy-Authorization
-    
+
 -   Range
-    
+
 -   Referer
-    
+
 -   TE
-    
--   User-Agent  
-    
+
+-   User-Agent
+
 ----
 
 ### Examples of Request Message
@@ -272,9 +279,9 @@ Now let's put it all together to form an HTTP request to *fetch **hello.htm** pa
     Connection: Keep-Alive                                      Headers
 
 ---
-*send form data to the server using request message body:*      
+*send form data to the server using request message body:*
 
-    
+
     POST /cgi-bin/process.cgi HTTP/1.1
     User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
     Host: www.tutorialspoint.com
@@ -288,7 +295,7 @@ Now let's put it all together to form an HTTP request to *fetch **hello.htm** pa
 
 ---
 *pass plain XML to your web server:*
-    
+
     POST /cgi-bin/process.cgi HTTP/1.1
     User-Agent: Mozilla/4.0 (compatible; MSIE5.01; Windows NT)
     Host: www.tutorialspoint.com
@@ -304,21 +311,21 @@ Now let's put it all together to form an HTTP request to *fetch **hello.htm** pa
 
 ## Responses
 
-**basic format:**       
+**basic format:**
 >-   A Status-line
 >-   Zero or more header (General|Response|Entity) fields followed by CRLF
 >-   An empty line (i.e., a line with nothing preceding the CRLF) indicating the end of the header fields
->-   Optionally a message-body      
+>-   Optionally a message-body
 
 ---
 
-### Status-Line 
+### Status-Line
 
-**format:**     
-    
-Status-Line = **HTTP-Version** SP **Status-Code** SP **Reason-Phrase** CRLF     
-### Status Code 
-The Status-Code element is a 3-digit integer where *first* digit of the Status-Code defines the class of response and the *last two* digits do not have any categorization role.        
+**format:**
+
+Status-Line = **HTTP-Version** SP **Status-Code** SP **Reason-Phrase** CRLF
+### Status Code
+The Status-Code element is a 3-digit integer where *first* digit of the Status-Code defines the class of response and the *last two* digits do not have any categorization role.
 
 S.N. | Code and Description
 ---|---
@@ -331,30 +338,30 @@ S.N. | Code and Description
 ---
 ### Response Header Fields
 
-The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line.       
+The response-header fields allow the server to pass additional information about the response which cannot be placed in the Status- Line.
 
 -   Accept-Ranges
-    
+
 -   Age
-    
+
 -   ETag
-    
+
 -   Location
-    
+
 -   Proxy-Authenticate
-    
+
 -   Retry-After
-    
+
 -   Server
-    
+
 -   Vary
-    
--   WWW-Authenticate        
+
+-   WWW-Authenticate
 
 ---
 ### Examples of Response Message
 
-The following example shows an HTTP response message displaying error condition when the web server could not find the requested page:      
+The following example shows an HTTP response message displaying error condition when the web server could not find the requested page:
 ```
 HTTP/1.1 404 Not Found
 Date: Sun, 18 Oct 2012 10:36:20 GMT
@@ -365,7 +372,7 @@ Content-Type: text/html; charset=iso-8859-1
 ```
 
 ```html
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">  
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html>
 <head>
     <title>404 Not Found</title>
@@ -376,7 +383,7 @@ Content-Type: text/html; charset=iso-8859-1
 </body>
 </html>
 ```
---- 
+---
 ## HTTP Header Fields
 
 ```mermaid
@@ -475,7 +482,7 @@ The user agent includes stored cookies in the Cookie HTTP request
 
              NOTE: The notion of a "secure" protocol is not defined by
              this document.  Typically, user agents consider a protocol
-             secure if the protocol makes use of transport-layer  
+             secure if the protocol makes use of transport-layer
              security, such as SSL or TLS.  For example, most user
              agents consider "https" to be a scheme that denotes a
              secure protocol.
@@ -518,11 +525,11 @@ The user agent includes stored cookies in the Cookie HTTP request
    UTF-8 character encoding  [RFC3629](https://tools.ietf.org/html/rfc3629 "UTF-8, a transformation format of ISO 10646")  to decode the octet sequence.
    This decoding might fail, however, because not every sequence of
    octets is valid UTF-8.
-   
---- 
+
+---
 
 ## Reference:
-[HTTP Tutorial](https://www.tutorialspoint.com/http/index.htm)    
-[Hypertext Transfer Protocol -- HTTP/1.1](https://www.w3.org/Protocols/rfc2616/rfc2616.html)    
-[The Cookie Header](https://tools.ietf.org/html/rfc6265#section-5.4)    
+[HTTP Tutorial](https://www.tutorialspoint.com/http/index.htm)
+[Hypertext Transfer Protocol -- HTTP/1.1](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+[The Cookie Header](https://tools.ietf.org/html/rfc6265#section-5.4)
 

@@ -2,24 +2,31 @@
 @def published = "28 November 2018"
 @def tags = ["Tutorial", "Ubuntu"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 #### 1. Install a client from [HERE](https://github.com/erguotou520/electron-ssr), It is an amazing ssr GUI!
 **...**
 #### 2. Open it and setting params.
 **...**
-#### 3. Setting Firefox browser. 
+#### 3. Setting Firefox browser.
 
-*One way*       
+*One way*
 
 - `Preferences` -> `General` -> `Network Settings` -> `Manual Proxy configuration`
 - `SOCKS Host:127.0.0.1` and `Port:1080`.ps:use yours port if you set another port.
 - Clicking `OK`.
 - Enjoying!
-     
 
-*Another way*       
+
+*Another way*
 
 - Adding this Add-on called [FoxyProxy Standard](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/).
-- Setting this Add-on by clicking `Options`, it will pop a tab. 
+- Setting this Add-on by clicking `Options`, it will pop a tab.
 - Enter`Edit`button then setting IP address(127.0.0.1) and Port(1080).
 - Enjoying!

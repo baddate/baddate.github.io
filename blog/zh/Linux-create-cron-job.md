@@ -2,6 +2,14 @@
 @def published = "3 December 2020"
 @def tags = ["Linux", "Cron", "Command"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
+
 Cron是Linux一个很有用的工具，也是开发人员最喜欢的工具，因为它可以让你使用通用脚本和特定于任务的脚本在特定的时间段、日期和间隔自动运行命令。有了该描述，你可以想象系统管理员如何使用它来自动执行备份任务、目录清除、通知等。
 
 Cron作业在后台运行，并不断检查`/etc/crontab`文件，`/etc/cron.*/`和`/var/spool/cron/`目录。我们最好不要直接编辑cron文件，因为每个用户都有唯一的crontab。

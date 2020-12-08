@@ -1,6 +1,14 @@
 @def title = "Build site with Franklin.jl"
 @def published = "30 November 2020"
-@def tags = ["Courses", "Julia", "Franklin.jl", "Github"]
+@def tags = ["Courses", "Julia", "Franklinjl", "Github"]
+
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 \toc
 

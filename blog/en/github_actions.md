@@ -2,6 +2,13 @@
 @def published = "03 January 2020"
 @def tags = ["Tips", "Git","Github", "Github Actions"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ## What's Github Actions
 [Github Actions](https://github.com/features/actions) is a __CI__(continuous integration) and __CD__(continuous deployment) service that help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues. It was launched in October 2018 and was officially available to all users in November 2019. With Github Actions you can write individual tasks, called _actions_, and combine them to create a custom workflow. *Workflows* are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.

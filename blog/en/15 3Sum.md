@@ -2,6 +2,13 @@
 @def published = "26 September 2019"
 @def tags = ["Leetcode", "Solution"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 __problem description:__
 

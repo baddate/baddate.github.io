@@ -2,6 +2,13 @@
 @def published = "26 March 2019"
 @def tags = ["IR", "Translate"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ## ABSTRACT
 在Web搜索引擎中处理查询需要有效地使用硬件资源来应对用户流量的规模和动态。本文重点讨论了多线程处理查询，这些查询需要访问大型反向索引数据结构以获取一组文档，通过执行WAND运算符对它们进行排名，以获得前K个最相关的文档。以及在执行查询的同时解决在反向索引上插入新文档的问题。 我们提出了一种高效的策略来为查询和索引更新操作分配线程，这种策略适合于在查询处理的同时支持索引的更新。 我们提案的核心是一种简单的分类技术，旨在快速为查询操作分配线程。
@@ -83,22 +90,22 @@ WAND同时处理查询中涉及的所有索引列表。 因此，在解决查询
 # CONCLUSIONS
 本文重点讨论了在Web搜索引擎的倒排索引中执行更新的同时处理多线程查询的问题。我们已经提出了一种有效的策略来动态地分配线程，以根据它们的特定特征处理各个查询。我们将查询处理分解为多个工作单元，这些工作单元可以由多个线程并行处理。我们设计了一种简单的分类方法来确定每个查询的工作单元数，这种方法足够精确且比其他查询时间估计策略快得多。根据该方案，我们建议在执行实际索引更新并在所有线程之间分发整个插入任务之前，在子索引中预处理文档。总的来说，提出的方法是以两步方式进行，其中（1）通过在查询级别应用并行性使用所有线程处理一批待处理查询，随后（2）处理一组待处理发布列表更新。批量使用并行的所有线程。实验表明，这两步策略对搜索引擎查询吞吐量有积极影响，并确保查询时间的竞争上限。
 # REFERENCE
-[1] V. N. Anh and A. Moﬀat. Inverted index compression using word-aligned binary codes. Inf. Retr., 8(1):151–166, 2005. 
+[1] V. N. Anh and A. Moﬀat. Inverted index compression using word-aligned binary codes. Inf. Retr., 8(1):151–166, 2005.
 
-[2] D. Arroyuelo, S. Gonz´alez, M. Oyarzu´n, and V. Sepulveda. Document identiﬁer reassignment and run-length-compressed inverted indexes for improved search performance. In SIGIR, pages 173–182, 2013. 
+[2] D. Arroyuelo, S. Gonz´alez, M. Oyarzu´n, and V. Sepulveda. Document identiﬁer reassignment and run-length-compressed inverted indexes for improved search performance. In SIGIR, pages 173–182, 2013.
 
-[3] R. Baeza-Yates and B. Ribeiro-Neto. Modern Information Retrieval: The Concepts and Technology behind Search (ACM Press Books). Addison-Wesley Professional, 2011. 
+[3] R. Baeza-Yates and B. Ribeiro-Neto. Modern Information Retrieval: The Concepts and Technology behind Search (ACM Press Books). Addison-Wesley Professional, 2011.
 
-[4] C. Bonacic, C. Garc´ıa, M. Marin, M. Prieto-Matias, and F. Tirado. Building eﬃcient multi-threaded search nodes. In CIKM, pages 1249–1258, 2010. 
+[4] C. Bonacic, C. Garc´ıa, M. Marin, M. Prieto-Matias, and F. Tirado. Building eﬃcient multi-threaded search nodes. In CIKM, pages 1249–1258, 2010.
 
-[5] A. Z. Broder, D. Carmel, M. Herscovici, A. Soﬀer, and J. Zien. Eﬃcient query evaluation using a two-level retrieval process. In CIKM, pages 426–434, 2003. 
+[5] A. Z. Broder, D. Carmel, M. Herscovici, A. Soﬀer, and J. Zien. Eﬃcient query evaluation using a two-level retrieval process. In CIKM, pages 426–434, 2003.
 
-[6] S. Ding and T. Suel. Faster top-k document retrieval using block-max indexes. In SIGIR, pages 993–1002, 2011. 
+[6] S. Ding and T. Suel. Faster top-k document retrieval using block-max indexes. In SIGIR, pages 993–1002, 2011.
 
-[7] C. Macdonald, N. Tonellotto, and I. Ounis. Learning to predict response times for online query scheduling. In SIGIR, pages 621–630, 2012. 
+[7] C. Macdonald, N. Tonellotto, and I. Ounis. Learning to predict response times for online query scheduling. In SIGIR, pages 621–630, 2012.
 
-[8] O. Rojas, V. Gil-Costa, and M. Marin. Eﬃcient parallel block-max wand algorithm. In Euro-Par, pages 394–405. 2013. 
+[8] O. Rojas, V. Gil-Costa, and M. Marin. Eﬃcient parallel block-max wand algorithm. In Euro-Par, pages 394–405. 2013.
 
-[9] H. Yan, S. Ding, and T. Suel. Inverted index compression and query processing with optimized document ordering. In WWW, pages 401–410, 2009. 
+[9] H. Yan, S. Ding, and T. Suel. Inverted index compression and query processing with optimized document ordering. In WWW, pages 401–410, 2009.
 
 [10] J. Zobel and A. Moﬀat. Inverted ﬁles for text search engines. ACM Comput. Surv., 38(2), July 2006.

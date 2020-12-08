@@ -2,6 +2,13 @@
 @def published = "10 July 2019"
 @def tags = ["Tips", "Linux"]
 
+~~~
+<ul>
+{{for tag in tags}}
+  &#x1F516;<a href="/tag/{{fill tag}}" style="text-transform: uppercase;color:#696969">{{fill tag}}</a>
+{{end}}
+</ul>
+~~~
 
 ## Nohup Command
 Nohup, short for _NO HANG UP_ is a command in Linux systems that keep processes running even after exiting the shell or terminal.
@@ -35,7 +42,7 @@ nohup ping google.com &
 To check the process when resuming the shell use the `pgrep` command:
 ```bash
 pgrep -a ping
-``` 
+```
 
 
 ## Redirection in linux
