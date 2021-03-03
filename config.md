@@ -14,9 +14,9 @@ The website_* must be defined for the RSS to work
 <!-- Stuff related to the site styling -->
 @def div_content = "container"
 @def dir = "/blog/zh"
-@def dir_name = "ZH-Blog"
+@def dir_name = "大菠萝"
 @def dir2 = "/blog/en"
-@def dir2_name = "EN-Blog"
+@def dir2_name = "DIABLO"
 
 <!--
 you can use this to add another navi item.
